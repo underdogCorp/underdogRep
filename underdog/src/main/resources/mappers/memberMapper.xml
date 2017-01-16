@@ -1,1 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.underdog.mapper.memberMapper">
+
+	<select id="joinCheckEmail" resultType="int">
+		SELECT COUNT(me_email) FROM member WHERE me_email = #{me_email}
+	</select>
+
+	<insert id="joinProc" parameterType="MemberVO">
+		INSERT INTO member (
+		me_email, me_pw, me_name, me_nick, me_birth
+		, me_regdate, me_status, me_grade, me_keyword, me_point
+		, me_zipcode, me_add1, me_add2
+		)
+		VALUES (
+		#{me_email}, #{me_pw}, #{me_name}, #{me_nick}, #{me_birth}
+		, sysdate, 0, 0, 'test', 0
+		, #{me_zipcode}, #{me_add1}, #{me_add2}
+		)
+	</insert>
+
+	<select id="loginProc" parameterType="MemberVO" resultType="MemberVO">
+		<![CDATA[
+		SELECT me_email, me_pw, me_name, me_nick
+		FROM member 
+		WHERE me_email=#{me_email} AND me_pw=#{me_pw}
+		]]>
+	</select>
+</mapper>
