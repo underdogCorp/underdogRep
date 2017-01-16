@@ -4,105 +4,106 @@ import java.sql.Date;
 
 public class MemberVO {
 
-	private String ME_EMAIL;
-	private String ME_PW;
-	private String ME_NAME;
-	private String ME_NICK;
-	private String ME_BIRTH;
-	private Date ME_REGDATE;
-	private int ME_STATUS;
-	private Date ME_EXITDATE;
-	private int ME_GRADE;
-	private String ME_KEYWORD;
-	private int ME_POINT;
-	private int ME_ZIPCODE;
-	private String ME_ADD1;
-	private String ME_ADD2;
+	private String me_email;
+	private String me_pw;
+	private String me_name;
+	private String me_nick;
+	private String me_birth;
+	private Date me_regdate;
+	private int me_status;
+	private Date me_exitdate;
+	private int me_grade;
+	private String me_keyword;
+	private int me_point;
+	private int me_zipcode;
+	private String me_add1;
+	private String me_add2;
 	
-	public String getME_EMAIL() {
-		return ME_EMAIL;
+	public String getMe_email() {
+		return me_email;
 	}
-	public void setME_EMAIL(String mE_EMAIL) {
-		ME_EMAIL = mE_EMAIL;
+	public void setMe_email(String me_email) {
+		this.me_email = me_email;
 	}
-	public String getME_PW() {
-		return ME_PW;
+	public String getMe_pw() {
+		return me_pw;
 	}
-	public void setME_PW(String mE_PW) {
-		ME_PW = mE_PW;
+	public void setMe_pw(String me_pw) {
+		this.me_pw = me_pw;
 	}
-	public String getME_NAME() {
-		return ME_NAME;
+	public String getMe_name() {
+		return me_name;
 	}
-	public void setME_NAME(String mE_NAME) {
-		ME_NAME = mE_NAME;
+	public void setMe_name(String me_name) {
+		this.me_name = me_name;
 	}
-	public String getME_NICK() {
-		return ME_NICK;
+	public String getMe_nick() {
+		return me_nick;
 	}
-	public void setME_NICK(String mE_NICK) {
-		ME_NICK = mE_NICK;
+	public void setMe_nick(String me_nick) {
+		this.me_nick = me_nick;
 	}
-	public String getME_BIRTH() {
-		return ME_BIRTH;
+	public String getMe_birth() {
+		return me_birth;
 	}
-	public void setME_BIRTH(String mE_BIRTH) {
-		ME_BIRTH = mE_BIRTH;
+	public void setMe_birth(String me_birth) {
+		this.me_birth = me_birth;
 	}
-	public Date getME_REGDATE() {
-		return ME_REGDATE;
+	public Date getMe_regdate() {
+		return me_regdate;
 	}
-	public void setME_REGDATE(Date mE_REGDATE) {
-		ME_REGDATE = mE_REGDATE;
+	public void setMe_regdate(Date me_regdate) {
+		this.me_regdate = me_regdate;
 	}
-	public int getME_STATUS() {
-		return ME_STATUS;
+	public int getMe_status() {
+		return me_status;
 	}
-	public void setME_STATUS(int mE_STATUS) {
-		ME_STATUS = mE_STATUS;
+	public void setMe_status(int me_status) {
+		this.me_status = me_status;
 	}
-	public Date getME_EXITDATE() {
-		return ME_EXITDATE;
+	public Date getMe_exitdate() {
+		return me_exitdate;
 	}
-	public void setME_EXITDATE(Date mE_EXITDATE) {
-		ME_EXITDATE = mE_EXITDATE;
+	public void setMe_exitdate(Date me_exitdate) {
+		this.me_exitdate = me_exitdate;
 	}
-	public int getME_GRADE() {
-		return ME_GRADE;
+	public int getMe_grade() {
+		return me_grade;
 	}
-	public void setME_GRADE(int mE_GRADE) {
-		ME_GRADE = mE_GRADE;
+	public void setMe_grade(int me_grade) {
+		this.me_grade = me_grade;
 	}
-	public String getME_KEYWORD() {
-		return ME_KEYWORD;
+	public String getMe_keyword() {
+		return me_keyword;
 	}
-	public void setME_KEYWORD(String mE_KEYWORD) {
-		ME_KEYWORD = mE_KEYWORD;
+	public void setMe_keyword(String me_keyword) {
+		this.me_keyword = me_keyword;
 	}
-	public int getME_POINT() {
-		return ME_POINT;
+	public int getMe_point() {
+		return me_point;
 	}
-	public void setME_POINT(int mE_POINT) {
-		ME_POINT = mE_POINT;
+	public void setMe_point(int me_point) {
+		this.me_point = me_point;
 	}
-	public int getME_ZIPCODE() {
-		return ME_ZIPCODE;
+	public int getMe_zipcode() {
+		return me_zipcode;
 	}
-	public void setME_ZIPCODE(int mE_ZIPCODE) {
-		ME_ZIPCODE = mE_ZIPCODE;
+	public void setMe_zipcode(int me_zipcode) {
+		this.me_zipcode = me_zipcode;
 	}
-	public String getME_ADD1() {
-		return ME_ADD1;
+	public String getMe_add1() {
+		return me_add1;
 	}
-	public void setME_ADD1(String mE_ADD1) {
-		ME_ADD1 = mE_ADD1;
+	public void setMe_add1(String me_add1) {
+		this.me_add1 = me_add1;
 	}
-	public String getME_ADD2() {
-		return ME_ADD2;
+	public String getMe_add2() {
+		return me_add2;
 	}
-	public void setME_ADD2(String mE_ADD2) {
-		ME_ADD2 = mE_ADD2;
+	public void setMe_add2(String me_add2) {
+		this.me_add2 = me_add2;
 	}
-
+	
+	
 
 }

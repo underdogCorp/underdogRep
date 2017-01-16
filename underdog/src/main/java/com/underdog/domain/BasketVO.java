@@ -4,63 +4,64 @@ import java.sql.Date;
 
 public class BasketVO {
 
-	private int BA_IDX;
-	private String BA_ME_EMAIL;
-	private int BA_PR_IDX;
-	private String BA_TERMSORT;
-	private int BA_TERMNUM;
-	private int BA_PRICE;
-	private int BA_SUM;
-	private Date BA_REGDATE;
+	private int ba_idx;
+	private String ba_me_email;
+	private int ba_pr_idx;
+	private String ba_termsort;
+	private int ba_termnum;
+	private int ba_price;
+	private int ba_sum;
+	private Date ba_regdate;
 	
-	public int getBA_IDX() {
-		return BA_IDX;
+	public int getBa_idx() {
+		return ba_idx;
 	}
-	public void setBA_IDX(int bA_IDX) {
-		BA_IDX = bA_IDX;
+	public void setBa_idx(int ba_idx) {
+		this.ba_idx = ba_idx;
 	}
-	public String getBA_ME_EMAIL() {
-		return BA_ME_EMAIL;
+	public String getBa_me_email() {
+		return ba_me_email;
 	}
-	public void setBA_ME_EMAIL(String bA_ME_EMAIL) {
-		BA_ME_EMAIL = bA_ME_EMAIL;
+	public void setBa_me_email(String ba_me_email) {
+		this.ba_me_email = ba_me_email;
 	}
-	public int getBA_PR_IDX() {
-		return BA_PR_IDX;
+	public int getBa_pr_idx() {
+		return ba_pr_idx;
 	}
-	public void setBA_PR_IDX(int bA_PR_IDX) {
-		BA_PR_IDX = bA_PR_IDX;
+	public void setBa_pr_idx(int ba_pr_idx) {
+		this.ba_pr_idx = ba_pr_idx;
 	}
-	public String getBA_TERMSORT() {
-		return BA_TERMSORT;
+	public String getBa_termsort() {
+		return ba_termsort;
 	}
-	public void setBA_TERMSORT(String bA_TERMSORT) {
-		BA_TERMSORT = bA_TERMSORT;
+	public void setBa_termsort(String ba_termsort) {
+		this.ba_termsort = ba_termsort;
 	}
-	public int getBA_TERMNUM() {
-		return BA_TERMNUM;
+	public int getBa_termnum() {
+		return ba_termnum;
 	}
-	public void setBA_TERMNUM(int bA_TERMNUM) {
-		BA_TERMNUM = bA_TERMNUM;
+	public void setBa_termnum(int ba_termnum) {
+		this.ba_termnum = ba_termnum;
 	}
-	public int getBA_PRICE() {
-		return BA_PRICE;
+	public int getBa_price() {
+		return ba_price;
 	}
-	public void setBA_PRICE(int bA_PRICE) {
-		BA_PRICE = bA_PRICE;
+	public void setBa_price(int ba_price) {
+		this.ba_price = ba_price;
 	}
-	public int getBA_SUM() {
-		return BA_SUM;
+	public int getBa_sum() {
+		return ba_sum;
 	}
-	public void setBA_SUM(int bA_SUM) {
-		BA_SUM = bA_SUM;
+	public void setBa_sum(int ba_sum) {
+		this.ba_sum = ba_sum;
 	}
-	public Date getBA_REGDATE() {
-		return BA_REGDATE;
+	public Date getBa_regdate() {
+		return ba_regdate;
 	}
-	public void setBA_REGDATE(Date bA_REGDATE) {
-		BA_REGDATE = bA_REGDATE;
+	public void setBa_regdate(Date ba_regdate) {
+		this.ba_regdate = ba_regdate;
 	}
-
+	
+	
 	
 }

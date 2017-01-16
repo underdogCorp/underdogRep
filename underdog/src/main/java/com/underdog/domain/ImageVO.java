@@ -2,56 +2,56 @@ package com.underdog.domain;
 
 public class ImageVO {
 
-	private int IM_IDX;
-	private int IM_PR_IDX;
-	private int IM_BO_IDX;
-	private String IM_IMGPATH;
-	private String IM_IMGNAME;
-	private int IM_SEQ;
-	private String IM_MEMO;
+	private int im_idx;
+	private int im_pr_idx;
+	private int im_bo_idx;
+	private String im_imgpath;
+	private String im_imgname;
+	private int im_seq;
+	private String im_memo;
 	
-	public int getIM_IDX() {
-		return IM_IDX;
+	public int getIm_idx() {
+		return im_idx;
 	}
-	public void setIM_IDX(int iM_IDX) {
-		IM_IDX = iM_IDX;
+	public void setIm_idx(int im_idx) {
+		this.im_idx = im_idx;
 	}
-	public int getIM_PR_IDX() {
-		return IM_PR_IDX;
+	public int getIm_pr_idx() {
+		return im_pr_idx;
 	}
-	public void setIM_PR_IDX(int iM_PR_IDX) {
-		IM_PR_IDX = iM_PR_IDX;
+	public void setIm_pr_idx(int im_pr_idx) {
+		this.im_pr_idx = im_pr_idx;
 	}
-	public int getIM_BO_IDX() {
-		return IM_BO_IDX;
+	public int getIm_bo_idx() {
+		return im_bo_idx;
 	}
-	public void setIM_BO_IDX(int iM_BO_IDX) {
-		IM_BO_IDX = iM_BO_IDX;
+	public void setIm_bo_idx(int im_bo_idx) {
+		this.im_bo_idx = im_bo_idx;
 	}
-	public String getIM_IMGPATH() {
-		return IM_IMGPATH;
+	public String getIm_imgpath() {
+		return im_imgpath;
 	}
-	public void setIM_IMGPATH(String iM_IMGPATH) {
-		IM_IMGPATH = iM_IMGPATH;
+	public void setIm_imgpath(String im_imgpath) {
+		this.im_imgpath = im_imgpath;
 	}
-	public String getIM_IMGNAME() {
-		return IM_IMGNAME;
+	public String getIm_imgname() {
+		return im_imgname;
 	}
-	public void setIM_IMGNAME(String iM_IMGNAME) {
-		IM_IMGNAME = iM_IMGNAME;
+	public void setIm_imgname(String im_imgname) {
+		this.im_imgname = im_imgname;
 	}
-	public int getIM_SEQ() {
-		return IM_SEQ;
+	public int getIm_seq() {
+		return im_seq;
 	}
-	public void setIM_SEQ(int iM_SEQ) {
-		IM_SEQ = iM_SEQ;
+	public void setIm_seq(int im_seq) {
+		this.im_seq = im_seq;
 	}
-	public String getIM_MEMO() {
-		return IM_MEMO;
+	public String getIm_memo() {
+		return im_memo;
 	}
-	public void setIM_MEMO(String iM_MEMO) {
-		IM_MEMO = iM_MEMO;
+	public void setIm_memo(String im_memo) {
+		this.im_memo = im_memo;
 	}
-
+	
 	
 }

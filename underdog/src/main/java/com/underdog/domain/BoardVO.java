@@ -4,84 +4,83 @@ import java.sql.Date;
 
 public class BoardVO {
 
-	private int BO_IDX;
-	private String BO_ME_EMAIL;
-	private int BO_BBSID;
-	private String BO_ME_NICK;
-	private String BO_TITLE;
-	private String BO_CONTENT;
-	private int BO_HIT;
-	private Date BO_REGDATE;
-	private String BO_REGIP;
-	private int BO_STATUS;
-	private Date BO_DELDATE;
+	private int bo_idx;
+	private String bo_me_email;
+	private int bo_bbsid;
+	private String bo_me_nick;
+	private String bo_title;
+	private String bo_content;
+	private int bo_hit;
+	private Date bo_regdate;
+	private String bo_regip;
+	private int bo_status;
+	private Date bo_deldate;
+	public int getBo_idx() {
+		return bo_idx;
+	}
+	public void setBo_idx(int bo_idx) {
+		this.bo_idx = bo_idx;
+	}
+	public String getBo_me_email() {
+		return bo_me_email;
+	}
+	public void setBo_me_email(String bo_me_email) {
+		this.bo_me_email = bo_me_email;
+	}
+	public int getBo_bbsid() {
+		return bo_bbsid;
+	}
+	public void setBo_bbsid(int bo_bbsid) {
+		this.bo_bbsid = bo_bbsid;
+	}
+	public String getBo_me_nick() {
+		return bo_me_nick;
+	}
+	public void setBo_me_nick(String bo_me_nick) {
+		this.bo_me_nick = bo_me_nick;
+	}
+	public String getBo_title() {
+		return bo_title;
+	}
+	public void setBo_title(String bo_title) {
+		this.bo_title = bo_title;
+	}
+	public String getBo_content() {
+		return bo_content;
+	}
+	public void setBo_content(String bo_content) {
+		this.bo_content = bo_content;
+	}
+	public int getBo_hit() {
+		return bo_hit;
+	}
+	public void setBo_hit(int bo_hit) {
+		this.bo_hit = bo_hit;
+	}
+	public Date getBo_regdate() {
+		return bo_regdate;
+	}
+	public void setBo_regdate(Date bo_regdate) {
+		this.bo_regdate = bo_regdate;
+	}
+	public String getBo_regip() {
+		return bo_regip;
+	}
+	public void setBo_regip(String bo_regip) {
+		this.bo_regip = bo_regip;
+	}
+	public int getBo_status() {
+		return bo_status;
+	}
+	public void setBo_status(int bo_status) {
+		this.bo_status = bo_status;
+	}
+	public Date getBo_deldate() {
+		return bo_deldate;
+	}
+	public void setBo_deldate(Date bo_deldate) {
+		this.bo_deldate = bo_deldate;
+	}
 	
-	public int getBO_IDX() {
-		return BO_IDX;
-	}
-	public void setBO_IDX(int bO_IDX) {
-		BO_IDX = bO_IDX;
-	}
-	public String getBO_ME_EMAIL() {
-		return BO_ME_EMAIL;
-	}
-	public void setBO_ME_EMAIL(String bO_ME_EMAIL) {
-		BO_ME_EMAIL = bO_ME_EMAIL;
-	}
-	public int getBO_BBSID() {
-		return BO_BBSID;
-	}
-	public void setBO_BBSID(int bO_BBSID) {
-		BO_BBSID = bO_BBSID;
-	}
-	public String getBO_ME_NICK() {
-		return BO_ME_NICK;
-	}
-	public void setBO_ME_NICK(String bO_ME_NICK) {
-		BO_ME_NICK = bO_ME_NICK;
-	}
-	public String getBO_TITLE() {
-		return BO_TITLE;
-	}
-	public void setBO_TITLE(String bO_TITLE) {
-		BO_TITLE = bO_TITLE;
-	}
-	public String getBO_CONTENT() {
-		return BO_CONTENT;
-	}
-	public void setBO_CONTENT(String bO_CONTENT) {
-		BO_CONTENT = bO_CONTENT;
-	}
-	public int getBO_HIT() {
-		return BO_HIT;
-	}
-	public void setBO_HIT(int bO_HIT) {
-		BO_HIT = bO_HIT;
-	}
-	public Date getBO_REGDATE() {
-		return BO_REGDATE;
-	}
-	public void setBO_REGDATE(Date bO_REGDATE) {
-		BO_REGDATE = bO_REGDATE;
-	}
-	public String getBO_REGIP() {
-		return BO_REGIP;
-	}
-	public void setBO_REGIP(String bO_REGIP) {
-		BO_REGIP = bO_REGIP;
-	}
-	public int getBO_STATUS() {
-		return BO_STATUS;
-	}
-	public void setBO_STATUS(int bO_STATUS) {
-		BO_STATUS = bO_STATUS;
-	}
-	public Date getBO_DELDATE() {
-		return BO_DELDATE;
-	}
-	public void setBO_DELDATE(Date bO_DELDATE) {
-		BO_DELDATE = bO_DELDATE;
-	}
-
 	
 }
