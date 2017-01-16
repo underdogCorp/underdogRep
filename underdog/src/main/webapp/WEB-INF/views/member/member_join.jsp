@@ -18,7 +18,7 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
 <title>회원가입 폼</title>
-<style>
+<style> 
 /* date spin 삭제 */
 input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
