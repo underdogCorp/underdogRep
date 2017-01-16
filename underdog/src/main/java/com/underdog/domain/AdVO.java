@@ -4,56 +4,56 @@ import java.sql.Date;
 
 public class AdVO {
 	
-	private int AD_IDX;
-	private String AD_URL;
-	private String AD_COMPANY;
-	private Date AD_REGDATE;
-	private int AD_STATUS;
-	private String AD_IMGPATH;
-	private String AD_IMGNAME;
+	private int idx;
+	private String ad_url;
+	private String ad_company;
+	private Date regdate;
+	private int status;
+	private String imgpath;
+	private String imgname;
 	
-	public int getAD_IDX() {
-		return AD_IDX;
+	public int getIdx() {
+		return idx;
 	}
-	public void setAD_IDX(int aD_IDX) {
-		AD_IDX = aD_IDX;
+	public void setIdx(int idx) {
+		this.idx = idx;
 	}
-	public String getAD_URL() {
-		return AD_URL;
+	public String getAd_url() {
+		return ad_url;
 	}
-	public void setAD_URL(String aD_URL) {
-		AD_URL = aD_URL;
+	public void setAd_url(String ad_url) {
+		this.ad_url = ad_url;
 	}
-	public String getAD_COMPANY() {
-		return AD_COMPANY;
+	public String getAd_company() {
+		return ad_company;
 	}
-	public void setAD_COMPANY(String aD_COMPANY) {
-		AD_COMPANY = aD_COMPANY;
+	public void setAd_company(String ad_company) {
+		this.ad_company = ad_company;
 	}
-	public Date getAD_REGDATE() {
-		return AD_REGDATE;
+	public Date getRegdate() {
+		return regdate;
 	}
-	public void setAD_REGDATE(Date aD_REGDATE) {
-		AD_REGDATE = aD_REGDATE;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
-	public int getAD_STATUS() {
-		return AD_STATUS;
+	public int getStatus() {
+		return status;
 	}
-	public void setAD_STATUS(int aD_STATUS) {
-		AD_STATUS = aD_STATUS;
+	public void setStatus(int status) {
+		this.status = status;
 	}
-	public String getAD_IMGPATH() {
-		return AD_IMGPATH;
+	public String getImgpath() {
+		return imgpath;
 	}
-	public void setAD_IMGPATH(String aD_IMGPATH) {
-		AD_IMGPATH = aD_IMGPATH;
+	public void setImgpath(String imgpath) {
+		this.imgpath = imgpath;
 	}
-	public String getAD_IMGNAME() {
-		return AD_IMGNAME;
+	public String getImgname() {
+		return imgname;
 	}
-	public void setAD_IMGNAME(String aD_IMGNAME) {
-		AD_IMGNAME = aD_IMGNAME;
+	public void setImgname(String imgname) {
+		this.imgname = imgname;
 	}
-
+	
 	
 }
