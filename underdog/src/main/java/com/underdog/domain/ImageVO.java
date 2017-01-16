@@ -1,6 +1,5 @@
 package com.underdog.domain;
 
-public class BasketVO {
+public class ImageVO {
 
-	
 }

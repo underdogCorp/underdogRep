@@ -1,5 +1,5 @@
 package com.underdog.domain;
 
-public class PayVO {
+public class MailingVO {
 
 }
