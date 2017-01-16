@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public interface PayDAOImpl {
+public interface ImageDAOImpl {
 
 }

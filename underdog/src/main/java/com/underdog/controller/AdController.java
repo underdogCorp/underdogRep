@@ -1,5 +1,5 @@
 package com.underdog.controller;
 
-public class PayController {
+public class AdController {
 
 }

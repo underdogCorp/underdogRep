@@ -1,5 +1,5 @@
 package com.underdog.service;
 
-public interface PayServiceImpl {
+public interface ImageServiceImpl {
 
 }

@@ -1,8 +1,11 @@
 package com.underdog.domain;
 
+
 import java.security.Timestamp;
 
+
 public class MemberVO {
+
 
 	private String me_email; /* 회원이메일 */
 	private String me_pw; /* 비밀번호 */
@@ -104,4 +107,7 @@ public class MemberVO {
 		this.me_add2 = me_add2;
 	}
 	
+
+	
+
 }

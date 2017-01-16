@@ -78,11 +78,11 @@ public class MemberController {
 		// Mail Server 설정
 		String charSet = "utf-8";
 		String hostSMTP = "smtp.naver.com";		
-		String hostSMTPid = "kebby70@naver.com";		
-		String hostSMTPpwd = "ahnkibum700";// 비밀번호 입력해야함
+		String hostSMTPid = "kevin_0811@naver.com";		
+		String hostSMTPpwd = "abcd1234";// 비밀번호 입력해야함
 		
 		// 보내는 사람 EMail, 제목, 내용 
-		String fromEmail = "kebby70@naver.com";		
+		String fromEmail = "kevin_0811@naver.com";		
 		String fromName = "underdog 사이트 관리자";
 		String subject = "underdog 사이트 가입 인증메일입니다.";
 		
