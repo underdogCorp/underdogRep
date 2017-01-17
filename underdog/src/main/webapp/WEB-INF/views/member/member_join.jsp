@@ -91,7 +91,8 @@ input[type=date]::-webkit-inner-spin-button {
 	        <hr/>
 	        <div class="form-group">
 	            <p class="form-control-static">사용하실 이메일(사이트의 아이디가 됩니다.)을 입력하세요</p>
-	            <input type="email" class="form-control float_l" id="me_emailStep02" style="width:250px" maxlength="30">
+	            <input type="email" class="form-control float_l" id="me_emailStep02" style="width:250px" maxlength="30"
+	            	placeholder="이메일(아이디) 입력">
 	            <button type="button" class="btn btn-success" id="btn_emailSend">전 송</button>
 	            <p class="form-control-static"></p>
 	            <input type="hidden" value="" />
