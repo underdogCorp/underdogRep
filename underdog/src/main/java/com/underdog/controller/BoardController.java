@@ -15,6 +15,8 @@ public class BoardController {
 	@RequestMapping(value = "/registerForm", method = RequestMethod.GET)
 	public void registerForm(){
 		
+		logger.info("게시판 글쓰기 폼 진입");
+		
 		
 	}
 	
