@@ -167,6 +167,7 @@ public class MemberController {
 
 		if (vo != null) {
 			System.out.println("SUCCESS");
+			session.setAttribute("MEMBER", vo);
 			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //정상적으로 로그인
 		} else {
 			System.out.println("FAILED");
@@ -174,14 +175,24 @@ public class MemberController {
 		}
 		return entity;
 	}
+	
 	@RequestMapping(value = "/loginForm")
-	public String registerForm() throws Exception {
+	public String loginForm() throws Exception {
 
 		logger.info("로그인 폼");
 
 		return "/member/login";
 	}
 	
-	
+	@RequestMapping(value = "/logoutProc")
+	public String logoutProc(HttpSession session) throws Exception {
+
+		logger.info("logoutProc");
+
+	      session.removeAttribute("MEMBER");
+	      session.invalidate();
+	      
+		return "redirect:/";
+	}
 	
 }

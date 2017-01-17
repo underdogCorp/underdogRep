@@ -4,9 +4,9 @@ var flagLimitTimer = "f";
 //유효성 검사 flag
 var flagEmailValidation = false; //이메일 입력시 정규식 및 중복 체크 통과 유무
 var flagPwValidation = false; //비밀번호 입력시 정규식 체크 
-var flagPw2Validation = false; //비밀번호 입력시 정규식 체크 
-var flagNameValidation = false; //
-var flagNickValidation = false; //
+var flagPw2Validation = false; //비밀번호 확인 입력 
+var flagNameValidation = false; //이름 유효성
+var flagNickValidation = false; //닉네임 유효성
 
 $(function () {
 	loadData(); //이용약관 불러오기
@@ -204,9 +204,11 @@ $(function () {
             data : $("#formLoginData").serialize(), // post data || get data
          	success : function(result) {
             	if (result == 'SUCCESS') {
+            		$("#txt_loginResult").hide();
 					alert("로그인 되었습니다.");
-					location.href = "http://www.naver.com";
+					location.href = "/";
 				} else {
+					$("#txt_loginResult").show();
 					$("#txt_loginResult").html("아이디 또는 비밀번호를 다시 확인하세요.<br/>"
 								+ "등록되지 않은 아이디이거나, 아이디 또는 비밀번호를 잘못 입력하셨습니다</p>")
 				}

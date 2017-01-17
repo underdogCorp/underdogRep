@@ -216,7 +216,7 @@ input[type=date]::-webkit-inner-spin-button {
 	        <br/><br/><br/>
 	        <div class="row ta_c">
 	            <p class="form-control-static" style="">로그인 하시기 바랍니다.</p>
-	            <p class="form-control-static" style="color:red" id="txt_loginResult"></p>
+	            <p class="form-control-static" style="color:red; display:none;" id="txt_loginResult"></p>
 	        </div>
 	        <form id="formLoginData">
 		        <div class="row">
