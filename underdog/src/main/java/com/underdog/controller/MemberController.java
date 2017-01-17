@@ -25,11 +25,11 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService mbService;
-	private int authNo;
+	private int authNo; 
 
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
-	/** È¸¿ø°¡ÀÔÆû ºÒ·¯¿À±â
+	/** íšŒì›ê°€ì…í¼ ë¶ˆëŸ¬ì˜¤ê¸°
 	 * @param locale
 	 * @param model
 	 * @return
@@ -40,7 +40,7 @@ public class MemberController {
 		return "/member/member_join";
 	}
 	
-	/** ÀÌ¸ŞÀÏ Áßº¹ Ã¼Å©
+	/** ì´ë©”ì¼ ì¤‘ë³µ ì²´í¬
 	 * @param me_email
 	 * @return
 	 * @throws Exception
@@ -56,13 +56,13 @@ public class MemberController {
 		
 		System.out.println(result);
 		if (result == 1) {
-			return new ResponseEntity<String>("NOT_EMPTY", HttpStatus.OK); //ÀÌ¸ŞÀÏ Áßº¹ ÀÖÀ½.
+			return new ResponseEntity<String>("NOT_EMPTY", HttpStatus.OK); //ì´ë©”ì¼ ì¤‘ë³µ ìˆìŒ.
 		} else {
 			return new ResponseEntity<String>("EMPTY", HttpStatus.OK);
 		}
 	}
 	
-	/** È¸¿ø °¡ÀÔ½Ã ¸ŞÀÏ·Î ÀÎÁõ¹øÈ£ Àü¼Û
+	/** íšŒì› ê°€ì…ì‹œ ë©”ì¼ë¡œ ì¸ì¦ë²ˆí˜¸ ì „ì†¡
 	 * @param me_email
 	 * @return
 	 * @throws Exception
@@ -75,18 +75,18 @@ public class MemberController {
 		Random random = new Random();
 		authNo = random.nextInt(100);
 		
-		// Mail Server ¼³Á¤
+		// Mail Server ì„¤ì •
 		String charSet = "utf-8";
 		String hostSMTP = "smtp.naver.com";		
 		String hostSMTPid = "kevin_0811@naver.com";		
-		String hostSMTPpwd = "abcd1234";// ºñ¹Ğ¹øÈ£ ÀÔ·ÂÇØ¾ßÇÔ
+		String hostSMTPpwd = "abcd1234";// ë¹„ë°€ë²ˆí˜¸ ì…ë ¥í•´ì•¼í•¨
 		
-		// º¸³»´Â »ç¶÷ EMail, Á¦¸ñ, ³»¿ë 
+		// ë³´ë‚´ëŠ” ì‚¬ëŒ EMail, ì œëª©, ë‚´ìš© 
 		String fromEmail = "kevin_0811@naver.com";		
-		String fromName = "underdog »çÀÌÆ® °ü¸®ÀÚ";
-		String subject = "underdog »çÀÌÆ® °¡ÀÔ ÀÎÁõ¸ŞÀÏÀÔ´Ï´Ù.";
+		String fromName = "underdog ì‚¬ì´íŠ¸ ê´€ë¦¬ì";
+		String subject = "underdog ì‚¬ì´íŠ¸ ê°€ì… ì¸ì¦ë©”ì¼ì…ë‹ˆë‹¤.";
 		
-		// ¹Ş´Â »ç¶÷ E-Mail ÁÖ¼Ò
+		// ë°›ëŠ” ì‚¬ëŒ E-Mail ì£¼ì†Œ
 		String mail = me_email;	
 		
 		try {
@@ -102,17 +102,17 @@ public class MemberController {
 			email.addTo(mail, charSet);
 			email.setFrom(fromEmail, fromName, charSet);
 			email.setSubject(subject);
-			email.setHtmlMsg("<p align = 'center'>underdog »çÀÌÆ®¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù.</p><br><div align='center'>"
-					+ "ÀÎÁõ¹øÈ£ : "	+ authNo + "</div>");
+			email.setHtmlMsg("<p align = 'center'>underdog ì‚¬ì´íŠ¸ì— ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤.</p><br><div align='center'>"
+					+ "ì¸ì¦ë²ˆí˜¸ : "	+ authNo + "</div>");
 			email.send();			
 		} catch (Exception e) {
 			System.out.println(e);
 		}				
 		
-		return new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //ÀÌ¸ŞÀÏ ¹ß¼ÛÇß½À´Ï´Ù.
+		return new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //ì´ë©”ì¼ ë°œì†¡í–ˆìŠµë‹ˆë‹¤.
 	}
 
-	/** Àü¼ÛµÈ ÀÎÁõ¹øÈ£°¡ À¯Àú°¡ ÀÔ·ÂÇÑ ³»¿ë°ú ¸Â´ÂÁö È®ÀÎ
+	/** ì „ì†¡ëœ ì¸ì¦ë²ˆí˜¸ê°€ ìœ ì €ê°€ ì…ë ¥í•œ ë‚´ìš©ê³¼ ë§ëŠ”ì§€ í™•ì¸
 	 * @param me_email
 	 * @return
 	 * @throws Exception
@@ -126,7 +126,7 @@ public class MemberController {
 		
 		if (inp_authNo.equals("" + authNo)) {
 			System.out.println("SUCCESS");
-			return new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //ÀÎÁõ¹øÈ£°¡ ¸ÂÀ½.
+			return new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //ì¸ì¦ë²ˆí˜¸ê°€ ë§ìŒ.
 		} else {
 			System.out.println("FAILED");
 			return new ResponseEntity<String>("FAILED", HttpStatus.OK);
@@ -144,7 +144,7 @@ public class MemberController {
 		
 		if (result == 1) {
 			System.out.println("SUCCESS");
-			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //È¸¿øÁ¤º¸°¡ Á¤»óÀûÀ¸·Î µî·Ï.
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //íšŒì›ì •ë³´ê°€ ì •ìƒì ìœ¼ë¡œ ë“±ë¡.
 		} else {
 			System.out.println("FAILED");
 			entity =  new ResponseEntity<String>("FAILED", HttpStatus.OK);
@@ -167,7 +167,7 @@ public class MemberController {
 
 		if (vo != null) {
 			System.out.println("SUCCESS");
-			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //Á¤»óÀûÀ¸·Î ·Î±×ÀÎ
+			entity = new ResponseEntity<String>("SUCCESS", HttpStatus.OK); //ì •ìƒì ìœ¼ë¡œ ë¡œê·¸ì¸
 		} else {
 			System.out.println("FAILED");
 			entity =  new ResponseEntity<String>("FAILED", HttpStatus.OK);

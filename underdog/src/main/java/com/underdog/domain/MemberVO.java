@@ -6,22 +6,21 @@ import java.security.Timestamp;
 
 public class MemberVO {
 
+	private String me_email; /* íšŒì›ì´ë©”ì¼ */
+	private String me_pw; /* ë¹„ë°€ë²ˆí˜¸ */
+	private String me_name; /* ì´ë¦„ */
+	private String me_nick; /* ë‹‰ë„¤ì„ */
+	private String me_birth; /* ìƒë…„ì›”ì¼ */
+	private Timestamp me_regdate; /* íšŒì›ê°€ì…ì¼ */
+	private int me_status; /* íšŒì›íƒˆí‡´ìœ ë¬´ */
+	private Timestamp me_exitdate; /* íšŒì›íƒˆí‡´ì¼ */
+	private int me_grade; /* íšŒì› ë“±ê¸‰ */
+	private String me_keyword; /* ê´€ì‹¬ ê²€ìƒ‰ì–´ */
+	private int me_point; /* í¬ì¸íŠ¸ */
+	private String me_zipcode; /* ìš°í¸ë²ˆí˜¸ */
+	private String me_add1; /* ì£¼ì†Œ1 */
+	private String me_add2; /* ì£¼ì†Œ2 */
 
-	private String me_email; /* È¸¿øÀÌ¸ŞÀÏ */
-	private String me_pw; /* ºñ¹Ğ¹øÈ£ */
-	private String me_name; /* ÀÌ¸§ */
-	private String me_nick; /* ´Ğ³×ÀÓ */
-	private String me_birth; /* »ı³â¿ùÀÏ */
-	private Timestamp me_regdate; /* È¸¿ø°¡ÀÔÀÏ */
-	private int me_status; /* È¸¿øÅ»ÅğÀ¯¹« */
-	private Timestamp me_exitdate; /* È¸¿øÅ»ÅğÀÏ */
-	private int me_grade; /* È¸¿ø µî±Ş */
-	private String me_keyword; /* °ü½É °Ë»ö¾î */
-	private int me_point; /* Æ÷ÀÎÆ® */
-	private String me_zipcode; /* ¿ìÆí¹øÈ£ */
-	private String me_add1; /* ÁÖ¼Ò1 */
-	private String me_add2; /* ÁÖ¼Ò2 */
-	
 	public String getMe_email() {
 		return me_email;
 	}

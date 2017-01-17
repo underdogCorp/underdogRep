@@ -20,7 +20,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public int joinProc(MemberVO mbVO) throws Exception {
-		//256bit ��ȣȭ
+		//256bit 암호화
 		String key = "underdog-underdog";
 		AES256 aes256 = new AES256(key);
 		
@@ -32,7 +32,7 @@ public class MemberServiceImpl implements MemberService {
 	
 	@Override
 	public MemberVO loginProc(MemberVO mbVO) throws Exception {
-		//256bit ��ȣȭ
+		//256bit 암호화
 		MemberVO vo = new MemberVO();
 		String key = "underdog-underdog";
 		AES256 aes256 = new AES256(key);

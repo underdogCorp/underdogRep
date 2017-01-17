@@ -10,3 +10,4 @@ public interface MemberDAO {
 
 	public MemberVO loginProc(MemberVO mbVO) throws Exception;
 }
+ 

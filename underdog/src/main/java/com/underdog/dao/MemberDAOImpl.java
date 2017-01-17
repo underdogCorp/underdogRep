@@ -24,7 +24,7 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public int joinProc(MemberVO mbVO) throws Exception {
 
-		return session.insert(namespace + ".joinProc", mbVO);
+		return session.insert(namespace + ".joinProc", mbVO); 
 	}
 
 	@Override
