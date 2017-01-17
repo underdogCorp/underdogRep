@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/board")
 public class BoardController {
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
