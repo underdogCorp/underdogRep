@@ -1,5 +1,5 @@
 package com.underdog.service;
 
-public interface MailingServiceImpl {
+public class MailingServiceImpl implements MailingService {
 
 }
