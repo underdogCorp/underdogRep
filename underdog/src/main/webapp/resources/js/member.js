@@ -198,7 +198,8 @@ $(function () {
     
     //step04 loginProc(로그인)
     $("#btn_login").on('click', function(){
-        $.ajax({
+    	$("#txt_loginResult").hide();
+		$.ajax({
             url: '/member/loginProc.dog', // url where to submit the request
             type : "POST", // type of action POST || GET
             data : $("#formLoginData").serialize(), // post data || get data
