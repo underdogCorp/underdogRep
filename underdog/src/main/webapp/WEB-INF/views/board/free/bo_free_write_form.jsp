@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +12,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<script src="http://dmaps.daum.net/map_js_init/postcode.js"></script>
-<script type="text/javascript" src="${path}/ckeditor_full/ckeditor.js"></script>
 
+
+<script src="http://dmaps.daum.net/map_js_init/postcode.js"></script>
+<script type="text/javascript"
+	src="/resources/ckeditor_full/ckeditor.js"></script>
 <style type="text/css">
 * {
 	padding: 0;
@@ -44,38 +46,27 @@
 
 </head>
 <body>
+	<div>
+		<div class="bbsWriteForm">
+			<h2>게시글 쓰기</h2>
 
-	
+			<form action="/First_Project1/BoardAddAction.do" method="post">
 
 
-
-
-	<div class="bbsWriteForm">
-		<h2>게시글 쓰기</h2>
-
-		<form action="/First_Project1/BoardAddAction.do" method="post">
-	
-
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-2 text-center"
-						style="background-color: lavender;">이름</div>
-					<div class="col-md-3" style="background-color: lavenderblush;">
-						<input type="text" class="form-control" id="name" name="name"
-							value="">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-2 text-center">이름</div>
+						<div class="col-md-3">
+							<input type="text" class="form-control" id="name" name="name"
+								value="">
+						</div>
 					</div>
-				</div>
-				<div class="row ">
-					<div class="col-md-2 text-center"
-						style="background-color: lavender;">제 목</div>
-					<div class="col-md-6" style="background-color: lavenderblush;">
-						<input type="text" class="form-control" id="subject"
-							name="subject">
-					</div>
-					<div class="col-md-2 text-center"
-						style="background-color: lavender;">비밀번호</div>
-					<div class="col-md-2" style="background-color: lavenderblush;">
-						<input type="text" class="form-control" id="pass" name="pass">
+					<div class="row ">
+						<div class="col-md-2 text-center">제 목</div>
+						<div class="col-md-6">
+							<input type="text" class="form-control" id="subject"
+								name="subject">
+						</div>
 					</div>
 				</div>
 				<div class="row mar_t20">
@@ -86,18 +77,16 @@
 					</script>
 				</div>
 				<div class="row mar_t20">
-					<div class="col-md-offset-4 col-md-1"
-						style="background-color: lavenderblush;">
+					<div class="col-md-offset-4 col-md-1">
 						<button type="submit" class="btn btn-success">글 등록</button>
 					</div>
-					<div class="col-md-offset-2 col-md-1"
-						style="background-color: lavenderblush;">
+					<div class="col-md-offset-2 col-md-1">
 						<button type="reset" class="btn btn-success"
-							onclick="location.href='/First_Project1/BoardList.do'">글
-							취소</button>
+							onclick="location.href='/bo_free_list'">글 취소</button>
 					</div>
 				</div>
-		</form>
+			</form>
+		</div>
 	</div>
 </body>
 </html>
