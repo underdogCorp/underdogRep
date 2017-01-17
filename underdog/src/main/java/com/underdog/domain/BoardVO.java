@@ -15,6 +15,7 @@ public class BoardVO {
 	private String bo_regip;
 	private int bo_status;
 	private Date bo_deldate;
+
 	public int getBo_idx() {
 		return bo_idx;
 	}
