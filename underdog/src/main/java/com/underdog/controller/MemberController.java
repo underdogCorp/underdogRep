@@ -174,4 +174,14 @@ public class MemberController {
 		}
 		return entity;
 	}
+	@RequestMapping(value = "/loginForm")
+	public String registerForm() throws Exception {
+
+		logger.info("로그인 폼");
+
+		return "/member/login";
+	}
+	
+	
+	
 }

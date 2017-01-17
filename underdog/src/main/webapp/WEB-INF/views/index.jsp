@@ -15,6 +15,8 @@ Hello Pinterest!!!!! !
 <a href="/bo_free_list">자유게시판</a><br>
 <a href="/bo_faq_list">FAQ</a><br>
 <a href="/bo_q&a_list">Q & A</a><br>
+<a href="/member/loginForm">로그인하기</a>
+<a href="/member/joinForm">회원 가입하기</a>
 
 </body>
 </html>
