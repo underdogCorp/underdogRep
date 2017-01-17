@@ -1,5 +1,5 @@
 package com.underdog.service;
 
-public interface OrderingServiceImpl {
+public class OrderingServiceImpl implements OrderingService {
 
 }

@@ -1,5 +1,5 @@
 package com.underdog.service;
 
-public interface ReplyServiceImpl {
+public class ReplyServiceImpl implements ReplyService {
 
 }
