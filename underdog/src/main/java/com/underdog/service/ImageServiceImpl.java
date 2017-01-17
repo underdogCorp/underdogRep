@@ -1,5 +1,5 @@
 package com.underdog.service;
 
-public interface ImageServiceImpl {
+public class ImageServiceImpl implements ImageService {
 
 }

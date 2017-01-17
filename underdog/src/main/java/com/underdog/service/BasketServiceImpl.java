@@ -1,5 +1,5 @@
 package com.underdog.service;
 
-public interface BasketServiceImpl {
+public class BasketServiceImpl implements BasketService {
 
 }
