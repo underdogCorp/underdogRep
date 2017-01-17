@@ -8,7 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-=======
 
 <!DOCTYPE html>
 <html>
@@ -52,7 +51,6 @@
     </tbody>
   </table>
 </div>
->>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 
 </body>
 </html>
