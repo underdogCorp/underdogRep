@@ -1,5 +1,5 @@
 package com.underdog.service;
 
-public interface ProductServiceImpl {
+public class ProductServiceImpl implements ProductService {
 
 }

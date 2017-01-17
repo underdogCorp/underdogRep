@@ -1,5 +1,5 @@
 package com.underdog.service;
 
-public interface MyPageServiceImpl {
+public class MyPageServiceImpl implements MyPageService {
 
 }
