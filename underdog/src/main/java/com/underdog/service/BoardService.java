@@ -1,5 +1,7 @@
 package com.underdog.service;
 
-public interface BoardService {
+import com.underdog.domain.BoardVO;
 
+public interface BoardService {
+	 public void regist(BoardVO board) throws Exception;
 }
