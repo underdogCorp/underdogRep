@@ -15,6 +15,9 @@
  <div id="bbswrite_wrap">
   <h2 class="bbswrite_title">게시판 입력폼</h2>
   <form method="post" action="/springsboard/board_write_ok.nhn">
+  
+   <input type="hidden" name="bo_bbsid" value="${param.bo_bbsid}" />
+  
    <table id="bbswrite_t">
    
     <tr>
