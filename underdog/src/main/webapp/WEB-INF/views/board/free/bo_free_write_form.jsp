@@ -51,13 +51,14 @@
 			<h2>게시글 쓰기</h2>
 
 			<form action="/registerProc" method="post">
-
-
-				<div class="container-fluid">
+			<input type="hidden" name="bo_me_email" value="">
+			<input type="hidden" name="bo_regip" value="">
+			<input type="hidden" name="bo_bbsid" value="02">
+					<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-2 text-center">이름</div>
 						<div class="col-md-3">
-							<input type="text" class="form-control" id="name" name="name"
+							<input type="text" class="form-control" id="name" name="bo_me_nick"
 								value="">
 						</div>
 					</div>
@@ -65,12 +66,12 @@
 						<div class="col-md-2 text-center">제 목</div>
 						<div class="col-md-6">
 							<input type="text" class="form-control" id="subject"
-								name="subject">
+								name="bo_title">
 						</div>
 					</div>
 				</div>
 				<div class="row mar_t20">
-					<textarea id="contents" class="textarea_fixed" name="content"
+					<textarea id="contents" class="textarea_fixed" name="bo_content"
 						rows="10" cols="60"></textarea>
 					<script type="text/javascript">
 						CKEDITOR.replace('contents');
