@@ -16,10 +16,11 @@
   <h2 class="bbswrite_title">게시판 입력폼</h2>
   <form method="post" action="/springsboard/board_write_ok.nhn">
    <table id="bbswrite_t">
+   
     <tr>
-     <th>글쓴이</th>
+     <th>회원닉네임</th>
      <td>
-     <input name="board_name" id="board_name" size="14" class="input_box" />
+     <input name="bo_me_nick" id="board_name" size="14" class="input_box" />
      </td>
     </tr>
     
@@ -34,7 +35,7 @@
     <tr>
      <th>글제목</th>
      <td>
-      <input name="board_subject" id="board_subject" size="40" 
+      <input name="bo_title" id="board_subject" size="40" 
       class="input_box" />
      </td>
     </tr>
@@ -42,7 +43,7 @@
     <tr>
      <th>글내용</th>
      <td>
-      <textarea name="board_content"  id="board_content" rows="8" cols="50"
+      <textarea name="bo_content"  id="board_content" rows="8" cols="50"
       class="input_box"></textarea>
      </td>
     </tr> 
