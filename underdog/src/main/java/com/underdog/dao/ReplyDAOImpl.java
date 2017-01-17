@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public interface ReplyDAOImpl {
+public class ReplyDAOImpl implements ReplyDAO {
 
 }

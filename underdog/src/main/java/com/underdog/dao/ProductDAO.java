@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public class ProductDAO implements ProductDAOImpl {
+public interface ProductDAO {
 
 }

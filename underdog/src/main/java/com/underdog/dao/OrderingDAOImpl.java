@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public interface OrderingDAOImpl {
+public class OrderingDAOImpl implements OrderingDAO {
 
 }

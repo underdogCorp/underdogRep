@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public interface BasketDAOImpl {
+public class BasketDAOImpl implements BasketDAO {
 
 }

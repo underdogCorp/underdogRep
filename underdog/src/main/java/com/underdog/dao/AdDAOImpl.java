@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public interface AdDAOImpl {
+public class AdDAOImpl implements AdDAO {
 
 }

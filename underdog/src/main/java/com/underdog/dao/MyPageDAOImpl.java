@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public interface MyPageDAOImpl {
+public class MyPageDAOImpl implements MyPageDAO {
 
 }

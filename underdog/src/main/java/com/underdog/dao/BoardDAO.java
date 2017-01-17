@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public class BoardDAO implements BoardDAOImpl {
+public interface BoardDAO {
 
 }

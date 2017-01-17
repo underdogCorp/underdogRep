@@ -1,5 +1,5 @@
 package com.underdog.dao;
 
-public interface ImageDAOImpl {
+public class ImageDAOImpl implements ImageDAO {
 
 }
