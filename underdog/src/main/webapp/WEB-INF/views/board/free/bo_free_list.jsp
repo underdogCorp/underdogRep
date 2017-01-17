@@ -44,5 +44,7 @@
   </table>
 </div>
 
+<button type="button" class="btn btn-default" onclick ="location.href='/registerForm'">글쓰기</button>
+
 </body>
 </html>

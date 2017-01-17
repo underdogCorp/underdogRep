@@ -1,5 +1,8 @@
 package com.underdog.service;
 
-public interface BoardServiceImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class BoardServiceImpl implements BoardService{
 
 }
