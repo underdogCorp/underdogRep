@@ -8,14 +8,13 @@
 </head>
 <body>
 <h1>
-Hello world!!!!! !
+Hello Pinterest!!!!! !
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
-
-
-
-<a href="/bo_free_list">자유게시판</a>
+<a href="/bo_info_list">공지사항</a><br>
+<a href="/bo_free_list">자유게시판</a><br>
+<a href="/bo_faq_list">FAQ</a><br>
+<a href="/bo_q&a_list">Q & A</a><br>
 
 </body>
 </html>
