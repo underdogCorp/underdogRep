@@ -37,7 +37,8 @@ input[type=date]::-webkit-inner-spin-button {
 	        </div>
 	        <div class="row">
 	            <p class="form-control-static" style="">홈페이지 이용약관</p>
-	            <textarea class="form-control font_12px" rows="5" id="comment" style="resize:none; background-color:white" readonly></textarea>
+	            <!-- <textarea class="form-control font_12px" rows="5" id="comment" style="resize:none; background-color:white" readonly></textarea> -->
+	             <div id="agreement1" style="height: 100px; overflow:auto; border: 1px solid lightgray"></div>
 	            <span class="form-control-static" style=""><strong>(필수약관)</strong> 이용약관에 동의 하십니까?</span>
 	            <label class="radio-inline float_r"><input type="radio" name="accept01" value="f">동의하지않음</label>
 	            <label class="radio-inline float_r"><input type="radio" name="accept01" value="t">동의 &nbsp; &nbsp; </label>
@@ -45,7 +46,7 @@ input[type=date]::-webkit-inner-spin-button {
 	        <hr style="margin: 10px">
 	        <div class="row">
 	            <p class="form-control-static" style="">개인정보 수집,이용 동의</p>
-	            <textarea class="form-control font_12px" rows="5" id="" style="resize:none; background-color:white" readonly></textarea>
+	             <div id="agreement2" style="height: 100px; overflow:auto; border: 1px solid lightgray"></div>
 	            <span class="form-control-static" style=""><strong>(필수약관)</strong>이용약관에 동의 하십니까?</span>
 	            <label class="radio-inline float_r"><input type="radio" name="accept02" value="f">동의하지않음</label>
 	            <label class="radio-inline float_r"><input type="radio" name="accept02" value="t">동의 &nbsp; &nbsp; </label>
@@ -53,7 +54,7 @@ input[type=date]::-webkit-inner-spin-button {
 	        <hr style="margin: 10px">
 	        <div class="row">
 	            <p class="form-control-static" style="">수집한 개인정보의 제3자 제공 및 취급 위탁 동의</p>
-	            <textarea class="form-control font_12px" rows="5" id="" style="resize:none; background-color:white" readonly></textarea>
+	             <div id="agreement3" style="height: 100px; overflow:auto; border: 1px solid lightgray"></div>
 	            <span class="form-control-static" style=""><strong>(선택약관)</strong>이용약관에 동의 하십니까?</span>
 	            <label class="radio-inline float_r"><input type="radio" name="accept03" value="f">동의하지않음</label>
 	            <label class="radio-inline float_r"><input type="radio" name="accept03" value="t">동의 &nbsp; &nbsp; </label>
@@ -61,7 +62,7 @@ input[type=date]::-webkit-inner-spin-button {
 	        <hr style="margin: 10px">
 	        <div class="row">
 	            <p class="form-control-static" style="">민감정보 및 고유식별정보 처리 동의</p>
-	            <textarea class="form-control font_12px" rows="5" id="" style="resize:none; background-color:white" readonly></textarea>
+	             <div id="agreement4" style="height: 100px; overflow:auto; border: 1px solid lightgray"></div>
 	            <span class="form-control-static" style=""><strong>(선택약관)</strong>이용약관에 동의 하십니까?</span>
 	            <label class="radio-inline float_r"><input type="radio" name="accept04" value="f">동의하지않음</label>
 	            <label class="radio-inline float_r"><input type="radio" name="accept04" value="t">동의 &nbsp; &nbsp; </label>

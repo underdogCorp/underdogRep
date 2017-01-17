@@ -353,7 +353,11 @@ function inputLimitTimer(duration) {
 }
 
 function loadData() {
-    $("#comment").html(getData().replace('\n', '<br>'));
+    //$("#comment").html(getData().replace('\n', '<br>'));
+	$("#agreement1").load("/resources/html/member_agreement.html #agree1");
+	$("#agreement2").load("/resources/html/member_agreement.html #agree2");
+	$("#agreement3").load("/resources/html/member_agreement.html #agree3");
+	$("#agreement4").load("/resources/html/member_agreement.html #agree4");
 }
 function getData () {
     var text = 'look at this line of data oh, \n look at this line';
