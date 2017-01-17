@@ -21,7 +21,7 @@ public class AES256 {
 	private String iv;
 	private Key keySpec;
 	
-	public AES256() {
+	public AES256() { 
 		// TODO Auto-generated constructor stub
 	}
 
