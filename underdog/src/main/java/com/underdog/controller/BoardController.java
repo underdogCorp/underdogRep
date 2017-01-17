@@ -1,6 +1,5 @@
 package com.underdog.controller;
 
-
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
@@ -8,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.underdog.domain.BoardVO;
 import com.underdog.service.BoardService;
-
 
 // @RequestMapping("/board/*")
 
@@ -18,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class BoardController {
@@ -44,8 +44,17 @@ public class BoardController {
 
 		return "/board/free/bo_free_write_form";
 	}
+
+	@RequestMapping(value = "/registerProc", method = RequestMethod.POST)
+	public String registPOST(BoardVO board, RedirectAttributes rttr) throws Exception {
+
+		logger.info("regist post ...........");
+		logger.info(board.toString());
+
+		service.regist(board);
+
+		rttr.addFlashAttribute("msg", "success");
+		return "redirect:/bo_free_list";
+	}
+
 }
-
-	
-
-	

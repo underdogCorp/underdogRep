@@ -50,7 +50,7 @@
 		<div class="bbsWriteForm">
 			<h2>게시글 쓰기</h2>
 
-			<form action="/First_Project1/BoardAddAction.do" method="post">
+			<form action="/registerProc" method="post">
 
 
 				<div class="container-fluid">
