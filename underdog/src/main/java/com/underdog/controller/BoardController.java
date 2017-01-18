@@ -58,7 +58,7 @@ public class BoardController {
 	
 		logger.info("게시판 리스트 입장");
 		
-		model.addAttribute("", arg1)
+		model.addAttribute("list", service.list(bbsid));
 		
 		return null;
 	}

@@ -1,5 +1,7 @@
 package com.underdog.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -7,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.underdog.domain.BoardVO;
 
 public class BoardDAOImpl implements BoardDAO {
+	
 	@Inject
 	private SqlSession session;
 
@@ -16,4 +19,11 @@ public class BoardDAOImpl implements BoardDAO {
 	public void create(BoardVO vo) throws Exception {
 		session.insert(namespace + ".create", vo);
 	}
+
+	  @Override
+	  public List<BoardVO> list() throws Exception {
+	    return session.selectList(namespace + ".list");
+	  }
+	
+	
 }

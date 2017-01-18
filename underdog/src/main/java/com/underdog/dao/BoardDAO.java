@@ -1,9 +1,13 @@
 package com.underdog.dao;
 
+import java.util.List;
+
 import com.underdog.domain.BoardVO;
 
 public interface BoardDAO {
 
+	
+	  public List<BoardVO> list() throws Exception;
 	
 	  public void create(BoardVO vo) throws Exception;
 
@@ -13,7 +17,7 @@ public interface BoardDAO {
 //
 //	  public void delete(Integer bno) throws Exception;
 //
-//	  public List<BoardVO> listAll() throws Exception;
+
 //
 //	  public List<BoardVO> listPage(int page) throws Exception;
 //

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.underdog.mapper.boardMapper">
+
 	<insert id="create">
 		insert into board (bo_me_email,
 							 bo_bbsid,
@@ -23,7 +26,8 @@
 		 		#{bo_regip})
 		 		<!-- 아이피 삭제유무 삭제일 이해안됨 -->
 	</insert>
-
+	
+<
 
 
 
