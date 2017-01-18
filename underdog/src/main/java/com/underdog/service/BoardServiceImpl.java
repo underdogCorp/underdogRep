@@ -19,9 +19,11 @@ public class BoardServiceImpl implements BoardService{
 	public void regist(BoardVO board) throws Exception {
 		
 	}
-	
-	public List<BoardVO> list() throws Exception {
-	    return dao.list();
-	  }
+
+	@Override
+	public List<BoardVO> list(String bbsid) throws Exception {
+		
+		return null;
+	}
 
 }
