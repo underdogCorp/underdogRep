@@ -24,7 +24,12 @@ Hello Pinterest!!!!! !
 <a href="/member/loginForm">로그인하기</a>
 <a href="/member/joinForm">회원 가입하기</a>
 
+<<<<<<< HEAD
 
 <!-- 하하하 -->
+=======
+<!-- test -->
+
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 </body>
 </html>
