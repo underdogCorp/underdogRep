@@ -55,7 +55,8 @@ public class BoardController {
 	
 	@RequestMapping("/list")
 	public String list(@RequestParam("bbsid") String bbsid, Model model){
-	
+		String jsp = null;
+		
 		logger.info("게시판 리스트 입장");
 		
 		try {
@@ -64,8 +65,11 @@ public class BoardController {
 			e.printStackTrace();
 		}
 		
+		if(bbsid.equals("01")){
+			jsp = "/board/free/bo_free_list";
+		}
 		
-		return null;
+		return jsp;
 	}
 	
 }
