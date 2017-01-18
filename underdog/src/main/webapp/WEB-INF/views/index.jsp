@@ -17,7 +17,7 @@ Hello Pinterest!!!!! !
 </c:if>
 
 <a href="#">회사소개</a><br>
-<a href="/board/bo_info_list">공지사항</a><br>
+<a href="/board/list?bbsid=01">공지사항</a><br>
 <a href="/board/bo_free_list">자유게시판</a><br>
 <a href="/board/bo_faq_list">FAQ</a><br>
 <a href="/board/bo_q&a_list">Q & A</a><br>

@@ -5,22 +5,17 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.underdog.domain.BoardVO;
 import com.underdog.service.BoardService;
 
-// @RequestMapping("/board/*")
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 @Controller
-@RequestMapping("/board")
+@RequestMapping("/board/*")
 public class BoardController {
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
@@ -57,5 +52,15 @@ public class BoardController {
 		rttr.addFlashAttribute("msg", "success");
 		return "redirect:/bo_free_list";
 	}
-
+	
+	@RequestMapping("/list")
+	public String list(@RequestParam("bbsid") String bbsid, Model model){
+	
+		logger.info("게시판 리스트 입장");
+		
+		model.addAttribute("", arg1)
+		
+		return null;
+	}
+	
 }
