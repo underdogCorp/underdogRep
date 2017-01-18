@@ -20,6 +20,8 @@ Hello Pinterest!!!!! !
 <a href="/bo_q&a_list">Q & A</a><br>
 <a href="/member/loginForm">로그인하기</a>
 <a href="/member/joinForm">회원 가입하기</a>
- 
+
+<!-- test -->
+
 </body>
 </html>
