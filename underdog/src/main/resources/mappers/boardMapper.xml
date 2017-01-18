@@ -27,7 +27,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 		<!-- 아이피 삭제유무 삭제일 이해안됨 -->
 	</insert>
 	
-<select id="">
+<select id="list">
 
 </select>
 

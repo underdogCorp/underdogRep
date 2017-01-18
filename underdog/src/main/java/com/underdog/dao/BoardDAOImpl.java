@@ -21,8 +21,8 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	  @Override
-	  public List<BoardVO> list() throws Exception {
-	    return session.selectList(namespace + ".list");
+	  public List<BoardVO> list(String bbsid) throws Exception {
+	    return session.selectList(namespace + ".list", bbsid);
 	  }
 	
 	

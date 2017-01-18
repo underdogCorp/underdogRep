@@ -22,10 +22,7 @@ public class BoardServiceImpl implements BoardService{
 
 	@Override
 	public List<BoardVO> list(String bbsid) throws Exception {
-		
-		
-		
-		return null;
+		return dao.list(bbsid);
 	}
 
 }

@@ -7,7 +7,7 @@ import com.underdog.domain.BoardVO;
 public interface BoardDAO {
 
 	
-	  public List<BoardVO> list() throws Exception;
+	  public List<BoardVO> list(String bbsid) throws Exception;
 	
 	  public void create(BoardVO vo) throws Exception;
 
