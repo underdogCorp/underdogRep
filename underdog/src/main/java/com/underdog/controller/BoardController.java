@@ -114,12 +114,13 @@ public class BoardController {
 
 		String jsp = null;
 		logger.info("BoardController - registerProc() 입장");
-
 		logger.info(board.toString());
 
-		service.regist(board);
+		service.registerProc(board);
 
-		if (board.getBo_bbsid() == 01) {
+		
+		
+		if (board.getBo_bbsid() ==01) {
 			jsp = "/board/info/bo_info_write_form";
 		} else if (board.getBo_bbsid() == 02) {
 			return "redirect:/board/list?bbsid=02";
