@@ -24,6 +24,7 @@
 
 </head>
 <body>
+	
 
 	<div class="container">
 		<h2>Hover Rows</h2>
@@ -33,7 +34,7 @@
 				<tr>
 					<th>이메일</th>
 					<th>제목</th>
-					<th>날자</th>
+					<th>날짜</th>
 				</tr>
 			</thead>
 			<tbody>
