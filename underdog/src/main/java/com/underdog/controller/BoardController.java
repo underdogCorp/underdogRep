@@ -109,7 +109,7 @@ public class BoardController {
 	// }
 
 	@RequestMapping("/registerProc")
-	public String registerProc(@RequestParam("bbsid") String bbsid, BoardVO board, RedirectAttributes rttr)
+	public String registerProc(@RequestParam("bbsid") String bbsid, BoardVO board)
 			throws Exception {
 
 		String jsp = null;
@@ -122,7 +122,7 @@ public class BoardController {
 			service.regist(board);
 			System.out.println("컨트롤러 입장");
 			logger.info(board.toString());
-			rttr.addFlashAttribute("msg", "SUCCESS");
+
 			return "redirect:/board/list?bbsid=02";
 			// jsp = "/board/free/bo_free_write_form";
 		} else if (bbsid.equals("03")) {
