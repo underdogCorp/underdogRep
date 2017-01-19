@@ -116,6 +116,7 @@ public class BoardController {
 
 		logger.info("BoardController - registerProc() 입장");
 
+
 		if (bbsid.equals("01")) {
 			jsp = "/board/info/bo_info_write_form";
 		} else if (bbsid.equals("02")) {
@@ -128,6 +129,7 @@ public class BoardController {
 		} else if (bbsid.equals("04")) {
 			jsp = "/board/q&a/bo_q&a_write_form";
 		}
+
 
 		return jsp;
 
