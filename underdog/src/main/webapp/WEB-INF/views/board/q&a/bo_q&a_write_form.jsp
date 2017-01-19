@@ -1,64 +1,54 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>    
-    
-<!doctype html>
-<html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<title>게시판 입력폼</title>
-	<link rel="stylesheet" type="text/css" href="/springsboard/css/bbs.css" />
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="/springsboard/js/board.js"></script>
-</head>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 
-<body>
- <div id="bbswrite_wrap">
-  <h2 class="bbswrite_title">게시판 입력폼</h2>
-  <form method="post" action="/springsboard/board_write_ok.nhn">
-  
-   <input type="hidden" name="bo_bbsid" value="${param.bo_bbsid}" />
-  
-   <table id="bbswrite_t">
-   
-    <tr>
-     <th>회원닉네임</th>
-     <td>
-     <input name="bo_me_nick" id="board_name" size="14" class="input_box" />
-     </td>
-    </tr>
-    
-    <tr>
-     <th>비밀번호</th>
-     <td>
-      <input type="password" name="board_pass" id="board_pass" size="14"
-      class="input_box" />
-     </td>
-    </tr>
-    
-    <tr>
-     <th>글제목</th>
-     <td>
-      <input name="bo_title" id="board_subject" size="40" 
-      class="input_box" />
-     </td>
-    </tr>
-    
-    <tr>
-     <th>글내용</th>
-     <td>
-      <textarea name="bo_content"  id="board_content" rows="8" cols="50"
-      class="input_box"></textarea>
-     </td>
-    </tr> 
-    
-   </table>
-   
-   <div id="bbswrite_menu">
-    <input type="submit" value="등록" class="input_button" />
-    <input type="reset" value="취소" class="input_button"
-    onclick="$('#board_name').focus();" />
-   </div>
-  </form>
- </div>
-</body>
-</html>
+
+
+<!-- Main content -->
+<section class="content">
+	<div class="row">
+		<!-- left column -->
+		<div class="col-md-12">
+			<!-- general form elements -->
+			<div class="box box-primary">
+				<div class="box-header">
+					<h3 class="box-title">REGISTER BOARD</h3>
+				</div>
+				<!-- /.box-header -->
+
+<form role="form" method="post">
+	<div class="box-body">
+		<div class="form-group">
+			<label for="exampleInputEmail1">Title</label> 
+			<input type="text"
+				name='title' class="form-control" placeholder="Enter Title">
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Content</label>
+			<textarea class="form-control" name="content" rows="3"
+				placeholder="Enter ..."></textarea>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputEmail1">Writer</label> 
+			<input type="text"
+				name="writer" class="form-control" placeholder="Enter Writer">
+		</div>
+	</div>
+	<!-- /.box-body -->
+
+	<div class="box-footer">
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+</form>
+
+
+			</div>
+			<!-- /.box -->
+		</div>
+		<!--/.col (left) -->
+
+	</div>
+	<!-- /.row -->
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+

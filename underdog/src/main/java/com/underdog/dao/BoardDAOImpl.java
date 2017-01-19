@@ -10,8 +10,8 @@ import com.underdog.domain.BoardVO;
 
 public class BoardDAOImpl implements BoardDAO {
 	
-	@Inject
-	private SqlSession session;
+//	@Inject
+//	private SqlSession session;
 
 	private static String namespace = "com.underdog.mapper.boardMapper";
 

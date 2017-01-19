@@ -12,8 +12,8 @@ import com.underdog.domain.BoardVO;
 @Service
 public class BoardServiceImpl implements BoardService{
 	
-	@Inject
-	private BoardDAO dao;
+//	@Inject
+//	private BoardDAO dao;
 	
 	@Override
 	public void regist(BoardVO board) throws Exception {
