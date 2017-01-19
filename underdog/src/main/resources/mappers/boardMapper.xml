@@ -26,7 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 <select id="list" parameterType="int" resultType="BoardVO">
-	select * from board where bo_bbsid = #{bbsid}
+	select * from board where bo_bbsid = #{bo_bbsid}
 </select>
 
 <select id="read" parameterType="Map" resultType="BoardVO">

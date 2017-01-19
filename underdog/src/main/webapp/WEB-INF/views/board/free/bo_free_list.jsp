@@ -33,24 +33,17 @@
 			<thead>
 				<tr>
 					<th>제목</th>
-<<<<<<< HEAD
 					<th>닉네임</th>
-					<th>시간</th>
-=======
+					<th>이메일</th>
 					<th>날짜</th>
->>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${list}" var="c">
 					<tr>
-<<<<<<< HEAD
-						<td><a href="/board/read?bo_idx=${c.bo_idx}&bbsid=${c.bo_bbsid}">${c.bo_title}</a></td>
+						<td><a href="/board/board_cont?bo_idx=${c.bo_idx}&bo_bbsid=${c.bo_bbsid}&state=read">${c.bo_title}</a></td>
 						<td>${c.bo_me_nick}</td>
-=======
 						<td>${c.bo_me_email}</td>
-						<td><a href="/board/read?bo_idx=${list.bo_idx }">${c.bo_title}</td>
->>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 						<td>${c.bo_regdate}</td>
 					</tr>
 				</c:forEach>
@@ -59,7 +52,7 @@
 	</div>
 
 	<button type="button" class="btn btn-default"
-		onclick="location.href='/board/registerForm?bbsid=02'">글쓰기</button>
+		onclick="location.href='/board/registerForm?bo_bbsid=02'">글쓰기</button>
 
 </body>
 </html>

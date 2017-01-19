@@ -25,8 +25,8 @@ public class BoardServiceImpl implements BoardService{
 	
 	
 	@Override
-	public List<BoardVO> list(int bbsid) throws Exception {
-		return dao.list(bbsid);
+	public List<BoardVO> list(int bo_bbsid) throws Exception {
+		return dao.list(bo_bbsid);
 	}
 	
 	

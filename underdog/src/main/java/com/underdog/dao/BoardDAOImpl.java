@@ -25,8 +25,8 @@ public class BoardDAOImpl implements BoardDAO {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@Override
-	public List<BoardVO> list(int bbsid) throws Exception {
-	  return session.selectList(namespace + ".list", bbsid);
+	public List<BoardVO> list(int bo_bbsid) throws Exception {
+	  return session.selectList(namespace + ".list", bo_bbsid);
 	}
 
 	@Override
