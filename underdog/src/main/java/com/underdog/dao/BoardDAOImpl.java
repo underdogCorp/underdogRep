@@ -5,13 +5,15 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.underdog.domain.BoardVO;
 
+@Repository
 public class BoardDAOImpl implements BoardDAO {
 	
-//	@Inject
-//	private SqlSession session;
+	@Inject
+	private SqlSession session;
 
 	private static String namespace = "com.underdog.mapper.boardMapper";
 

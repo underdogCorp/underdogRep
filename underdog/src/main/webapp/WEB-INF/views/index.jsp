@@ -18,9 +18,9 @@ Hello Pinterest!!!!! !
 
 <a href="#">회사소개</a><br>
 <a href="/board/list?bbsid=01">공지사항</a><br>
-<a href="/board/bo_free_list">자유게시판</a><br>
-<a href="/board/bo_faq_list">FAQ</a><br>
-<a href="/board/bo_q&a_list">Q & A</a><br>
+<a href="/board/list?bbsid=02">자유게시판</a><br>
+<a href="/board/list?bbsid=03">FAQ</a><br>
+<a href="/board/list?bbsid=04">Q & A</a><br>
 <a href="/member/loginForm">로그인하기</a>
 <a href="/member/joinForm">회원 가입하기</a>
 
