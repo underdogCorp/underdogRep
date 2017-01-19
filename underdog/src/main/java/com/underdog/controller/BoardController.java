@@ -1,6 +1,7 @@
 package com.underdog.controller;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -110,8 +111,11 @@ public class BoardController {
 	// }
 
 	@RequestMapping("/registerProc")
-	public String registerProc(@ModelAttribute("BoardVO") BoardVO board) throws Exception {
-
+	public String registerProc(HttpServletRequest req, @ModelAttribute BoardVO board) throws Exception {
+//														@RequestParam  HashMap hm
+		String ip = req.getRemoteAddr();
+		board.setBo_regip(ip);
+		
 		String jsp = null;
 		logger.info("BoardController - registerProc() 입장");
 
