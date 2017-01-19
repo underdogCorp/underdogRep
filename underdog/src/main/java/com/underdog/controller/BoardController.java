@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -109,31 +110,26 @@ public class BoardController {
 	// }
 
 	@RequestMapping("/registerProc")
-	public String registerProc(@RequestParam("bbsid") String bbsid, BoardVO board)
-			throws Exception {
+	public String registerProc(@ModelAttribute("BoardVO") BoardVO board) throws Exception {
 
 		String jsp = null;
-
 		logger.info("BoardController - registerProc() 입장");
+		System.out.println("컨트롤러 입장");
 
-		if (bbsid.equals("01")) {
+		logger.info(board.toString());
+
+		service.regist(board);
+
+		if (board.getBo_bbsid() == 01) {
 			jsp = "/board/info/bo_info_write_form";
-			
-		} else if (bbsid.equals("02")) {
-			
-			System.out.println("컨트롤러 입장");
-			
-			logger.info(board.toString());
-			
-			service.regist(board);
 
-			
+		} else if (board.getBo_bbsid() == 02) {
 
 			return "redirect:/board/list?bbsid=02";
 			// jsp = "/board/free/bo_free_write_form";
-		} else if (bbsid.equals("03")) {
+		} else if (board.getBo_bbsid() == 03) {
 			jsp = "/board/faq/bo_faq_write_form";
-		} else if (bbsid.equals("04")) {
+		} else if (board.getBo_bbsid() == 04) {
 			jsp = "/board/q&a/bo_q&a_write_form";
 		}
 
