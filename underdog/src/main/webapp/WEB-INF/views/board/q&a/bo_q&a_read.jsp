@@ -6,16 +6,15 @@
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-게시판 번호 : ${list.bo_idx } <br/>
-회원 이메일 : ${list.bo_me_email } <br/>
-게시판 아이디 : ${list.bbsid} <br/>
-회원 닉네임 : ${list.bo_me_nick } <br/>
-제목 : ${list.bo_title } <br/>
-본문 : ${list.bo_content } <br/>
-조회수 : ${list.bo_hit } <br/>
-게시일자: ${list.bo_regdate } <br/>
-아이피 : ${list.bo_regip } <br/>
-
+게시판 번호 : <input type="text" value="${list.bo_idx }"/> <br/>
+회원 이메일 : <input type="text" value="${list.bo_me_email }"/> <br/>
+게시판 아이디 : <input type="text" value="${list.bbsid}"/> <br/>
+회원 닉네임 : <input type="text" value="${list.bo_me_nick }"/> <br/>
+제목 : <input type="text" value="${list.bo_title }"/> <br/>
+본문 : <input type="text" value="${list.bo_content }"/> <br/>
+조회수 : <input type="text" value="${list.bo_hit }"/> <br/>
+게시일자: <input type="text" value="${list.bo_regdate }"/> <br/>
+아이피 : <input type="text" value="${list.bo_regip }"/> <br/>
 
 
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>
