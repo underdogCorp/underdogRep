@@ -75,7 +75,7 @@ public class BoardController {
 			jsp = "/board/faq/bo_faq_write_form";
 			logger.info("faq 글쓰기 입장");
 		} else if (bo_bbsid == 04) {
-			jsp = "/board/q&a/bo_q&a_write_form";
+			jsp = "/board/q&a/bo_q&a_write_form";	
 			logger.info("Q&A 글쓰기 입장");
 		}
 
