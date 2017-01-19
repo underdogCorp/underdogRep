@@ -4,8 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
+
 <body>
 nav bar 입니다 <br/><br/>
 
@@ -14,7 +15,7 @@ nav bar 입니다 <br/><br/>
 	<p><a href="/member/logoutProc">로그아웃</a></p>
 	<br/>
 </c:if>
-
+<a href="/">홈</a><br>
 <a href="#">회사소개</a><br>
 <a href="/board/list?bbsid=01">공지사항</a><br>
 <a href="/board/list?bbsid=02">자유게시판</a><br>
@@ -22,3 +23,5 @@ nav bar 입니다 <br/><br/>
 <a href="/board/list?bbsid=04">Q & A</a><br>
 <a href="/member/loginForm">로그인하기</a>
 <a href="/member/joinForm">회원 가입하기</a>
+
+<br/>

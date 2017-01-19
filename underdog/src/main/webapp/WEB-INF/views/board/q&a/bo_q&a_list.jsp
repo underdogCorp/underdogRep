@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page session="false"%>
 
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
 <!-- Main content -->
 <section class="content">
@@ -43,28 +44,7 @@
 <a href="/board/registerForm?bbsid=04">글쓰기</a>
 </table>
 
-				</div>
-				<!-- /.box-body -->
-				<div class="box-footer">Footer</div>
-				<!-- /.box-footer-->
-			</div>
-		</div>
-		<!--/.col (left) -->
 
-	</div>
-	<!-- /.row -->
-</section>
-<!-- /.content -->
-</div>
-<!-- /.content-wrapper -->
 
-<script>
-    
-    var result = '${msg}';
-    
-    if(result == 'SUCCESS'){
-    	alert("처리가 완료되었습니다.");
-    }
-    
-    </script>
 
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>
