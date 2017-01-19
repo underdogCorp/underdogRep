@@ -116,11 +116,12 @@ public class BoardController {
 
 		logger.info("BoardController - registerProc() 입장");
 
-
 		if (bbsid.equals("01")) {
 			jsp = "/board/info/bo_info_write_form";
 		} else if (bbsid.equals("02")) {
 			service.regist(board);
+			System.out.println("컨트롤러 입장");
+			logger.info(board.toString());
 			rttr.addFlashAttribute("msg", "SUCCESS");
 			return "redirect:/board/list?bbsid=02";
 			// jsp = "/board/free/bo_free_write_form";
@@ -129,7 +130,6 @@ public class BoardController {
 		} else if (bbsid.equals("04")) {
 			jsp = "/board/q&a/bo_q&a_write_form";
 		}
-
 
 		return jsp;
 

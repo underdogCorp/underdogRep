@@ -59,23 +59,22 @@
 					<div class="row">
 						<div class="col-md-2 text-center">이름</div>
 						<div class="col-md-3">
-							<input type="text" class="form-control" id="name" name="bo_me_nick"
-								value="">
+							<input type="text" class="form-control" id="bo_me_nick" name="bo_me_nick">
 						</div>
 					</div>
 					<div class="row ">
 						<div class="col-md-2 text-center">제 목</div>
 						<div class="col-md-6">
-							<input type="text" class="form-control" id="subject"
+							<input type="text" class="form-control" id="bo_title"
 								name="bo_title">
 						</div>
 					</div>
 				</div>
 				<div class="row mar_t20">
-					<textarea id="contents" class="textarea_fixed" name="bo_content"
+					<textarea id="bo_content" class="textarea_fixed" name="bo_content"
 						rows="10" cols="60"></textarea>
 					<script type="text/javascript">
-						CKEDITOR.replace('contents');
+						CKEDITOR.replace('bo_content');
 					</script>
 				</div>
 				<div class="row mar_t20">
