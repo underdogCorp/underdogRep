@@ -39,16 +39,16 @@ public class BoardController {
 		 }
 
 			if (bbsid == 01) {
-				jsp = "/board/list?bbsid=01";
+				jsp = "/board/info/bo_info_list";
 				logger.info("공지사항으로 이동");
 			} else if (bbsid == 02) {
-				jsp = "/board/list?bbsid=02";
+				jsp = "/board/free/bo_free_list";
 				logger.info("자유게시판으로 이동");
 			} else if (bbsid == 03) {
-				jsp = "/board/list?bbsid=03";
+				jsp = "/board/faq/bo_faq_list";
 				logger.info("faq로 이동 이동");
 			} else if (bbsid == 04) {
-				jsp = "/board/list?bbsid=04";
+				jsp = "/board/q&a/bo_q&a_list";
 				logger.info("Q&A로 이동");
 			}
 
