@@ -1,29 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Home</title>
-</head>
-<body>
+
+
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+
+
 <h1>
 Hello Pinterest!!!!! !
 </h1>
 
-<c:if test="${sessionScope.MEMBER ne null }">
-	<p>${sessionScope.MEMBER.me_name} 님이 입장하셨습니다.</p>
-	<p><a href="/member/logoutProc">로그아웃</a></p>
-	<br/>
-</c:if>
-
-<a href="#">회사소개</a><br>
-<a href="/board/list?bbsid=01">공지사항</a><br>
-<a href="/board/list?bbsid=02">자유게시판</a><br>
-<a href="/board/list?bbsid=03">FAQ</a><br>
-<a href="/board/list?bbsid=04">Q & A</a><br>
-<a href="/member/loginForm">로그인하기</a>
-<a href="/member/joinForm">회원 가입하기</a>
-
-
-</body>
-</html>
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>
