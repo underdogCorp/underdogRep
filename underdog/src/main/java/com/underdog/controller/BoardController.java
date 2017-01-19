@@ -89,7 +89,6 @@ public class BoardController {
 		
 		String jsp = null;
 		logger.info("BoardController - registerProc() 입장");
-		logger.info(boardVO.toString());
 
 		service.registerProc(req, boardVO);
 		
@@ -117,8 +116,7 @@ public class BoardController {
 	
 		
 		String jsp = null;
-		logger.info("BoardController - registerProc() 입장");
-		logger.info(boardVO.toString());
+		logger.info("BoardController - read() 입장");
 
 		service.registerProc(req, boardVO);
 	

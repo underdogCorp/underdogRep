@@ -1,47 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page session="false"%>
 
-<!doctype html>
-<html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<title>게시판 내용보기</title>
-	<link rel="stylesheet" type="text/css" href="/springsboard/css/board.css" />
-</head>
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-<body>
-	<div id="boardcont_wrap">
-		<h2 class="boardcont_title">게시물 내용보기</h2>
-		<table id="boardcont_t">
-			<tr>
-				<th>제목</th>
-				<td>${bcont.board_subject}</td>
-			</tr>
+게시판 번호 : ${list.bo_idx } <br/>
+회원 이메일 : ${list.bo_me_email } <br/>
+게시판 아이디 : ${list.bbsid} <br/>
+회원 닉네임 : ${list.bo_me_nick } <br/>
+제목 : ${list.bo_title } <br/>
+본문 : ${list.bo_content } <br/>
+조회수 : ${list.bo_hit } <br/>
+게시일자: ${list.bo_regdate } <br/>
+아이피 : ${list.bo_regip } <br/>
 
-			<tr>
-				<th>글내용</th>
-				<td>
-					<%--  ${board_cont} --%> 
-					<pre>${bcont.board_content}</pre>
-				</td>
-			</tr>
 
-			<tr>
-				<th>조회수</th>
-				<td>${bcont.board_readcount}</td>
-			</tr>
-		</table>
 
-		<div id="boardcont_menu">
-			<input type="button" value="수정" class="input_button"
-				onclick="location='board_cont.nhn?board_num=${bcont.board_num}&page=${page}&state=edit'" />
-			<input type="button" value="삭제" class="input_button"
-				onclick="location='board_cont.nhn?board_num=${bcont.board_num}&page=${page}&state=del'" />
-			<input type="button" value="답변" class="input_button"
-				onclick="location='board_cont.nhn?board_num=${bcont.board_num}&page=${page}&state=reply'" />
-			<input type="button" value="목록" class="input_button"
-				onclick="location='board_list.nhn?page=${page}'" />
-		</div>
-	</div>
-</body>
-</html>
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>

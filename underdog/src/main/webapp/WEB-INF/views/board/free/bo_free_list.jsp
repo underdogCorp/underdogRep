@@ -24,7 +24,7 @@
 
 </head>
 <body>
-	
+
 
 	<div class="container">
 		<h2>Hover Rows</h2>
@@ -41,7 +41,7 @@
 				<c:forEach items="${list}" var="c">
 					<tr>
 						<td>${c.bo_me_email}</td>
-						<td>${c.bo_title}</td>
+						<td><a href="/board/read?bo_idx=${list.bo_idx }">${c.bo_title}</td>
 						<td>${c.bo_regdate}</td>
 					</tr>
 				</c:forEach>
