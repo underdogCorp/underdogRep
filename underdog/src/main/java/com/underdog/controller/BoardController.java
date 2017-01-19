@@ -111,12 +111,12 @@ public class BoardController {
 	}
 
 	
-	@RequestMapping("/read")
-	public String read() throws Exception {
+	@RequestMapping("/modifyForm")
+	public String modifyForm() throws Exception {
 	
 		
 		String jsp = null;
-		logger.info("BoardController - read() 입장");
+		logger.info("BoardController - modifyForm() 입장");
 
 		service.registerProc(req, boardVO);
 	
@@ -125,5 +125,6 @@ public class BoardController {
 
 	}
 	
+
 	
 }
