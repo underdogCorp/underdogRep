@@ -17,8 +17,9 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Override
 	public void regist(BoardVO board) throws Exception {
-		dao.create(board);
 		System.out.println("서비스입장");
+		dao.create(board);
+		
 		}
 
 	@Override

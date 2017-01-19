@@ -118,10 +118,16 @@ public class BoardController {
 
 		if (bbsid.equals("01")) {
 			jsp = "/board/info/bo_info_write_form";
+			
 		} else if (bbsid.equals("02")) {
-			service.regist(board);
+			
 			System.out.println("컨트롤러 입장");
+			
 			logger.info(board.toString());
+			
+			service.regist(board);
+
+			
 
 			return "redirect:/board/list?bbsid=02";
 			// jsp = "/board/free/bo_free_write_form";

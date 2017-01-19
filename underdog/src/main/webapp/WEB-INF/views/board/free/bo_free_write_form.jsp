@@ -51,10 +51,10 @@
 			<h2>자유 게시판 글쓰기</h2>
 			<br>
 
-			<form action="/board/registerProc?bbsid=02" method="post">
-			<input type="hidden" name="bo_me_email" value="">
-			<input type="hidden" name="bo_regip" value="">
-			<input type="hidden" name="bo_bbsid" value="02">
+			<form action="/board/registerProc" method="post">
+			<input type="hidden" name="bo_me_email" value="1234">
+			<input type="hidden" name="bo_regip" value="1234">
+			<input type="hidden" name="bbsid" value="02">
 					<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-2 text-center">이름</div>
@@ -73,9 +73,9 @@
 				<div class="row mar_t20">
 					<textarea id="bo_content" class="textarea_fixed" name="bo_content"
 						rows="10" cols="60"></textarea>
-					<script type="text/javascript">
+				 	<script type="text/javascript">
 						CKEDITOR.replace('bo_content');
-					</script>
+					</script> 
 				</div>
 				<div class="row mar_t20">
 					<div class="col-md-offset-4 col-md-1">

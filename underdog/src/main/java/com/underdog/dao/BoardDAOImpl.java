@@ -19,6 +19,7 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public void create(BoardVO vo) throws Exception {
+		System.out.println("dao입장");
 		session.insert(namespace + ".create", vo);
 	}
 
