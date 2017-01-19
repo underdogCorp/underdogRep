@@ -79,10 +79,10 @@
 				</div>
 				<div class="row mar_t20">
 					<div class="col-md-offset-4 col-md-1">
-						<button type="submit" class="btn btn-success">글 등록</button>
+						<button type="submit" class="btn btn-default">글 등록</button>
 					</div>
 					<div class="col-md-offset-2 col-md-1">
-						<button type="reset" class="btn btn-success"
+						<button type="reset" class="btn btn-default"
 							onclick="location.href='/board/list?bbsid=02'">글 취소</button>
 					</div>
 				</div>
