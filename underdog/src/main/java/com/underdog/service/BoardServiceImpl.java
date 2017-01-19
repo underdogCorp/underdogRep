@@ -17,8 +17,10 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Override
 	public void regist(BoardVO board) throws Exception {
+		System.out.println("서비스입장");
+		dao.create(board);
 		
-	}
+		}
 
 	@Override
 	public List<BoardVO> list(String bbsid) throws Exception {

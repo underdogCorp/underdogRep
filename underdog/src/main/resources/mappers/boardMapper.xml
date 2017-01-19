@@ -5,25 +5,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.underdog.mapper.boardMapper">
 
-	<insert id="create">
-		insert into board (bo_me_email,
+	<insert id="create" parameterType="BoardVO">
+		insert into board (bo_idx,
+							bo_me_email,
 							 bo_bbsid,
 							 bo_me_nick,
 							 bo_title,
-							 bo_concent,
-							 bo_bbsid,
+							 bo_content,				
 							 bo_regip,
-							 bo_regdate,
-							 bo_regip)
-		values(#{bo_me_email},
+							 bo_regdate)
+		values(board_seq.nextval,
+				#{bo_me_email},
 				#{bo_bbsid},
 		 		#{bo_me_nick},
 		 		#{bo_title},
-		 		#{bo_concent},
-		 		#{bo_bbsid},
+		 		#{bo_content},		 
 		 		#{bo_regip},
-		 		sysdate,
-		 		#{bo_regip})
+		 		sysdate)
 		 		<!-- 아이피 삭제유무 삭제일 이해안됨 -->
 	</insert>
 	
