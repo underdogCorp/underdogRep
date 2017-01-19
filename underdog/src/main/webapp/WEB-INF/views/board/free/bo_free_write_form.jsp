@@ -52,14 +52,14 @@
 			<br>
 
 			<form action="/board/registerProc" method="post">
-			<input type="hidden" name="bo_me_email" value="1234">
-			<input type="hidden" name="bo_regip" value="1234">
-			<input type="hidden" name="bbsid" value="02">
+			<input type="hidden" name="bo_me_email" value="${sessionScope.MEMBER.me_email}">
+			<input type="hidden" name="bo_bbsid" value="02">
 					<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-2 text-center">이름</div>
 						<div class="col-md-3">
-							<input type="text" class="form-control" id="bo_me_nick" name="bo_me_nick">
+							<input type="text" class="form-control" id="bo_me_nick" name="bo_me_nick" 
+							value="${sessionScope.MEMBER.me_nick}">
 						</div>
 					</div>
 					<div class="row ">

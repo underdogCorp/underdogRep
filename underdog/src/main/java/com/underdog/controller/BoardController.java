@@ -110,12 +110,16 @@ public class BoardController {
 	// }
 
 	@RequestMapping("/registerProc")
+<<<<<<< HEAD
 	public String registerProc(@ModelAttribute("BoardVO") BoardVO boardVO)
 			throws Exception {
+=======
+	public String registerProc(@ModelAttribute("BoardVO") BoardVO board) throws Exception {
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 
 		String jsp = null;
-
 		logger.info("BoardController - registerProc() 입장");
+<<<<<<< HEAD
 		
 		System.out.println("컨트롤러 입장");
 		
@@ -126,13 +130,28 @@ public class BoardController {
 		
 	
 		if (boardVO.getBo_bbsid() == 01) {
+=======
+		System.out.println("컨트롤러 입장");
+
+		logger.info(board.toString());
+
+		service.regist(board);
+
+		if (board.getBo_bbsid() == 01) {
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 			jsp = "/board/info/bo_info_write_form";
+<<<<<<< HEAD
 		} else if (bbsid.equals("02")) {
+=======
+
+		} else if (board.getBo_bbsid() == 02) {
+
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 			return "redirect:/board/list?bbsid=02";
 			// jsp = "/board/free/bo_free_write_form";
-		} else if (bbsid.equals("03")) {
+		} else if (board.getBo_bbsid() == 03) {
 			jsp = "/board/faq/bo_faq_write_form";
-		} else if (bbsid.equals("04")) {
+		} else if (board.getBo_bbsid() == 04) {
 			jsp = "/board/q&a/bo_q&a_write_form";
 		}
 
