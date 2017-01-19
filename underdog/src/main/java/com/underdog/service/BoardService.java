@@ -2,13 +2,17 @@ package com.underdog.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.underdog.domain.BoardVO;
 
 
 public interface BoardService {
-	 public void registerProc(BoardVO board) throws Exception;
+	public List<BoardVO> list(String bbsid) throws Exception;
+	
+	public void registerProc(HttpServletRequest req, BoardVO boardVO) throws Exception;
 	 
-	 public List<BoardVO> list(String bbsid) throws Exception;
+	 
 
 	
 	 

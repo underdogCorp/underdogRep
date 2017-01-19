@@ -111,27 +111,24 @@ public class BoardController {
 	// }
 
 	@RequestMapping("/registerProc")
-	public String registerProc(HttpServletRequest req, @ModelAttribute BoardVO board) throws Exception {
-//														@RequestParam  HashMap hm
-		String ip = req.getRemoteAddr();
-		board.setBo_regip(ip);
+	public String registerProc(HttpServletRequest req, @ModelAttribute BoardVO boardVO) throws Exception {
+//	
 		
 		String jsp = null;
 		logger.info("BoardController - registerProc() 입장");
-		logger.info(board.toString());
+		logger.info(boardVO.toString());
 
-		service.registerProc(board);
+		service.registerProc(req, boardVO);
 
-		
-		
-		if (board.getBo_bbsid() ==01) {
+
+		if (boardVO.getBo_bbsid() ==01) {
 			jsp = "/board/info/bo_info_write_form";
-		} else if (board.getBo_bbsid() == 02) {
+		} else if (boardVO.getBo_bbsid() == 02) {
 			return "redirect:/board/list?bbsid=02";
 			// jsp = "/board/free/bo_free_write_form";
-		} else if (board.getBo_bbsid() == 03) {
+		} else if (boardVO.getBo_bbsid() == 03) {
 			jsp = "/board/faq/bo_faq_write_form";
-		} else if (board.getBo_bbsid() == 04) {
+		} else if (boardVO.getBo_bbsid() == 04) {
 			jsp = "/board/q&a/bo_q&a_write_form";
 		}
 

@@ -5,8 +5,11 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import com.underdog.controller.BoardController;
 import com.underdog.domain.BoardVO;
 
 @Repository
@@ -17,16 +20,19 @@ public class BoardDAOImpl implements BoardDAO {
 
 	private static String namespace = "com.underdog.mapper.boardMapper";
 
+	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	
 	@Override
-	public void create(BoardVO vo) throws Exception {
-		System.out.println("dao입장");
-		session.insert(namespace + ".create", vo);
+	public List<BoardVO> list(String bbsid) throws Exception {
+	  return session.selectList(namespace + ".list", bbsid);
 	}
 
-	  @Override
-	  public List<BoardVO> list(String bbsid) throws Exception {
-	    return session.selectList(namespace + ".list", bbsid);
-	  }
+	@Override
+	public void registerProc(BoardVO boardVO) {
+		logger.info("BoardDAOImpl - registerProc 입장");
+		session.insert(namespace + ".registerProc", boardVO);
+		
+	}
 	
 	
 }

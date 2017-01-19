@@ -9,7 +9,7 @@ public interface BoardDAO {
 	
 	  public List<BoardVO> list(String bbsid) throws Exception;
 	
-	  public void create(BoardVO vo) throws Exception;
+	  public void registerProc(BoardVO boardVO);
 
 //	  public BoardVO read(Integer bno) throws Exception;
 //

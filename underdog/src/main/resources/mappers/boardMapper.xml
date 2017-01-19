@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.underdog.mapper.boardMapper">
 
-	<insert id="create" parameterType="BoardVO">
+	<insert id="registerProc" parameterType="BoardVO">
 		insert into board (bo_idx,
 							bo_me_email,
 							 bo_bbsid,
