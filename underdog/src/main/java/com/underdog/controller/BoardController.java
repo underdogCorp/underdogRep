@@ -24,54 +24,38 @@ public class BoardController {
 
 	@Inject
 	private BoardService service;
-
-	// @RequestMapping(value = "/bo_free_list")
-	// public String BoardWriteMove() throws Exception {
-	//
-	// logger.info("자유게시판 리스트 진입");
-	//
-	// return "/board/free/bo_free_list";
-	// }
-	//
-	// @RequestMapping(value = "/registerForm")
-	// public String registerForm() throws Exception {
-	//
-	// logger.info("글쓰기 폼 이동");
-	//
-	// return "/board/free/bo_free_write_form";
-	// }
-	//
-
+	
+	//게시판 리스트 조회
 	@RequestMapping("/list")
-	public String list(@RequestParam("bbsid") String bbsid, Model model) {
+	public String list(@RequestParam("bbsid") int bbsid, Model model) {
 		String jsp = null;
 
 		logger.info("BoardController - list() 입장");
 
-		// try {
-		// model.addAttribute("list", service.list(bbsid));
-		// } catch (Exception e) {
-		// e.printStackTrace();
-		// }
+		 try {
+		 model.addAttribute("list", service.list(bbsid));
+		 } catch (Exception e) {
+		 e.printStackTrace();
+		 }
 
-		if (bbsid.equals("01")) {
-			jsp = "/board/info/bo_info_list";
-			logger.info("공지사항으로 이동");
-		} else if (bbsid.equals("02")) {
-
-			jsp = "/board/free/bo_free_list";
-			logger.info("자유게시판으로 이동");
-		} else if (bbsid.equals("03")) {
-			jsp = "/board/faq/bo_faq_list";
-			logger.info("faq로 이동 이동");
-		} else if (bbsid.equals("04")) {
-			jsp = "/board/q&a/bo_q&a_list";
-			logger.info("Q&A로 이동");
-		}
+			if (bbsid == 01) {
+				jsp = "/board/list?bbsid=01";
+				logger.info("공지사항으로 이동");
+			} else if (bbsid == 02) {
+				jsp = "/board/list?bbsid=02";
+				logger.info("자유게시판으로 이동");
+			} else if (bbsid == 03) {
+				jsp = "/board/list?bbsid=03";
+				logger.info("faq로 이동 이동");
+			} else if (bbsid == 04) {
+				jsp = "/board/list?bbsid=04";
+				logger.info("Q&A로 이동");
+			}
 
 		return jsp;
 	}
 
+	//게시판 글쓰기 폼 보기
 	@RequestMapping("/registerForm")
 	public String registerForm(@RequestParam("bbsid") String bbsid) {
 
@@ -110,6 +94,7 @@ public class BoardController {
 	// return "redirect:/bo_free_list";
 	// }
 
+	//게시판 글쓰기 프로세스
 	@RequestMapping("/registerProc")
 	public String registerProc(HttpServletRequest req, @ModelAttribute BoardVO boardVO) throws Exception {
 //	
@@ -119,19 +104,21 @@ public class BoardController {
 		logger.info(boardVO.toString());
 
 		service.registerProc(req, boardVO);
-
-
+		
 		if (boardVO.getBo_bbsid() ==01) {
-			jsp = "/board/info/bo_info_write_form";
+			jsp = "redirect:/board/list?bbsid=01";
+			logger.info("공지사항으로 이동");
 		} else if (boardVO.getBo_bbsid() == 02) {
-			return "redirect:/board/list?bbsid=02";
-			// jsp = "/board/free/bo_free_write_form";
+			jsp = "redirect:/board/list?bbsid=02";
+			logger.info("자유게시판으로 이동");
 		} else if (boardVO.getBo_bbsid() == 03) {
-			jsp = "/board/faq/bo_faq_write_form";
+			jsp = "redirect:/board/list?bbsid=03";
+			logger.info("faq로 이동 이동");
 		} else if (boardVO.getBo_bbsid() == 04) {
-			jsp = "/board/q&a/bo_q&a_write_form";
+			jsp = "redirect:/board/list?bbsid=04";
+			logger.info("Q&A로 이동");
 		}
-
+		
 		return jsp;
 
 	}

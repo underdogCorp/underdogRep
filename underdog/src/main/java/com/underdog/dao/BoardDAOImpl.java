@@ -23,7 +23,7 @@ public class BoardDAOImpl implements BoardDAO {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@Override
-	public List<BoardVO> list(String bbsid) throws Exception {
+	public List<BoardVO> list(int bbsid) throws Exception {
 	  return session.selectList(namespace + ".list", bbsid);
 	}
 
@@ -33,6 +33,7 @@ public class BoardDAOImpl implements BoardDAO {
 		session.insert(namespace + ".registerProc", boardVO);
 		
 	}
-	
+
+
 	
 }
