@@ -19,7 +19,7 @@ import com.underdog.service.BoardService;
 public class BoardController {
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
-
+	
 
 	@Inject
 	private BoardService service;
@@ -57,22 +57,26 @@ public class BoardController {
 	public String list(@RequestParam("bbsid") String bbsid, Model model){
 		String jsp = null;
 		
-		logger.info("게시판 리스트 입장");
+		logger.info("BoardController - list() 입장");
 		
-		try {
-			model.addAttribute("list", service.list(bbsid));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//			model.addAttribute("list", service.list(bbsid));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
 		if(bbsid.equals("01")){
 			jsp = "/board/info/bo_info_list";
+			logger.info("공지사항으로 이동");
 		} else if(bbsid.equals("02")){
 			jsp = "/board/free/bo_free_list";
+			logger.info("자유게시판으로 이동");
 		} else if(bbsid.equals("03")){
 			jsp = "/board/faq/bo_faq_list";
+			logger.info("faq로 이동 이동");
 		} else if(bbsid.equals("04")){
 			jsp = "/board/q&a/bo_q&a_list";
+			logger.info("Q&A로 이동");
 		}
 		
 		return jsp;
@@ -84,7 +88,34 @@ public class BoardController {
 		
 		String jsp = null;
 		
-		logger.info("게시판 글쓰기페이지 이동 입장");
+		logger.info("BoardController - registerForm() 입장");
+		
+		
+		if(bbsid.equals("01")){
+			jsp = "/board/info/bo_info_write_form";
+			logger.info("공지사항 글쓰기 입장");
+		} else if(bbsid.equals("02")){
+			jsp = "/board/free/bo_free_write_form";
+			logger.info("자유게시판 글쓰기 입장");
+		} else if(bbsid.equals("03")){
+			jsp = "/board/faq/bo_faq_write_form";
+			logger.info("faq 글쓰기 입장");
+		} else if(bbsid.equals("04")){
+			jsp = "/board/q&a/bo_q&a_write_form";
+			logger.info("Q&A 글쓰기 입장");
+		}
+		
+		return jsp;
+		
+	}
+	
+	
+	@RequestMapping("/registerProc")
+	public String registerProc(@RequestParam("bbsid") String bbsid){
+		
+		String jsp = null;
+		
+		logger.info("BoardController - registerProc() 입장");
 		
 		
 		if(bbsid.equals("01")){
@@ -100,9 +131,6 @@ public class BoardController {
 		return jsp;
 		
 	}
-	
-	
-	
 	
 	
 	
