@@ -25,6 +25,7 @@
 </head>
 <body>
 
+
 	<div class="container">
 		<h2>Hover Rows</h2>
 		<p>The .table-hover class enables a hover state on table rows:</p>
@@ -32,15 +33,24 @@
 			<thead>
 				<tr>
 					<th>제목</th>
+<<<<<<< HEAD
 					<th>닉네임</th>
 					<th>시간</th>
+=======
+					<th>날짜</th>
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${list}" var="c">
 					<tr>
+<<<<<<< HEAD
 						<td><a href="/board/read?bo_idx=${c.bo_idx}&bbsid=${c.bo_bbsid}">${c.bo_title}</a></td>
 						<td>${c.bo_me_nick}</td>
+=======
+						<td>${c.bo_me_email}</td>
+						<td><a href="/board/read?bo_idx=${list.bo_idx }">${c.bo_title}</td>
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 						<td>${c.bo_regdate}</td>
 					</tr>
 				</c:forEach>

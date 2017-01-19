@@ -1,49 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page session="false"%>
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-<!-- Main content -->
-<section class="content">
-	<div class="row">
-		<!-- left column -->
-		<div class="col-md-12">
-			<!-- general form elements -->
 
-			<div class="box">
-				<div class="box-header with-border">
-					<h3 class="box-title">LIST ALL PAGE</h3>
-				</div>
-				<div class="box-body">
-				
-<table class="table table-bordered">
-	<tr>
-		<th style="width: 10px">BNO</th>
-		<th>TITLE</th>
-		<th>WRITER</th>
-		<th>REGDATE</th>
-		<th style="width: 40px">VIEWCNT</th>
-	</tr>
+	<div class="container">
+		<h2>Q & A</h2>
+		<p>무엇이든 물어보세요</p>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>조회수</th>
+					<th>게시일</th>
+					<th>아이피</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${list}" var="list">
+					<tr>
+						<td>${list.bo_idx }</td>
+						<td><a href="/board/read?bbsid=${list.bbsid}&bno=${list.bo_idx }&page=&lpp=&keyword=&sel=">
+							<c:out value="${list.bo_title }"/></a></td>
+						<td>${list.bo_me_nick }(${list.bo_me_email })</td>
+						<td>${list.bo_hit }</td>
+						<td>${list.bo_regdate }</td>
+						<td>${list.bo_regip }</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 
-<c:forEach items="${list}" var="boardVO">
-
-	<tr>
-		<td>${boardVO.bno}</td>
-		<td><a href='/board/read?bno=${boardVO.bno}'>${boardVO.title}</a></td>
-		<td>${boardVO.writer}</td>
-		<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
-				value="${boardVO.regdate}" /></td>
-		<td><span class="badge bg-red">${boardVO.viewcnt }</span></td>
-	</tr>
-
-</c:forEach>
-
-<a href="/board/registerForm?bbsid=04">글쓰기</a>
-</table>
-
+	<button type="button" class="btn btn-default"
+		onclick="location.href='/board/registerForm?bbsid=04'">글쓰기</button>
 
 
 

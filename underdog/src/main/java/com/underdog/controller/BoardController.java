@@ -59,22 +59,22 @@ public class BoardController {
 
 	//게시판 글쓰기 폼 보기
 	@RequestMapping("/registerForm")
-	public String registerForm(@RequestParam("bbsid") String bbsid) {
+	public String registerForm(@RequestParam("bbsid") int bbsid) {
 
 		String jsp = null;
 
 		logger.info("BoardController - registerForm() 입장");
 
-		if (bbsid.equals("01")) {
+		if (bbsid == 01) {
 			jsp = "/board/info/bo_info_write_form";
 			logger.info("공지사항 글쓰기 입장");
-		} else if (bbsid.equals("02")) {
+		} else if (bbsid == 02) {
 			jsp = "/board/free/bo_free_write_form";
 			logger.info("자유게시판 글쓰기 입장");
-		} else if (bbsid.equals("03")) {
+		} else if (bbsid == 03) {
 			jsp = "/board/faq/bo_faq_write_form";
 			logger.info("faq 글쓰기 입장");
-		} else if (bbsid.equals("04")) {
+		} else if (bbsid == 04) {
 			jsp = "/board/q&a/bo_q&a_write_form";
 			logger.info("Q&A 글쓰기 입장");
 		}
@@ -83,27 +83,14 @@ public class BoardController {
 
 	}
 
-	// @RequestMapping(value = "/registerProc", method = RequestMethod.POST)
-	// public String registPOST(BoardVO board, RedirectAttributes rttr) throws
-	// Exception {
-	//
-	// logger.info("regist post ...........");
-	// logger.info(board.toString());
-	//
-	// service.regist(board);
-	//
-	// rttr.addFlashAttribute("msg", "success");
-	// return "redirect:/bo_free_list";
-	// }
 
 	//게시판 글쓰기 프로세스
 	@RequestMapping("/registerProc")
 	public String registerProc(HttpServletRequest req, @ModelAttribute BoardVO boardVO) throws Exception {
-//	
+	
 		
 		String jsp = null;
 		logger.info("BoardController - registerProc() 입장");
-		logger.info(boardVO.toString());
 
 		service.registerProc(req, boardVO);
 		
@@ -151,4 +138,24 @@ public class BoardController {
 		return jsp;
 	}
 
+	
+	
+	
+	
+	@RequestMapping("/modifyForm")
+	public String modifyForm() throws Exception {
+	
+		
+		String jsp = null;
+		logger.info("BoardController - modifyForm() 입장");
+
+		service.registerProc(req, boardVO);
+	
+		
+		return jsp;
+
+	}
+	
+
+	
 }
