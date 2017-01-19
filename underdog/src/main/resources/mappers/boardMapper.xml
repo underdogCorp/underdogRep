@@ -13,8 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 							 bo_concent,
 							 bo_bbsid,
 							 bo_regip,
-							 bo_regdate,
-							 bo_regip)
+							 bo_regdate,)
 		values(#{bo_me_email},
 				#{bo_bbsid},
 		 		#{bo_me_nick},
@@ -22,8 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 		#{bo_concent},
 		 		#{bo_bbsid},
 		 		#{bo_regip},
-		 		sysdate,
-		 		#{bo_regip})
+		 		sysdate,)
 		 		<!-- 아이피 삭제유무 삭제일 이해안됨 -->
 	</insert>
 	

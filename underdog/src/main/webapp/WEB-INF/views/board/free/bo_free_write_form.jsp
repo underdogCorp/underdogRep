@@ -48,9 +48,10 @@
 <body>
 	<div>
 		<div class="bbsWriteForm">
-			<h2>게시글 쓰기</h2>
+			<h2>자유 게시판 글쓰기</h2>
+			<br>
 
-			<form action="/registerProc" method="post">
+			<form action="/board/registerProc?bbsid=02" method="post">
 			<input type="hidden" name="bo_me_email" value="">
 			<input type="hidden" name="bo_regip" value="">
 			<input type="hidden" name="bo_bbsid" value="02">
@@ -83,7 +84,7 @@
 					</div>
 					<div class="col-md-offset-2 col-md-1">
 						<button type="reset" class="btn btn-success"
-							onclick="location.href='/bo_free_list'">글 취소</button>
+							onclick="location.href='/board/list?bbsid=02'">글 취소</button>
 					</div>
 				</div>
 			</form>
