@@ -1,6 +1,8 @@
 package com.underdog.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -32,6 +34,10 @@ public class BoardDAOImpl implements BoardDAO {
 		logger.info("BoardDAOImpl - registerProc 입장");
 		session.insert(namespace + ".registerProc", boardVO);
 		
+	}
+	@Override
+	public List<BoardVO> read(Map data) throws Exception {
+		return session.selectList(namespace +".read", data);
 	}
 
 

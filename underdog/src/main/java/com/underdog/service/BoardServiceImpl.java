@@ -1,6 +1,8 @@
 package com.underdog.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -36,6 +38,10 @@ public class BoardServiceImpl implements BoardService{
 		boardVO.setBo_regip(req.getRemoteAddr());
 		dao.registerProc(boardVO);
 		
+	}
+	@Override
+	public List<BoardVO> read(Map data) throws Exception{
+		return dao.read(data);
 	}
 
 

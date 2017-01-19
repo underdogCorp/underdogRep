@@ -31,16 +31,16 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>이메일</th>
 					<th>제목</th>
-					<th>날자</th>
+					<th>닉네임</th>
+					<th>시간</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${list}" var="c">
 					<tr>
-						<td>${c.bo_me_email}</td>
-						<td>${c.bo_title}</td>
+						<td><a href="/board/read?bo_idx=${c.bo_idx}&bbsid=${c.bo_bbsid}">${c.bo_title}</a></td>
+						<td>${c.bo_me_nick}</td>
 						<td>${c.bo_regdate}</td>
 					</tr>
 				</c:forEach>

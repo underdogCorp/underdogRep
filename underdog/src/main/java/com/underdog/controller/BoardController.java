@@ -1,5 +1,7 @@
 package com.underdog.controller;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
@@ -121,6 +123,32 @@ public class BoardController {
 		
 		return jsp;
 
+	}
+	@RequestMapping("/read")
+	public String read(@RequestParam HashMap data, Model model)throws Exception{
+		logger.info("read 진입 ");
+		
+		String jsp=null;
+		model.addAttribute("data", service.read(data));
+		logger.info("read에서 bbsid 구분 진입");
+		logger.info((String) data.get("bbsid"));
+		if (data.get("bbsid").equals("1")) {
+			jsp = "/board/info/bo_info_read";
+			logger.info("공지사항 상세보기 이동");
+		} else if (data.get("bbsid").equals("2")) {
+			jsp = "/board/free/bo_free_read";
+			logger.info("자유게시판 상세보기 이동");
+		} else if (data.get("bbsid").equals("3")) {
+			jsp = "/board/faq/bo_feq_read";
+			logger.info("faq 상세보기 이동");
+		} else if (data.get("bbsid").equals("4")) {
+			jsp = "/board/q&a/bo_q&a_read";
+			logger.info("Q&A 상세보기 이동");
+		}
+
+		
+		
+		return jsp;
 	}
 
 }

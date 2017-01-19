@@ -1,6 +1,7 @@
 package com.underdog.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,7 +14,7 @@ public interface BoardService {
 	
 	public void registerProc(HttpServletRequest req, BoardVO boardVO) throws Exception;
 	 
-	 
+	public List<BoardVO> read(Map data) throws Exception;
 
 	
 	 

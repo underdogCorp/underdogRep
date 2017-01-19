@@ -1,6 +1,7 @@
 package com.underdog.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import com.underdog.domain.BoardVO;
 
@@ -10,13 +11,17 @@ public interface BoardDAO {
 	  public List<BoardVO> list(int bbsid) throws Exception;
 	
 	  public void registerProc(BoardVO boardVO);
-
-//	  public BoardVO read(Integer bno) throws Exception;
+	  
+	  public List<BoardVO> read(Map bo_dix) throws Exception;
 //
 //	  public void update(BoardVO vo) throws Exception;
 //
 //	  public void delete(Integer bno) throws Exception;
 //
+
+
+
+	
 
 //
 //	  public List<BoardVO> listPage(int page) throws Exception;
