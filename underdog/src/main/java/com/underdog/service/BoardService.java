@@ -1,5 +1,6 @@
 package com.underdog.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +16,8 @@ public interface BoardService {
 	public void registerProc(HttpServletRequest req, BoardVO boardVO) throws Exception;
 	 
 	public List<BoardVO> read(Map data) throws Exception;
+
+	public Object board_cont(HashMap data);
 
 	
 	 

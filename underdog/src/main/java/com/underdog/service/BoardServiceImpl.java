@@ -45,5 +45,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 
+	@Override
+	public Object board_cont(HashMap data) {
+		return dao.board_cont(data);
+	}
+
+
 
 }

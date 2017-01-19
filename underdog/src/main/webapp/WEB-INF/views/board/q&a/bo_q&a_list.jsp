@@ -23,7 +23,7 @@
 				<c:forEach items="${list}" var="list">
 					<tr>
 						<td>${list.bo_idx }</td>
-						<td><a href="/board/read?bbsid=${list.bbsid}&bno=${list.bo_idx }&page=&lpp=&keyword=&sel=">
+						<td><a href="/board/read?bo_bbsid=${list.bo_bbsid}&bno=${list.bo_idx }&page=&lpp=&keyword=&sel=">
 							<c:out value="${list.bo_title }"/></a></td>
 						<td>${list.bo_me_nick }(${list.bo_me_email })</td>
 						<td>${list.bo_hit }</td>

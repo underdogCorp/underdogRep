@@ -1,5 +1,6 @@
 package com.underdog.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,8 @@ public interface BoardDAO {
 //
 //	  public void delete(Integer bno) throws Exception;
 //
+
+	public Object board_cont(HashMap data);
 
 
 

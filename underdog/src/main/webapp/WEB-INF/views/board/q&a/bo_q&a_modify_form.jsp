@@ -6,7 +6,7 @@
 
 게시판 번호 : <input type="text" value="${list.bo_idx }"/> <br/>
 회원 이메일 : <input type="text" value="${list.bo_me_email }"/> <br/>
-게시판 아이디 : <input type="text" value="${list.bbsid}"/> <br/>
+게시판 아이디 : <input type="text" value="${list.bo_bbsid}"/> <br/>
 회원 닉네임 : <input type="text" value="${list.bo_me_nick }"/> <br/>
 제목 : <input type="text" value="${list.bo_title }"/> <br/>
 본문 : <input type="text" value="${list.bo_content }"/> <br/>

@@ -40,6 +40,11 @@ public class BoardDAOImpl implements BoardDAO {
 		return session.selectList(namespace +".read", data);
 	}
 
+	@Override
+	public Object board_cont(HashMap data) {
+		return session.selectList(namespace +".board_cont", data);
+	}
+
 
 	
 }
