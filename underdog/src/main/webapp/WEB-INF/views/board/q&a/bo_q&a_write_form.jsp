@@ -16,10 +16,12 @@
 	})
 
 </script>
+<h2>Q & A 글쓰기</h2><br/>
+
 <form id="q&aSubmitFrm">
 게시판 id (hidden으로 처리, 임시): <input type="text" name="bo_bbsid" value="04"><br/>
 
-회원이메일(session으로 처리, 임시)  : <input type="text" name="bo_me_email"><br/>
+회원이메일(session으로 처리, 임시)  : ${sessionScope.MEMBER.me_email}<input type="text" name="bo_me_email"><br/>
 회원닉네임(session으로 처리, 임시)  : <input type="text" name="bo_me_nick"><br/>
 
 제목 : <input type="text" name="bo_title"><br/>
