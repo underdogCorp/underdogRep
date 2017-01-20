@@ -123,14 +123,14 @@ public class BoardController {
 			jsp = "/board/free/bo_free_";
 			logger.info("자유게시판 상세보기 이동");
 		} else if (data.get("bo_bbsid").equals("03")) {
-			jsp = "/board/faq/bo_feq_";
+			jsp = "/board/faq/bo_faq_";
 			logger.info("faq 상세보기 이동");
 		} else if (data.get("bo_bbsid").equals("04")) {
 			jsp = "/board/q&a/bo_q&a_";
 			logger.info("Q&A 상세보기 이동");
 		}
 
-		if (data.get("state").equals("read")) {
+		if (data.get("state").equals("read") || data.get("state").equals("modifyRead")) {
 			contM = "read";
 		} else if (data.get("state").equals("modify")) {
 			contM = "modify_form";
@@ -154,7 +154,7 @@ public class BoardController {
 		
 		service.modifyProc(data);
 
-		return "/board/board_cont?bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=read";
+		return "redirect:/board/board_cont?bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=modifyRead";
 	
 	}
 	

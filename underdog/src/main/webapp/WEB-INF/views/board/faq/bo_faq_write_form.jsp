@@ -1,12 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 
-</body>
-</html>
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+
+<script>
+	$(function(){
+		$('#qnaWriteSubmitBtn').click(function(){
+			
+			var f = $('#qnaWriteSubmitFrm');
+			f.attr('method', 'POST');
+			f.attr('action', "/board/registerProc");
+			f.submit();
+			
+		})
+		
+	})
+
+</script>
+<h2>F A Q 글쓰기</h2><br/>
+
+<form id="qnaWriteSubmitFrm">
+게시판 id (hidden으로 처리, 임시): <input type="text" name="bo_bbsid" value="03"><br/>
+회원이메일 (hidden으로 처리, 임시): <input type="text" name="bo_me_email" value="${sessionScope.MEMBER.me_email}"><br/> <br/>
+회원닉네임 (hidden으로 처리, 임시): <input type="text" name="bo_me_nick" value="${sessionScope.MEMBER.me_nick}"><br/><br/>
+
+
+작성자 : ${sessionScope.MEMBER.me_name}(${sessionScope.MEMBER.me_email})<br/>
+
+
+제목 : <input type="text" name="bo_title"><br/>
+내용 : <input type="text" name="bo_content"><br/>
+
+<input type="button" id="qnaWriteSubmitBtn" value="제출">
+</form>
+
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>

@@ -1,12 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+	pageEncoding="UTF-8"%>
 
-</body>
-</html>
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+
+
+	<div class="container">
+		<h2>F A Q</h2>
+		<p>자주하는 질문</p>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>조회수</th>
+					<th>게시일</th>
+					<th>아이피</th>
+				</tr>
+			</thead>	
+			<tbody>
+				<c:forEach items="${list}" var="list">
+					<tr>
+						<td>${list.bo_idx }</td>
+						<td><a href="/board/board_cont?bo_bbsid=${list.bo_bbsid}&bo_idx=${list.bo_idx }&page=&lpp=&keyword=&sel=&state=read">
+							<c:out value="${list.bo_title }"/></a></td>
+						<td>${list.bo_me_nick }(${list.bo_me_email })</td>
+						<td>${list.bo_hit }</td>
+						<td>${list.bo_regdate }</td>
+						<td>${list.bo_regip }</td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
+<c:if test="${sessionScope.MEMBER != null }">
+	<button type="button" class="btn btn-default"
+		onclick="location.href='/board/registerForm?bo_bbsid=03'">글쓰기</button>
+</c:if>
+
+
+
+
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>
