@@ -19,7 +19,7 @@ public interface BoardService {
 
 	public void delProc (Map data) throws Exception;
 
-	public void modifyProc(BoardVO baordVO) throws Exception;
+	public void modifyProc(Map data) throws Exception;
 
 
  

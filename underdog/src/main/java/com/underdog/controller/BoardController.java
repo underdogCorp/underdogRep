@@ -147,14 +147,15 @@ public class BoardController {
 
 	// 수정 프로세스
 	@RequestMapping("/modifyProc")
-	public String modifyProc(@ModelAttribute BoardVO baordVO) throws Exception{
+	public String modifyProc(@RequestParam HashMap data) throws Exception{
 	
 		logger.info("BoardController - modifyProc() 입장");
-		service.modifyProc(baordVO);
+		service.modifyProc(data);
 		
 		return null;
 	}
 
+	
 	@RequestMapping("/delProc")
 	public String delProc(@RequestParam HashMap data) throws Exception {
 		String jsp = null;

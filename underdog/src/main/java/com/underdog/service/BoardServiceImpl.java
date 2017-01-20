@@ -56,9 +56,9 @@ public class BoardServiceImpl implements BoardService{
 
 	// 게시글 수정
 	@Override
-	public void modifyProc(BoardVO baordVO) throws Exception{
+	public void modifyProc(Map data) throws Exception{
 		logger.info("BoardServiceImpl - modifyProc 입장");
-		dao.modifyProc(baordVO);
+		dao.modifyProc(data);
 	}
 
 

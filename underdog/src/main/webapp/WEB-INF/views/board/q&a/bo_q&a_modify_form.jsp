@@ -9,21 +9,20 @@ $(function(){
 	$('#qnaModifySubmitBtn').click(function(){
 		var f = $('#qnaModifySubmitFrm');
 		f.attr('method', 'POST');
-		f.atte('action', "/board/modifyProc")
+		f.attr('action', "/board/modifyProc")
 		f.submit();
 	})
 })
 
 </script>
 <form id="qnaModifySubmitFrm">
+히든으로 넘길 값들 <br/>
 게시판 번호 : <input type="hidden" name="bo_idx" value="${data.bo_idx }"/> <br/>
-회원 이메일 : <input type="hidden" name="bo_me_email" value="${data.bo_me_email }"/> <br/>
-게시판 아이디 : <input type="hidden" name="bo_bbsid" value="${data.bo_bbsid}"/> <br/>
-회원 닉네임 : <input type="hidden" name="bo_me_nick" value="${data.bo_me_nick }"/> <br/>
+<%-- 게시판 번호 : <input type="hidden" name="bo_idx" value="${data.bo_idx }"/> <br/> --%>
+<%-- 게시판 번호 : <input type="hidden" name="bo_idx" value="${data.bo_idx }"/> <br/> --%>
+<%-- 게시판 번호 : <input type="hidden" name="bo_idx" value="${data.bo_idx }"/> <br/> --%>
 
-조회수 : <input type="hidden" name="bo_hit" value="${data.bo_hit }"/> <br/>
-게시일자: <input type="hidden" name="bo_regdate" value="${data.bo_regdate }"/> <br/>
-아이피 : <input type="hidden" name="bo_regip" value="${data.bo_regip }"/> <br/>
+
 
 게시판 번호 : ${data.bo_idx } <br/>
 회원 이메일 : ${data.bo_me_email }> <br/>

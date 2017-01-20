@@ -50,6 +50,7 @@ public class BoardDAOImpl implements BoardDAO {
 		return (BoardVO)session.selectOne(namespace +".board_cont", data);
 	}
 	
+	
 	@Override
 	public void delproc(Map data){
 		session.update(namespace+"board_delproc",data);
@@ -58,9 +59,10 @@ public class BoardDAOImpl implements BoardDAO {
 
 	// 게시글 수정
 	@Override
-	public void modifyProc(BoardVO baordVO) throws Exception {
+	public void modifyProc(Map data) throws Exception {
 		logger.info("BoardDAOImpl - modifyProc 입장");
-		session.update(namespace + ".modifyProc", baordVO);
+
+		session.update(namespace + ".modifyProc", data);
 	}
 
 
