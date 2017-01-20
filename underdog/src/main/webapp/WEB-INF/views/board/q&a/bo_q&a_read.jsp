@@ -18,7 +18,7 @@
 
 <c:if test="${sessionScope.MEMBER.me_email == data.bo_me_email}">
 <input type="button" value="수정폼으로" onclick="location='/board/board_cont?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}&state=modify'"/>
-<input type="button" value="삭제하기" onclick="location='/board/board_cont?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}&state=modify'"/>
+<input type="button" value="삭제하기" onclick="location='/board/delProc?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}"/>
 </c:if>
 
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>
