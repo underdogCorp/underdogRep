@@ -164,6 +164,8 @@ public class BoardController {
 		String jsp = null;
 		logger.info("bo_idx:" + bo_idx);
 		logger.info("BoardController - delProc 입장");
+		logger.info("bo_idx:" + bo_bbsid);
+		logger.info("BoardController - delProc 입장");
 		service.delProc(bo_idx);
 
 		if (bo_bbsid == 01) {

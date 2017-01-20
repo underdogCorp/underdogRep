@@ -66,7 +66,7 @@
 										onclick="location.href=''">수정</button> <c:if
 										test="${sessionScope.MEMBER.me_email eq data.bo_me_email}">
 										<button type="button" class="btn btn-default"
-											onclick="location.href='/board/delProc?bo_idx=${data.bo_idx}&?bbsid=${data.bo_bbsid}'">삭제</button>
+											onclick="location.href='/board/delProc?bo_idx=${data.bo_idx}&bo_bbsid=${data.bo_bbsid}'">삭제</button>
 									</c:if>
 							</span></td>
 						</tr>
