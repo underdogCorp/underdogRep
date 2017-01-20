@@ -179,6 +179,16 @@ public class BoardController {
 
 	}
 	
-
+	@RequestMapping("/modifyProc")
+	public String modifyProc(@RequestParam HashMap date){
+		
+		logger.info("BoardController - modifyProc() 입장");
+		logger.info((String) date.get("bo_idx"));
+		logger.info((String) date.get("bo_bbsid"));
+		
+		
+		return null;
+	}
+	
 	
 }
