@@ -6,19 +6,19 @@
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
+<br/>
+게시판 번호 : ${data.bo_idx } <br/>
+회원 이메일 : ${data.bo_me_email } <br/>
+게시판 아이디 : ${data.bo_bbsid} <br/>
+회원 닉네임 : ${data.bo_me_nick } <br/>
+제목 : ${data.bo_title } <br/>
+본문 : ${data.bo_content } <br/>
+조회수 : ${data.bo_hit } <br/>
+게시일자: ${data.bo_regdate }<br/>
+아이피 : ${data.bo_regip } <br/>
 
-게시판 번호 : ${list.bo_idx }" <br/>
-회원 이메일 : ${list.bo_me_email }" <br/>
-게시판 아이디 : ${list.bo_bbsid}" <br/>
-회원 닉네임 : ${list.bo_me_nick }" <br/>
-제목 : ${list.bo_title }" <br/>
-본문 : ${list.bo_content }" <br/>
-조회수 : ${list.bo_hit }" <br/>
-게시일자: ${list.bo_regdate }"<br/>
-아이피 : ${list.bo_regip }" <br/>
 
-
-<input type="button" value="수정하기" onclick="location='/board/modifyProc?bo_idx=${list.bo_idx }&bo_bbsid=${list.bo_bbsid}'"/>
+<input type="button" value="수정하기" onclick="location='/board/modifyProc?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}'"/>
 
 
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>
