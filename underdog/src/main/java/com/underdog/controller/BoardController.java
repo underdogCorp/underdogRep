@@ -111,6 +111,10 @@ public class BoardController {
 
 
 	// 게시글 상세보기 및 수정 폼
+
+
+	// 게시글 상세보기 및 수정 폼
+
 	@RequestMapping("/board_cont")
 	public String board_cont(@RequestParam HashMap data, Model model) throws Exception {
 
@@ -145,6 +149,7 @@ public class BoardController {
 
 	}
 
+<<<<<<< HEAD
 	// 수정 프로세스
 	@RequestMapping("/modifyProc")
 	public String modifyProc(@RequestParam HashMap data) throws Exception{
@@ -154,6 +159,11 @@ public class BoardController {
 		
 		return null;
 	}
+=======
+
+
+
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 
 	
 	@RequestMapping("/delProc")
