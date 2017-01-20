@@ -27,16 +27,12 @@ public class BoardController {
 
 	// 게시판 리스트 조회
 	@RequestMapping("/list")
-	public String list(@RequestParam("bo_bbsid") String bo_bbsid, Model model) {
+	public String list(@RequestParam("bo_bbsid") String bo_bbsid, Model model) throws Exception{
 		String jsp = null;
 
 		logger.info("BoardController - list() 입장");
 
-		try {
 			model.addAttribute("list", service.list(bo_bbsid));
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 
 		if (bo_bbsid.equals("01")) {
 			jsp = "/board/info/bo_info_list";
@@ -57,7 +53,7 @@ public class BoardController {
 
 	// 게시판 글쓰기 폼 보기
 	@RequestMapping("/registerForm")
-	public String registerForm(@RequestParam("bo_bbsid") String bo_bbsid) {
+	public String registerForm(@RequestParam("bo_bbsid") String bo_bbsid) throws Exception{
 
 		String jsp = null;
 
@@ -171,16 +167,16 @@ public class BoardController {
 		service.delProc(bo_idx);
 
 		if (bo_bbsid == 01) {
-			jsp = "/board/info/bo_info_list";
+			jsp = "redirect:/board/list?bo_bbsid=01";
 			logger.info("공지사항으로 이동");
 		} else if (bo_bbsid == 02) {
-			jsp = "/board/free/bo_free_list";
+			jsp = "redirect:/board/list?bo_bbsid=02";
 			logger.info("자유게시판으로 이동");
 		} else if (bo_bbsid == 03) {
-			jsp = "/board/faq/bo_faq_list";
+			jsp = "redirect:/board/list?bo_bbsid=03";
 			logger.info("faq로 이동 이동");
 		} else if (bo_bbsid == 04) {
-			jsp = "/board/q&a/bo_q&a_list";
+			jsp = "redirect:/board/list?bo_bbsid=04";
 			logger.info("Q&A로 이동");
 		}
 
