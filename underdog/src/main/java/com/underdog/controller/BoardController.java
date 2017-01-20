@@ -11,9 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.underdog.domain.BoardVO;
 import com.underdog.service.BoardService;
@@ -93,7 +91,7 @@ public class BoardController {
 
 		service.registerProc(req, boardVO);
 		
-		if (boardVO.getBo_bbsid() ==01) {
+		if (boardVO.getBo_bbsid.equals("01")) {
 			jsp = "redirect:/board/list?bbsid=01";
 			logger.info("공지사항으로 이동");
 		} else if (boardVO.getBo_bbsid() == 02) {
