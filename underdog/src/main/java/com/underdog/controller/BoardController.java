@@ -157,7 +157,7 @@ public class BoardController {
 	}
 
 
-	
+	// 삭제 프로세스
 	@RequestMapping("/delProc")
 	public String delProc(@RequestParam HashMap data) throws Exception {
 		String jsp = null;
