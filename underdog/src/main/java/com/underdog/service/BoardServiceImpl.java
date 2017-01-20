@@ -23,13 +23,14 @@ public class BoardServiceImpl implements BoardService{
 	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
-	
+	// 게시판 리스트 불러오기
 	@Override
 	public List<BoardVO> list(String bo_bbsid) throws Exception {
+		logger.info("BoardServiceImpl - list 입장");
 		return dao.list(bo_bbsid);
 	}
 	
-	
+	// 게시글 등록
 	@Override
 	public void registerProc(HttpServletRequest req, BoardVO boardVO) throws Exception {
 		
@@ -40,8 +41,10 @@ public class BoardServiceImpl implements BoardService{
 		
 	}
 
+	// 상세보기 및 수정 폼 가기
 	@Override
 	public BoardVO board_cont(HashMap data) throws Exception{
+		logger.info("BoardServiceImpl - board_cont 입장");
 		return dao.board_cont(data);
 	}
 	@Override
@@ -50,6 +53,13 @@ public class BoardServiceImpl implements BoardService{
 		dao.delproc(data);
 	}
 	
+
+	// 게시글 수정
+	@Override
+	public void modifyProc(BoardVO baordVO) throws Exception{
+		logger.info("BoardServiceImpl - modifyProc 입장");
+		dao.modifyProc(baordVO);
+	}
 
 
 

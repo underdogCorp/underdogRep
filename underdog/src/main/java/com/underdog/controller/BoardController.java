@@ -109,6 +109,10 @@ public class BoardController {
 
 	}
 
+<<<<<<< HEAD
+=======
+	// 게시글 상세보기 및 수정 폼
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 	@RequestMapping("/board_cont")
 	public String board_cont(@RequestParam HashMap data, Model model) throws Exception {
 
@@ -142,14 +146,30 @@ public class BoardController {
 		return jsp + contM;
 
 	}
+<<<<<<< HEAD
 
+=======
+	
+	// 수정 프로세스
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 	@RequestMapping("/modifyProc")
+<<<<<<< HEAD
 	public String modifyProc(@RequestParam HashMap date) {
 
+=======
+	public String modifyProc(@ModelAttribute BoardVO baordVO) throws Exception{
+	
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 		logger.info("BoardController - modifyProc() 입장");
+<<<<<<< HEAD
 		logger.info((String) date.get("bo_idx"));
 		logger.info((String) date.get("bo_bbsid"));
 
+=======
+		
+		service.modifyProc(baordVO);
+		
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 		return null;
 	}
 

@@ -39,8 +39,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	update board set bo_status = "1", bo_deldate = sysdate where bo_idx = #{bo_idx}
 </select>
 
-
-
+<!-- 게시글 수정 -->
+<update id="modifyProc" parameterType="BoardVO"
 
 
 

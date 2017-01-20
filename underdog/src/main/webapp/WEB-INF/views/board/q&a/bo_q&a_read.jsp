@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page session="false"%>
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
@@ -17,8 +16,9 @@
 게시일자: ${data.bo_regdate }<br/>
 아이피 : ${data.bo_regip } <br/>
 
-
-<input type="button" value="수정하기" onclick="location='/board/modifyProc?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}'"/>
-
+<c:if test="${sessionScope.MEMBER.me_email == data.bo_me_email}">
+<input type="button" value="수정폼으로" onclick="location='/board/board_cont?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}&state=modify'"/>
+<input type="button" value="삭제하기" onclick="location='/board/board_cont?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}&state=modify'"/>
+</c:if>
 
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>
