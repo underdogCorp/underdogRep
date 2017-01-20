@@ -17,15 +17,10 @@ public interface BoardService {
 
 	public BoardVO board_cont(HashMap data) throws Exception;
 
-
 	public void delProc (Map data) throws Exception;
 
-<<<<<<< HEAD
 	public void modifyProc(Map data) throws Exception;
 
-=======
-	public void modifyProc(BoardVO baordVO) throws Exception;
->>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 
 	
 
