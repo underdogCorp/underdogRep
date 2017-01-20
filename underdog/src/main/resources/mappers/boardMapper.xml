@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 		<!-- 삭제유무 삭제일 이해안됨 -->
 	</insert>
 	
-<select id="list" parameterType="int" resultType="BoardVO">
+<select id="list" parameterType="String" resultType="BoardVO">
 	select * from board where bo_bbsid = #{bo_bbsid}
 </select>
 
