@@ -46,6 +46,13 @@
 
 </head>
 <body>
+
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+	<br>
+	<br>
+	<br>
+	<br>
+
 	<div>
 		<div class="bbsWriteForm">
 			<h2>자유 게시판 글쓰기</h2>

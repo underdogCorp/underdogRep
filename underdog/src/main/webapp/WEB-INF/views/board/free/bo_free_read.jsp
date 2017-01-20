@@ -19,6 +19,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
 <body>
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 	<br>
 	<br>
 	<br>
