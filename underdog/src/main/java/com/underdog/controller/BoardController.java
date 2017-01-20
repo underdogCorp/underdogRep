@@ -127,7 +127,7 @@ public class BoardController {
 			jsp = "/board/free/bo_free_";
 			logger.info("자유게시판 상세보기 이동");
 		} else if (data.get("bo_bbsid").equals("03")) {
-			jsp = "/board/faq/bo_feq_";
+			jsp = "/board/faq/bo_faq_";
 			logger.info("faq 상세보기 이동");
 		} else if (data.get("bo_bbsid").equals("04")) {
 			jsp = "/board/q&a/bo_q&a_";
