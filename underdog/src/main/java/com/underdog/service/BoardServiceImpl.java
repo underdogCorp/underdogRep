@@ -50,9 +50,9 @@ public class BoardServiceImpl implements BoardService{
 	
 	//	게시글 삭제 
 	@Override
-	public void delProc(Map data) throws Exception{
+	public void delProc(int bo_idx) throws Exception{
 		logger.info("BoardServiceImpl- delproc 입장");
-		dao.delproc(data);
+		dao.delproc(bo_idx);
 	}
 	
 
