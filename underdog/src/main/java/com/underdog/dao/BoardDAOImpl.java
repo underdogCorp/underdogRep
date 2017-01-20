@@ -49,6 +49,12 @@ public class BoardDAOImpl implements BoardDAO {
 		logger.info("BoardDAOImpl - board_cont 입장");
 		return (BoardVO)session.selectOne(namespace +".board_cont", data);
 	}
+	
+	@Override
+	public void delproc(Map data){
+		session.update(namespace+"board_delproc",data);
+	}
+	
 
 	// 게시글 수정
 	@Override

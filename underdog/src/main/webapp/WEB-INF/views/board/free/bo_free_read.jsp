@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +53,30 @@
 					</tbody>
 				</table>
 
-			<%-- 	<c:forEach var="b" items="${list}" varStatus="status">
+				bo_idx의 (현제 게시글) 이메일 값:${data.bo_me_email} <br>
+				<br> 쎄션에있는 이메일 값:${sessionScope.MEMBER.me_email}
+
+				<table class="table table-condensed">
+					<thead>
+						<tr>
+							<td><span style='float: right'>
+									<button type="button" id="list" class="btn btn-default"
+										onclick="location.href=''">목록</button>
+									<button type="button" id="modify" class="btn btn-default"
+										onclick="location.href=''">수정</button> <c:if
+										test="${sessionScope.MEMBER.me_email eq data.bo_me_email}">
+										<button type="button" class="btn btn-default"
+											onclick="location.href='/board/delProc?bo_idx=${data.bo_idx}'">삭제</button>
+									</c:if>
+							</span></td>
+						</tr>
+					</thead>
+				</table>
+
+
+
+
+				<%-- 	<c:forEach var="b" items="${list}" varStatus="status">
 
 					<table class="table table-condensed">
 						<tr>

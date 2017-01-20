@@ -47,6 +47,12 @@ public class BoardServiceImpl implements BoardService{
 		logger.info("BoardServiceImpl - board_cont 입장");
 		return dao.board_cont(data);
 	}
+	@Override
+	public void delProc(Map data) throws Exception{
+		logger.info("BoardServiceImpl- delproc 입장");
+		dao.delproc(data);
+	}
+	
 
 	// 게시글 수정
 	@Override
