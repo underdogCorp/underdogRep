@@ -20,9 +20,12 @@
 
 <form id="q&aSubmitFrm">
 게시판 id (hidden으로 처리, 임시): <input type="text" name="bo_bbsid" value="04"><br/>
+회원이메일 (hidden으로 처리, 임시): <input type="text" name="bo_me_email" value="${sessionScope.MEMBER.me_email}"><br/> <br/>
+회원닉네임 (hidden으로 처리, 임시): <input type="text" name="bo_me_nick" value="${sessionScope.MEMBER.me_nick}"><br/><br/>
 
-회원이메일(session으로 처리, 임시)  : ${sessionScope.MEMBER.me_email}<input type="text" name="bo_me_email"><br/>
-회원닉네임(session으로 처리, 임시)  : <input type="text" name="bo_me_nick"><br/>
+
+작성자 : ${sessionScope.MEMBER.me_name}(${sessionScope.MEMBER.me_email})<br/>
+
 
 제목 : <input type="text" name="bo_title"><br/>
 내용 : <input type="text" name="bo_content"><br/>

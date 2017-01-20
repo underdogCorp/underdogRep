@@ -31,7 +31,13 @@ nav bar 입니다 <br/><br/>
 <a href="/board/list?bo_bbsid=02">자유게시판</a><br>
 <a href="/board/list?bo_bbsid=03">FAQ</a><br>
 <a href="/board/list?bo_bbsid=04">Q & A</a><br>
-<a href="/member/loginForm">로그인하기</a>
-<a href="/member/joinForm">회원 가입하기</a>
+
+<c:if test="${sessionScope.MEMBER == null}">
+	<a href="/member/loginForm">로그인하기</a>
+	<a href="/member/joinForm">회원 가입하기</a>
+</c:if>
+
 
 <br/>
+
+======================================================================

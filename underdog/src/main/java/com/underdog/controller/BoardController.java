@@ -88,7 +88,6 @@ public class BoardController {
 	@RequestMapping("/registerProc")
 	public String registerProc(HttpServletRequest req, @ModelAttribute BoardVO boardVO) throws Exception {
 	
-		
 		String jsp = null;
 		logger.info("BoardController - registerProc() 입장");
 
