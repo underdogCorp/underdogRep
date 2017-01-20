@@ -29,7 +29,7 @@ public class BoardController {
 	
 	//게시판 리스트 조회
 	@RequestMapping("/list")
-	public String list(@RequestParam("bo_bbsid") int bo_bbsid, Model model) {
+	public String list(@RequestParam("bo_bbsid") String bo_bbsid, Model model) {
 		String jsp = null;
 
 		logger.info("BoardController - list() 입장");
@@ -40,16 +40,16 @@ public class BoardController {
 		 e.printStackTrace();
 		 }
 
-			if (bo_bbsid == 01) {
+			if (bo_bbsid.equals("01")) {
 				jsp = "/board/info/bo_info_list";
 				logger.info("공지사항으로 이동");
-			} else if (bo_bbsid == 02) {
+			} else if (bo_bbsid.equals("02")) {
 				jsp = "/board/free/bo_free_list";
 				logger.info("자유게시판으로 이동");
-			} else if (bo_bbsid == 03) {
+			} else if (bo_bbsid.equals("03")) {
 				jsp = "/board/faq/bo_faq_list";
 				logger.info("faq로 이동 이동");
-			} else if (bo_bbsid == 04) {
+			} else if (bo_bbsid.equals("04")) {
 				jsp = "/board/q&a/bo_q&a_list";
 				logger.info("Q&A로 이동");
 			}
@@ -59,22 +59,22 @@ public class BoardController {
 
 	//게시판 글쓰기 폼 보기
 	@RequestMapping("/registerForm")
-	public String registerForm(@RequestParam("bo_bbsid") int bo_bbsid) {
+	public String registerForm(@RequestParam("bo_bbsid") String bo_bbsid) {
 
 		String jsp = null;
 
 		logger.info("BoardController - registerForm() 입장");
 
-		if (bo_bbsid == 01) {
+		if (bo_bbsid.equals("01")) {
 			jsp = "/board/info/bo_info_write_form";
 			logger.info("공지사항 글쓰기 입장");
-		} else if (bo_bbsid == 02) {
+		} else if (bo_bbsid.equals("02")) {
 			jsp = "/board/free/bo_free_write_form";
 			logger.info("자유게시판 글쓰기 입장");
-		} else if (bo_bbsid == 03) {
+		} else if (bo_bbsid.equals("03")) {
 			jsp = "/board/faq/bo_faq_write_form";
 			logger.info("faq 글쓰기 입장");
-		} else if (bo_bbsid == 04) {
+		} else if (bo_bbsid.equals("04")) {
 			jsp = "/board/q&a/bo_q&a_write_form";	
 			logger.info("Q&A 글쓰기 입장");
 		}
@@ -93,16 +93,16 @@ public class BoardController {
 
 		service.registerProc(req, boardVO);
 		
-		if (boardVO.getBo_bbsid() ==01) {
+		if (boardVO.getBo_bbsid().equals("01")) {
 			jsp = "redirect:/board/list?bbsid=01";
 			logger.info("공지사항으로 이동");
-		} else if (boardVO.getBo_bbsid() == 02) {
+		} else if (boardVO.getBo_bbsid().equals("02")) {
 			jsp = "redirect:/board/list?bbsid=02";
 			logger.info("자유게시판으로 이동");
-		} else if (boardVO.getBo_bbsid() == 03) {
+		} else if (boardVO.getBo_bbsid().equals("03")) {
 			jsp = "redirect:/board/list?bbsid=03";
 			logger.info("faq로 이동 이동");
-		} else if (boardVO.getBo_bbsid() == 04) {
+		} else if (boardVO.getBo_bbsid().equals("04")) {
 			jsp = "redirect:/board/list?bbsid=04";
 			logger.info("Q&A로 이동");
 		}
@@ -155,16 +155,16 @@ public class BoardController {
 	
 		
 		
-		if (data.get("bo_bbsid").equals("1")) {
+		if (data.get("bo_bbsid").equals("01")) {
 			jsp = "/board/info/bo_info_";
 			logger.info("공지사항 상세보기 이동");
-		} else if (data.get("bo_bbsid").equals("2")) {
+		} else if (data.get("bo_bbsid").equals("02")) {
 			jsp = "/board/free/bo_free_";
 			logger.info("자유게시판 상세보기 이동");
-		} else if (data.get("bo_bbsid").equals("3")) {
+		} else if (data.get("bo_bbsid").equals("03")) {
 			jsp = "/board/faq/bo_feq_";
 			logger.info("faq 상세보기 이동");
-		} else if (data.get("bo_bbsid").equals("4")) {
+		} else if (data.get("bo_bbsid").equals("04")) {
 			jsp = "/board/q&a/bo_q&a_";
 			logger.info("Q&A 상세보기 이동");
 		}

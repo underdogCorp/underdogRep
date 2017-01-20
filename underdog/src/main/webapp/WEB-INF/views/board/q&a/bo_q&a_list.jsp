@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page session="false"%>
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
@@ -38,8 +37,7 @@
 	<button type="button" class="btn btn-default"
 		onclick="location.href='/board/registerForm?bo_bbsid=04'">글쓰기</button>
 </c:if>
-	<button type="button" class="btn btn-default"
-		onclick="location.href='/board/registerForm?bo_bbsid=04'">글쓰기</button>
+
 
 
 

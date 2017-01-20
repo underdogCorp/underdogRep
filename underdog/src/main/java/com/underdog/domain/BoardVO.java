@@ -6,7 +6,7 @@ public class BoardVO {
 
 	private int bo_idx;
 	private String bo_me_email;
-	private int bo_bbsid;
+	private String bo_bbsid;
 	private String bo_me_nick;
 	private String bo_title;
 	private String bo_content;
@@ -28,10 +28,10 @@ public class BoardVO {
 	public void setBo_me_email(String bo_me_email) {
 		this.bo_me_email = bo_me_email;
 	}
-	public int getBo_bbsid() {
+	public String getBo_bbsid() {
 		return bo_bbsid;
 	}
-	public void setBo_bbsid(int bo_bbsid) {
+	public void setBo_bbsid(String bo_bbsid) {
 		this.bo_bbsid = bo_bbsid;
 	}
 	public String getBo_me_nick() {
