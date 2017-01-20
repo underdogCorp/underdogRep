@@ -106,7 +106,7 @@ public class BoardController {
 			jsp = "redirect:/board/list?bo_bbsid=04";
 			logger.info("Q&A 게시판으로 이동");
 		}
-		
+			
 		return jsp;
 
 	}
