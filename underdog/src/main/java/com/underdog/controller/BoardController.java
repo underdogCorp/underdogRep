@@ -150,17 +150,15 @@ public class BoardController {
 	}
 	
 	// 수정 프로세스
-//	@RequestMapping("/modifyProc")
-//	public String modifyProc(@RequestParam HashMap date){
-//		
-//		logger.info("BoardController - modifyProc() 입장");
-//		logger.info((String) date.get("bo_idx"));
-//		logger.info((String) date.get("bo_bbsid"));
-//		
-//		service.modifyProc(date)
-//		
-//		return null;
-//	}
+	@RequestMapping("/modifyProc")
+	public String modifyProc(@ModelAttribute BoardVO baordVO){
+	
+		logger.info("BoardController - modifyProc() 입장");
+		
+		service.modifyProc(baordVO);
+		
+		return null;
+	}
 	
 	
 }

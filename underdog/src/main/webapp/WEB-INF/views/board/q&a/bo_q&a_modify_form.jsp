@@ -10,6 +10,7 @@ $(function(){
 		var f = $('#qnaModifySubmitFrm');
 		f.attr('method', 'POST');
 		f.atte('action', "/board/modifyProc")
+		f.submit();
 	})
 })
 
