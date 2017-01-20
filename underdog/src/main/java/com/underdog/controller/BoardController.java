@@ -90,6 +90,8 @@ public class BoardController {
 	
 		String jsp = null;
 		logger.info("BoardController - registerProc() 입장");
+		logger.info(boardVO.getBo_bbsid());
+		
 
 		service.registerProc(req, boardVO);
 		
@@ -101,10 +103,10 @@ public class BoardController {
 			logger.info("자유게시판으로 이동");
 		} else if (boardVO.getBo_bbsid().equals("03")) {
 			jsp = "redirect:/board/list?bbsid=03";
-			logger.info("faq로 이동 이동");
+			logger.info("faq 게시판으로 이동 이동");
 		} else if (boardVO.getBo_bbsid().equals("04")) {
 			jsp = "redirect:/board/list?bbsid=04";
-			logger.info("Q&A로 이동");
+			logger.info("Q&A 게시판으로 이동");
 		}
 		
 		return jsp;
