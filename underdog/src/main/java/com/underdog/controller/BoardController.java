@@ -151,16 +151,7 @@ public class BoardController {
 
 
 
-	// 수정 프로세스
-	@RequestMapping("/modifyProc")
-	public String modifyProc(@ModelAttribute BoardVO baordVO) throws Exception{
 
-
-		logger.info((String) date.get("bo_idx"));
-		logger.info((String) date.get("bo_bbsid"));
-
-
-	}
 
 	@RequestMapping("/delProc")
 	public String delProc(@RequestParam HashMap data) throws Exception {
