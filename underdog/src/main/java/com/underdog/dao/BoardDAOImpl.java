@@ -61,7 +61,9 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void modifyProc(Map data) throws Exception {
 		logger.info("BoardDAOImpl - modifyProc 입장");
-
+		logger.info(data.get("bo_idx").toString());
+		logger.info(data.get("bo_title").toString());
+		logger.info(data.get("bo_content").toString());
 		session.update(namespace + ".modifyProc", data);
 	}
 

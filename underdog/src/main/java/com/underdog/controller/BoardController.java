@@ -149,11 +149,14 @@ public class BoardController {
 	// 수정 프로세스
 	@RequestMapping("/modifyProc")
 	public String modifyProc(@RequestParam HashMap data) throws Exception{
-	
-		logger.info("BoardController - modifyProc() 입장");
-		service.modifyProc(data);
 		
-		return null;
+		logger.info("BoardController - modifyProc() 입장");
+		String bo_idx = (String) data.get("bo_idx");
+		String bo_bbsid = (String) data.get("bo_bbsid");
+		service.modifyProc(data);
+
+		return "/board/board_cont?bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=read";
+		
 	}
 
 
