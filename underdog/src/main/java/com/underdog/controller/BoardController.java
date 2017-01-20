@@ -94,7 +94,6 @@ public class BoardController {
 		service.registerProc(req, boardVO);
 
 		if (boardVO.getBo_bbsid().equals("01")) {
-
 			jsp = "redirect:/board/list?bbsid=01";
 			logger.info("공지사항으로 이동");
 		} else if (boardVO.getBo_bbsid().equals("02")) {
