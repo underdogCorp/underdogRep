@@ -93,6 +93,10 @@ public class BoardController {
 
 		service.registerProc(req, boardVO);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 		if (boardVO.getBo_bbsid().equals("01")) {
 			jsp = "redirect:/board/list?bo_bbsid=01";
 			logger.info("공지사항으로 이동");
