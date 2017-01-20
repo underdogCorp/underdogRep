@@ -35,7 +35,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <select id="board_cont" parameterType="Map" resultType="BoardVO">
 	select * from board where bo_idx = #{bo_idx}
 </select>
-
+<!-- 게시글 삭제 -->
 <select id="board_delproc" parameterType="Map">
 	update board set bo_status = "1", bo_deldate = sysdate where bo_idx = #{bo_idx}
 </select>
