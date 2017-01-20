@@ -20,10 +20,6 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
-	<br>
-	<br>
-	<br>
-	<br>
 
 	<!-- 좌우측의 공간 확보 -->
 	<div class="container">

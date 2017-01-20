@@ -48,10 +48,6 @@
 <body>
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
-	<br>
-	<br>
-	<br>
-	<br>
 
 	<div>
 		<div class="bbsWriteForm">

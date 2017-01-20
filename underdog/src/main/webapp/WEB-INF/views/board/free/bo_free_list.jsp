@@ -25,10 +25,6 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
-	<br>
-	<br>
-	<br>
-	<br>
 
 	<div class="container">
 		<h2>Hover Rows</h2>
