@@ -112,6 +112,9 @@ public class BoardController {
 
 	// 게시글 상세보기 및 수정 폼
 
+
+	// 게시글 상세보기 및 수정 폼
+
 	@RequestMapping("/board_cont")
 	public String board_cont(@RequestParam HashMap data, Model model) throws Exception {
 
@@ -149,24 +152,14 @@ public class BoardController {
 
 
 	// 수정 프로세스
-
 	@RequestMapping("/modifyProc")
-
-
 	public String modifyProc(@ModelAttribute BoardVO baordVO) throws Exception{
-	
 
-		logger.info("BoardController - modifyProc() 입장");
 
 		logger.info((String) date.get("bo_idx"));
 		logger.info((String) date.get("bo_bbsid"));
 
 
-		
-		service.modifyProc(baordVO);
-		
-
-		return null;
 	}
 
 	@RequestMapping("/delProc")
