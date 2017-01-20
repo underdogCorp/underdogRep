@@ -47,6 +47,11 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public BoardVO board_cont(HashMap data) throws Exception {
 		logger.info("BoardDAOImpl - board_cont 입장");
+		logger.info((String) data.get("state"));
+		
+		if(data.get("state").equals("read")) {
+			session.update(namespace +".hit", data);
+		}
 		return (BoardVO)session.selectOne(namespace +".board_cont", data);
 	}
 	

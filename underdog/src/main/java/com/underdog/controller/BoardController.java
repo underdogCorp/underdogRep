@@ -130,7 +130,7 @@ public class BoardController {
 			logger.info("Q&A 상세보기 이동");
 		}
 
-		if (data.get("state").equals("read")) {
+		if (data.get("state").equals("read") || data.get("state").equals("modifyRead")) {
 			contM = "read";
 		} else if (data.get("state").equals("modify")) {
 			contM = "modify_form";
@@ -154,7 +154,7 @@ public class BoardController {
 		
 		service.modifyProc(data);
 
-		return "/board/board_cont?bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=read";
+		return "redirect:/board/board_cont?bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=modifyRead";
 	
 	}
 	
@@ -167,16 +167,16 @@ public class BoardController {
 		service.delProc(bo_idx);
 
 		if (bo_bbsid == 01) {
-			jsp = "/board/list?bo_bbsid=01";
+			jsp = "redirect:/board/list?bo_bbsid=01";
 			logger.info("공지사항으로 이동");
 		} else if (bo_bbsid == 02) {
-			jsp = "/board/list?bo_bbsid=02";
+			jsp = "redirect:/board/list?bo_bbsid=02";
 			logger.info("자유게시판으로 이동");
 		} else if (bo_bbsid == 03) {
-			jsp = "/board/list?bo_bbsid=03";
+			jsp = "redirect:/board/list?bo_bbsid=03";
 			logger.info("faq로 이동 이동");
 		} else if (bo_bbsid == 04) {
-			jsp = "/board/list?bo_bbsid=04";
+			jsp = "redirect:/board/list?bo_bbsid=04";
 			logger.info("Q&A로 이동");
 		}
 
