@@ -37,7 +37,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </select>
 
 <!-- 게시글 수정 -->
-<update id="modifyProc" parameterType="BoardVO"
+<update id="modifyProc" parameterType="BoardVO">
+	update board 
+		set bo_idx = #{bo_idx}, 
+			bo_me_email = #{bo_me_email},
+			bo_bbsid = #{bo_bbsid},
+			bo_me_nick = #{bo_me_nick},
+			bo_title = #{bo_title},
+			bo_content = #{bo_content},				
+			bo_regdate = #{bo_regdate}
+			bo_regip = #{bo_regip},
+	where bo_idx = #{bo_idx}
+</update>
 
 
 
