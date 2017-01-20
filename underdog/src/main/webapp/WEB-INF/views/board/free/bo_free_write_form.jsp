@@ -53,7 +53,7 @@
 
 			<form action="/board/registerProc" method="post">
 			<input type="hidden" name="bo_me_email" value="${sessionScope.MEMBER.me_email}">
-			<input type="hidden" name="bo_bbsid" value="2">
+			<input type="hidden" name="bo_bbsid" value="02">
 					<div class="container-fluid">
 					<div class="row">
 						<div class="col-md-2 text-center">이름</div>

@@ -17,7 +17,7 @@ public interface BoardService {
 	 
 	public List<BoardVO> read(Map data) throws Exception;
 
-	public Object board_cont(HashMap data);
+	public BoardVO board_cont(HashMap data) throws Exception;
 
 	
 	 

@@ -95,16 +95,16 @@ public class BoardController {
 
 		if (boardVO.getBo_bbsid().equals("01")) {
 
-			jsp = "redirect:/board/list?bbsid=01";
+			jsp = "redirect:/board/list?bo_bbsid=01";
 			logger.info("공지사항으로 이동");
 		} else if (boardVO.getBo_bbsid().equals("02")) {
-			jsp = "redirect:/board/list?bbsid=02";
+			jsp = "redirect:/board/list?bo_bbsid=02";
 			logger.info("자유게시판으로 이동");
 		} else if (boardVO.getBo_bbsid().equals("03")) {
-			jsp = "redirect:/board/list?bbsid=03";
+			jsp = "redirect:/board/list?bo_bbsid=03";
 			logger.info("faq 게시판으로 이동 이동");
 		} else if (boardVO.getBo_bbsid().equals("04")) {
-			jsp = "redirect:/board/list?bbsid=04";
+			jsp = "redirect:/board/list?bo_bbsid=04";
 			logger.info("Q&A 게시판으로 이동");
 		}
 		
@@ -151,6 +151,7 @@ public class BoardController {
 		String jsp = null;
 		String contM = null;
 		logger.info("BoardController - board_cont() 입장");
+		logger.info("bo_idx:"+data.get("bo_idx"));
 
 		model.addAttribute("data", service.board_cont(data));
 	
