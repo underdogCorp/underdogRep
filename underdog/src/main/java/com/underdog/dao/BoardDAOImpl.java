@@ -41,6 +41,12 @@ public class BoardDAOImpl implements BoardDAO {
 	public BoardVO board_cont(HashMap data) throws Exception {
 		return (BoardVO)session.selectOne(namespace +".board_cont", data);
 	}
+	
+	@Override
+	public void delproc(Map data){
+		session.update(namespace+"board_delproc",data);
+	}
+	
 
 
 	

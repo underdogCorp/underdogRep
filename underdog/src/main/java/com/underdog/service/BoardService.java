@@ -17,7 +17,7 @@ public interface BoardService {
 
 	public BoardVO board_cont(HashMap data) throws Exception;
 
-	
+	public void delProc (Map data) throws Exception;
 	 
 	 
 	 

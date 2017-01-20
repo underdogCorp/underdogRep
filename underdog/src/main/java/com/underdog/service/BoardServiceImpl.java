@@ -44,6 +44,12 @@ public class BoardServiceImpl implements BoardService{
 	public BoardVO board_cont(HashMap data) throws Exception{
 		return dao.board_cont(data);
 	}
+	@Override
+	public void delProc(Map data) throws Exception{
+		logger.info("BoardServiceImpl- delproc 입장");
+		dao.delproc(data);
+	}
+	
 
 
 
