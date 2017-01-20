@@ -110,7 +110,6 @@ public class BoardController {
 	}
 
 	// 게시글 상세보기 및 수정 폼
-
 	@RequestMapping("/board_cont")
 	public String board_cont(@RequestParam HashMap data, Model model) throws Exception {
 
@@ -153,10 +152,14 @@ public class BoardController {
 		logger.info("BoardController - modifyProc() 입장");
 		String bo_idx = (String) data.get("bo_idx");
 		String bo_bbsid = (String) data.get("bo_bbsid");
+		
+		logger.info(bo_idx);
+		logger.info(bo_bbsid);
+		
 		service.modifyProc(data);
 
 		return "/board/board_cont?bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=read";
-		
+	
 	}
 	
 	// 삭제 프로세스
