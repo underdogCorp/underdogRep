@@ -24,11 +24,14 @@ public class BoardDAOImpl implements BoardDAO {
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
+	// 게시판 리스트 불러오기
 	@Override
 	public List<BoardVO> list(String bo_bbsid) throws Exception {
+		logger.info("BoardDAOImpl - list 입장");
 	  return session.selectList(namespace + ".list", bo_bbsid);
 	}
 
+	// 게시글 등록
 	@Override
 	public void registerProc(BoardVO boardVO) {
 		logger.info("BoardDAOImpl - registerProc 입장");
@@ -37,9 +40,18 @@ public class BoardDAOImpl implements BoardDAO {
 		
 	}
 
+	// 상세보기 및 수정 폼
 	@Override
 	public BoardVO board_cont(HashMap data) throws Exception {
+		logger.info("BoardDAOImpl - board_cont 입장");
 		return (BoardVO)session.selectOne(namespace +".board_cont", data);
+	}
+
+	// 게시글 수정
+	@Override
+	public void modifyProc(BoardVO baordVO) throws Exception {
+		logger.info("BoardDAOImpl - modifyProc 입장");
+		session.update(namespace + ".modifyProc", baordVO);
 	}
 
 

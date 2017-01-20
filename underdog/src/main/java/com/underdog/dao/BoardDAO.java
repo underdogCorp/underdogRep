@@ -20,6 +20,8 @@ public interface BoardDAO {
 
 	public BoardVO board_cont(HashMap data) throws Exception;
 
+	public void modifyProc(BoardVO baordVO) throws Exception;
+
 	//
 	// public List<BoardVO> listPage(int page) throws Exception;
 	//

@@ -151,7 +151,7 @@ public class BoardController {
 	
 	// 수정 프로세스
 	@RequestMapping("/modifyProc")
-	public String modifyProc(@ModelAttribute BoardVO baordVO){
+	public String modifyProc(@ModelAttribute BoardVO baordVO) throws Exception{
 	
 		logger.info("BoardController - modifyProc() 입장");
 		
