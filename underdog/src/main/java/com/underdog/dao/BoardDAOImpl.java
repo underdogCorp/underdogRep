@@ -32,6 +32,7 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void registerProc(BoardVO boardVO) {
 		logger.info("BoardDAOImpl - registerProc 입장");
+		
 		session.insert(namespace + ".registerProc", boardVO);
 		
 	}

@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 							 bo_content,				
 							 bo_regip,
 							 bo_regdate)
-		values(board_seq.nextval,
+		values(bo_idx_seq.nextval,
 				#{bo_me_email},
 				#{bo_bbsid},
 		 		#{bo_me_nick},

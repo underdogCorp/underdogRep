@@ -153,8 +153,7 @@ public class BoardController {
 
 		model.addAttribute("data", service.board_cont(data));
 	
-		
-		
+
 		if (data.get("bo_bbsid").equals("01")) {
 			jsp = "/board/info/bo_info_";
 			logger.info("공지사항 상세보기 이동");
