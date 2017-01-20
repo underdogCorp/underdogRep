@@ -9,7 +9,7 @@ import com.underdog.domain.BoardVO;
 public interface BoardDAO {
 
 	
-	  public List<BoardVO> list(int bbsid) throws Exception;
+	  public List<BoardVO> list(String bbsid) throws Exception;
 	
 	  public void registerProc(BoardVO boardVO);
 	  
