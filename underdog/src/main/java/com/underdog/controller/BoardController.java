@@ -145,7 +145,7 @@ public class BoardController {
 
 	}
 
-	
+
 	// 수정 프로세스
 	@RequestMapping("/modifyProc")
 	public String modifyProc(@RequestParam HashMap data) throws Exception{
@@ -158,15 +158,28 @@ public class BoardController {
 		return "/board/board_cont?bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=read";
 		
 	}
-
-
 	
+	// 삭제 프로세스
 	@RequestMapping("/delProc")
-	public String delProc(@RequestParam HashMap data) throws Exception {
+	public String delProc(@RequestParam("bo_idx") int bo_idx, @RequestParam("bo_bbsid") int bo_bbsid) throws Exception {
 		String jsp = null;
+		logger.info("bo_idx:" + bo_idx);
 		logger.info("BoardController - delProc 입장");
-		service.delProc(data);
+		service.delProc(bo_idx);
 
+		if (bo_bbsid == 01) {
+			jsp = "/board/info/bo_info_list";
+			logger.info("공지사항으로 이동");
+		} else if (bo_bbsid == 02) {
+			jsp = "/board/free/bo_free_list";
+			logger.info("자유게시판으로 이동");
+		} else if (bo_bbsid == 03) {
+			jsp = "/board/faq/bo_faq_list";
+			logger.info("faq로 이동 이동");
+		} else if (bo_bbsid == 04) {
+			jsp = "/board/q&a/bo_q&a_list";
+			logger.info("Q&A로 이동");
+		}
 
 		return jsp;
 	}

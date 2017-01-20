@@ -12,7 +12,7 @@ public interface BoardDAO {
 
 	public void registerProc(BoardVO boardVO);
 
-	public void delproc(Map data);
+	public void delproc(int bo_idx) throws Exception;
 
 	public BoardVO board_cont(HashMap data) throws Exception;
 
