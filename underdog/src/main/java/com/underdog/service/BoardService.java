@@ -14,8 +14,6 @@ public interface BoardService {
 	public List<BoardVO> list(String bbsid) throws Exception;
 	
 	public void registerProc(HttpServletRequest req, BoardVO boardVO) throws Exception;
-	 
-	public List<BoardVO> read(Map data) throws Exception;
 
 	public BoardVO board_cont(HashMap data) throws Exception;
 

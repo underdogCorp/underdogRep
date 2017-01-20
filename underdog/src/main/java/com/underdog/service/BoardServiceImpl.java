@@ -39,11 +39,6 @@ public class BoardServiceImpl implements BoardService{
 		dao.registerProc(boardVO);
 		
 	}
-	@Override
-	public List<BoardVO> read(Map data) throws Exception{
-		return dao.read(data);
-	}
-
 
 	@Override
 	public BoardVO board_cont(HashMap data) throws Exception{

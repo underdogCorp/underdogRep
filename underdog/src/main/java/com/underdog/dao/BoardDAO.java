@@ -12,7 +12,6 @@ public interface BoardDAO {
 
 	public void registerProc(BoardVO boardVO);
 
-	public List<BoardVO> read(Map bo_dix) throws Exception;
 	//
 	// public void update(BoardVO vo) throws Exception;
 	//

@@ -36,10 +36,6 @@ public class BoardDAOImpl implements BoardDAO {
 		session.insert(namespace + ".registerProc", boardVO);
 		
 	}
-	@Override
-	public List<BoardVO> read(Map data) throws Exception {
-		return session.selectList(namespace +".read", data);
-	}
 
 	@Override
 	public BoardVO board_cont(HashMap data) throws Exception {
