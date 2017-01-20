@@ -23,9 +23,7 @@
 
 		 	<value>jdbc:oracle:thin:@192.168.10.4:1521:xe</value> 
  			<!-- <value>jdbc:oracle:thin:@localhost:1521:xe</value>  -->
-
-
-
+ 			
 		</property>
 		<property name="username">
 			<value>underdog</value>
