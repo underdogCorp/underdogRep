@@ -18,7 +18,7 @@
 아이피 : ${list.bo_regip }" <br/>
 
 
-<input type="button" value="수정하기" onclick="location='/board/board_cont?bo_idx=${list.bo_idx }&bo_bbsid=${list.bo_bbsid}&state=modify'"/>
+<input type="button" value="수정하기" onclick="location='/board/modifyProc?bo_idx=${list.bo_idx }&bo_bbsid=${list.bo_bbsid}'"/>
 
 
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>

@@ -20,8 +20,13 @@
 			<value>oracle.jdbc.driver.OracleDriver</value>
 		</property>
 		<property name="url">
+<<<<<<< HEAD
 		 	<value>jdbc:oracle:thin:@192.168.10.4:1521:xe</value> 
  			<!-- <value>jdbc:oracle:thin:@localhost:1521:xe</value>  -->
+=======
+			<value>jdbc:oracle:thin:@192.168.10.4:1521:xe</value>
+<!--  			<value>jdbc:oracle:thin:@localhost:1521:xe</value>  -->
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 		</property>
 		<property name="username">
 			<value>underdog</value>
