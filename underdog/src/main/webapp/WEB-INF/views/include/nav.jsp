@@ -31,18 +31,17 @@
 				<a class="navbar-brand" href="/">홈</a>
 			</div>
 			<li><a href="#">회사소개</a></li>
-			<li><a href="/mypage/mypage?me_email=${sessionScope.MEMBER.me_email}">마이페이지</a></li>
+			<li><a
+				href="/mypage/mypage?me_email=${sessionScope.MEMBER.me_email}">마이페이지</a></li>
 			<li><a href="/board/list?bo_bbsid=01">공지사항</a></li>
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="#">게시판 목록<span class="caret"></span></a>
 				<ul class="dropdown-menu">
 					<li><a href="/board/list?bo_bbsid=02">자유게시판</a></li>
 					<li><a href="/board/list?bo_bbsid=03">FAQ</a></li>
-					<li><a href="/board/list?bo_bbsid=04">Q & A</a></li>
-				</ul></li>
+					<li><a href="/board/list?bo_bbsid=04">Q & A</a></li></li>
 			</li>
-			<li></li>
-			<li></li>
+		</ul>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
@@ -59,3 +58,4 @@
 			</c:if>
 		</ul>
 	</div>
+	</nav>
