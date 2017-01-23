@@ -30,27 +30,27 @@
 					<thead>
 						<tr align="center">
 							<th width="10%">제목</th>
-							<th width="60%">${data.bo_title}</th>
+							<th width="60%">${board.bo_title}</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td>작성일</td>
-							<td>${data.bo_regdate}</td>
+							<td>${board.bo_regdate}</td>
 						</tr>
 						<tr>
 							<td>글쓴이</td>
-							<td>${data.bo_me_nick}<span style='float: right'>조회 :
-									${data.bo_hit} </span>
+							<td>${board.bo_me_nick}<span style='float: right'>조회 :
+									${board.bo_hit} </span>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="2">${data.bo_content}</td>
+							<td colspan="2">${board.bo_content}</td>
 						</tr>
 					</tbody>
 				</table>
 
-				bo_idx의 (현제 게시글) 이메일 값:${data.bo_me_email} <br>
+				bo_idx의 (현제 게시글) 이메일 값:${board.bo_me_email} <br>
 				<br> 쎄션에있는 이메일 값:${sessionScope.MEMBER.me_email}
 
 				<table class="table table-condensed">
@@ -61,9 +61,9 @@
 										onclick="location.href=''">목록</button>
 									<button type="button" id="modify" class="btn btn-default"
 										onclick="location.href=''">수정</button> <c:if
-										test="${sessionScope.MEMBER.me_email eq data.bo_me_email}">
+										test="${sessionScope.MEMBER.me_email eq board.bo_me_email}">
 										<button type="button" class="btn btn-default"
-											onclick="location.href='/board/delProc?bo_idx=${data.bo_idx}&bo_bbsid=${data.bo_bbsid}'">삭제</button>
+											onclick="location.href='/board/delProc?bo_idx=${board.bo_idx}&bo_bbsid=${board.bo_bbsid}'">삭제</button>
 									</c:if>
 							</span></td>
 						</tr>

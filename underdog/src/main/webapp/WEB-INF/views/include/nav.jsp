@@ -37,7 +37,7 @@
 			<li class="dropdown"><a class="dropdown-toggle"
 				data-toggle="dropdown" href="#">게시판 목록<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="/board/list?bo_bbsid=02">자유게시판</a></li>
+					<li><a href="/board/listPage?bo_bbsid=02">자유게시판</a></li>
 					<li><a href="/board/list?bo_bbsid=03">FAQ</a></li>
 					<li><a href="/board/listPage?bo_bbsid=04">Q & A</a></li>
 				</ul>
