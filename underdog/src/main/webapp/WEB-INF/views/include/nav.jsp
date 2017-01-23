@@ -59,4 +59,35 @@
 			</c:if>
 		</ul>
 	</div>
+<<<<<<< HEAD
 	</nav>
+=======
+	</nav>
+	<br />
+	<br />
+	<a>회원등급 : ${sessionScope.MEMBER.me_grade}</a>
+	<br>
+
+	<a href="/">홈</a>
+	<br>
+	<a href="#">회사소개</a>
+	<br>
+	<a href="/board/list?bo_bbsid=01">공지사항</a>
+	<br>
+	<a href="/board/list?bo_bbsid=02">자유게시판</a>
+	<br>
+	<a href="/board/list?bo_bbsid=03">FAQ</a>
+	<br>
+	<a href="/board/listPage?bo_bbsid=04">Q & A</a>
+	<br>
+
+	<c:if test="${sessionScope.MEMBER == null}">
+		<a href="/member/loginForm">로그인하기</a>
+		<a href="/member/joinForm">회원 가입하기</a>
+	</c:if>
+
+
+	<br />
+
+	======================================================================
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git

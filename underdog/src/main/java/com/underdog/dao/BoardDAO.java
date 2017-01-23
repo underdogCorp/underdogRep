@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.underdog.domain.BoardVO;
+import com.underdog.domain.Criteria;
 
 public interface BoardDAO {
 
@@ -17,11 +18,16 @@ public interface BoardDAO {
 	public BoardVO board_cont(HashMap data) throws Exception;
 
 	public void modifyProc(Map data) throws Exception;
+	
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+
+	public int listCountCriteria(Criteria cri) throws Exception; 
+	
 
 	//
 	// public List<BoardVO> listPage(int page) throws Exception;
 	//
-	// public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+	
 	//
 	// public int countPaging(Criteria cri) throws Exception;
 	//

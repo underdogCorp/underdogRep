@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import com.underdog.domain.BoardVO;
+import com.underdog.domain.Criteria;
 
 
 public interface BoardService {
@@ -20,6 +21,13 @@ public interface BoardService {
 	public void delProc (int bo_idx) throws Exception;
 
 	public void modifyProc(Map data) throws Exception;
+	
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+
+	public int listCountCriteria(Criteria cri) throws Exception;
+
+	
+	
 
 
 	
