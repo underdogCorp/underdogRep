@@ -22,7 +22,7 @@
 				<c:forEach items="${list}" var="list">
 					<tr>
 						<td>${list.bo_idx }</td>
-						<td><a href="/board/board_cont?bo_bbsid=${list.bo_bbsid}&bo_idx=${list.bo_idx }&page=&lpp=&keyword=&sel=&state=read">
+						<td><a href="/board/board_cont?bo_bbsid=${list.bo_bbsid}&bo_idx=${list.bo_idx }${pageMaker.makeQuery(pageMaker.cri.page) }&state=read">
 							<c:out value="${list.bo_title }"/></a></td>
 						<td>${list.bo_me_nick }(${list.bo_me_email })</td>
 						<td>${list.bo_hit }</td>

@@ -188,16 +188,7 @@ public class BoardController {
 	}
 
 	
-	 // 페이징 처리
-	 @RequestMapping(value = "/listCri")
-	 public void listAll(Criteria cri, Model model) throws Exception {
-		 
-		 logger.info("show all list......................");
-		 
-		 model.addAttribute("list", service.listCriteria(cri));
-	
-	 }
-	 
+	 // 페이징 처리	 
 	 @RequestMapping( value = "/listPage")
 	 public void listPage(Criteria cri, Model model) throws Exception{
 		 

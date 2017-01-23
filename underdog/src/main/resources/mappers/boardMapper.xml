@@ -64,6 +64,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	where bo_idx = #{bo_idx}
 </update>
 
+
   <select id="listCriteria" resultType="BoardVO">
  <![CDATA[
  select * from board 
@@ -80,7 +81,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  from 
    board 
  where 
-   bo_idx > 0 and bo_status = 0 
+   bo_bbsid = #{bo_bbsid} and bo_idx > 0 and bo_status = 0 
  ]]>
  </select>
  
