@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import com.underdog.controller.BoardController;
 import com.underdog.dao.BoardDAO;
 import com.underdog.domain.BoardVO;
+import com.underdog.domain.Criteria;
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -63,6 +64,19 @@ public class BoardServiceImpl implements BoardService{
 		logger.info("BoardServiceImpl - modifyProc 입장");
 		
 		dao.modifyProc(data);
+	}
+
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+
+		return dao.listCriteria(cri);
+  
+	}
+
+	@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+		
+		return dao.listCountCriteria(cri);
 	}
 
 

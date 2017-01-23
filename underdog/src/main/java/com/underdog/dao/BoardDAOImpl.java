@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import com.underdog.controller.BoardController;
 import com.underdog.domain.BoardVO;
+import com.underdog.domain.Criteria;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -71,6 +72,20 @@ public class BoardDAOImpl implements BoardDAO {
 		logger.info(data.get("bo_content").toString());
 		session.update(namespace + ".modifyProc", data);
 	}
+
+	@Override
+	public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+		
+		return session.selectList(namespace + ".listCriteria", cri);
+	}
+
+	@Override
+	public int listCountCriteria(Criteria cri) throws Exception {
+		
+		return session.selectOne(namespace + ".listCountCriteria", cri);
+	}
+
+
 
 
 	

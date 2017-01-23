@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.underdog.domain.BoardVO;
+import com.underdog.domain.Criteria;
+import com.underdog.domain.PageMaker;
 import com.underdog.service.BoardService;
 
 @Controller
@@ -185,4 +187,27 @@ public class BoardController {
 		return jsp;
 	}
 
+	
+	 // 페이징 처리
+	 @RequestMapping(value = "/listCri")
+	 public void listAll(Criteria cri, Model model) throws Exception {
+		 
+		 logger.info("show all list......................");
+		 
+		 model.addAttribute("list", service.listCriteria(cri));
+	
+	 }
+	 
+	 @RequestMapping( value = "/listPage")
+	 public void listPage(Criteria cri, Model model) throws Exception{
+		 
+		 model.addAttribute("list", service.listCriteria(cri));
+		 
+		 PageMaker pageMaker = new PageMaker();
+		 pageMaker.setCri(cri);
+		 //pageMaker.setTotalCount(131);
+		 pageMaker.setTotalCount(service.listCountCriteria(cri));
+		 
+		 model.addAttribute("pageMaker", pageMaker);
+	 }
 }
