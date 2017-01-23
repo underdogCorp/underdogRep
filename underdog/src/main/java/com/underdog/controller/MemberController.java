@@ -162,9 +162,10 @@ public class MemberController {
 		System.out.println(mbVO.getMe_email());
 		System.out.println(mbVO.getMe_pw());
 		
+		
 		MemberVO vo = new MemberVO();
 		vo = mbService.loginProc(mbVO);
-
+		System.out.println("회원 등급:"+mbVO.getMe_grade());
 		if (vo != null) {
 			System.out.println("SUCCESS");
 			session.setAttribute("MEMBER", vo);

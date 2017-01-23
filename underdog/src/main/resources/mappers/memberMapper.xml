@@ -25,7 +25,7 @@
 	<!-- 로그인 시도시 이메일과 암호 비교 -->
 	<select id="loginProc" parameterType="MemberVO" resultType="MemberVO">
 		<![CDATA[
-		SELECT me_email, me_pw, me_name, me_nick
+		SELECT me_email, me_pw, me_name, me_nick, me_grade
 		FROM member 
 		WHERE me_email=#{me_email} AND me_pw=#{me_pw}
 		]]>
