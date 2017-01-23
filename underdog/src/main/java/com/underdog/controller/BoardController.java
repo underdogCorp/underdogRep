@@ -167,8 +167,9 @@ public class BoardController {
 		logger.info(perPageNum);
 		
 		service.modifyProc(data);
-
-		return "redirect:/board/board_cont?page="+page"+&perPageNum=+"perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=modifyRead";
+		
+		
+		return "redirect:/board/board_cont?page="+page+"&perPageNum="+perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=modifyRead";
 	
 	}
 	
