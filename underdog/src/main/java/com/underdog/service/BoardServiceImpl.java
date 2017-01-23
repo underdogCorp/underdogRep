@@ -46,6 +46,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardVO board_cont(HashMap data) throws Exception{
 		logger.info("BoardServiceImpl - board_cont 입장");
+		
 		return dao.board_cont(data);
 	}
 	
