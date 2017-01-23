@@ -40,7 +40,7 @@ ${data.perPageNum }
 <br/>
 <c:if test="${sessionScope.MEMBER.me_email == board.bo_me_email}">
 <input type="button" value="수정폼으로" onclick="location='/board/board_cont?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&state=modify'"/>
-<input type="button" id="q&aDelBtn" value="삭제하기" onclick="location='/board/delProc?bo_idx=${board.bo_idx }&bo_bbsid=${board.bo_bbsid}'"/>
+<input type="button" value="삭제하기" onclick="location='/board/delProc?page=${data.page }&perPageNum=${data.perPageNum }&bo_idx=${board.bo_idx }&bo_bbsid=${board.bo_bbsid}'"/>
 </c:if>
 
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>

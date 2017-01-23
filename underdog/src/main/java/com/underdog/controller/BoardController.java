@@ -157,7 +157,6 @@ public class BoardController {
 		logger.info("BoardController - modifyProc() 입장");
 		String bo_idx = (String) data.get("bo_idx");
 		String bo_bbsid = (String) data.get("bo_bbsid");
-
 		String page = (String) data.get("page");
 		String perPageNum = (String) data.get("perPageNum");
 		
@@ -175,25 +174,34 @@ public class BoardController {
 	
 	// 삭제 프로세스
 	@RequestMapping("/delProc")
-	public String delProc(@RequestParam("bo_idx") int bo_idx, @RequestParam("bo_bbsid") int bo_bbsid) throws Exception {
+	public String delProc(@RequestParam HashMap data) throws Exception {
+		logger.info("BoardController - delProc 입장");
+		
 		String jsp = null;
-		logger.info("bo_idx:" + bo_idx);
-		logger.info("BoardController - delProc 입장");
-		logger.info("bo_idx:" + bo_bbsid);
-		logger.info("BoardController - delProc 입장");
+		
+		String bo_idx = (String) data.get("bo_idx");
+		String bo_bbsid = (String) data.get("bo_bbsid");
+		String page = (String) data.get("page");
+		String perPageNum = (String) data.get("perPageNum");
+		
+		logger.info(bo_idx);
+		logger.info(bo_bbsid);
+		logger.info(page);
+		logger.info(perPageNum);
+		
 		service.delProc(bo_idx);
-
-		if (bo_bbsid == 01) {
+		
+		if (bo_bbsid.equals("01")) {
 			jsp = "redirect:/board/list?bo_bbsid=01";
 			logger.info("공지사항으로 이동");
-		} else if (bo_bbsid == 02) {
+		} else if (bo_bbsid.equals("02")) {
 			jsp = "redirect:/board/list?bo_bbsid=02";
 			logger.info("자유게시판으로 이동");
-		} else if (bo_bbsid == 03) {
+		} else if (bo_bbsid.equals("03")) {
 			jsp = "redirect:/board/list?bo_bbsid=03";
 			logger.info("faq로 이동 이동");
-		} else if (bo_bbsid == 04) {
-			jsp = "redirect:/board/list?bo_bbsid=04";
+		} else if (bo_bbsid.equals("04")) {
+			jsp = "redirect:/board/listPage?page="+page+"&perPageNum="+perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx;
 			logger.info("Q&A로 이동");
 		}
 

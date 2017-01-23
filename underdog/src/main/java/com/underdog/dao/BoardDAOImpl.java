@@ -58,7 +58,7 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	// 게시글 삭제
 	@Override
-	public void delproc(int bo_idx)	throws Exception{
+	public void delproc(String bo_idx)	throws Exception{
 		session.update(namespace+".board_delproc",bo_idx);
 	}
 	
