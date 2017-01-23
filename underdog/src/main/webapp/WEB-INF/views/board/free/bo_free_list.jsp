@@ -24,7 +24,7 @@
 
 </head>
 <body>
-<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
 	<div class="container">
 		<h2>Hover Rows</h2>
@@ -41,7 +41,8 @@
 			<tbody>
 				<c:forEach items="${list}" var="c">
 					<tr>
-						<td><a href="/board/board_cont?bo_idx=${c.bo_idx}&bo_bbsid=${c.bo_bbsid}&state=read">${c.bo_title}</a></td>
+						<td><a
+							href="/board/board_cont?bo_idx=${c.bo_idx}&bo_bbsid=${c.bo_bbsid}&state=read">${c.bo_title}</a></td>
 						<td>${c.bo_me_nick}</td>
 						<td>${c.bo_me_email}</td>
 						<td>${c.bo_regdate}</td>
@@ -50,6 +51,38 @@
 			</tbody>
 		</table>
 	</div>
+
+	<div class="box-footer">
+
+		<div class="text-center">
+			<ul class="pagination">
+
+				<c:if test="${pageMaker.prev}">
+					<li><a
+						href="/board/listPage${pageMaker.makeQuery(pageMaker.startPage - 1) }&bo_bbsid=02">&laquo;</a></li>
+				</c:if>
+
+				<c:forEach begin="${pageMaker.startPage }"
+					end="${pageMaker.endPage }" var="idx">
+					<li
+						<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
+						<a href="/board/listPage${pageMaker.makeQuery(idx)}&bo_bbsid=02">${idx}</a>
+					</li>
+				</c:forEach>
+
+				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+					<li><a
+						href="/board/listPage${pageMaker.makeQuery(pageMaker.endPage +1) }&bo_bbsid=02">&raquo;</a></li>
+				</c:if>
+
+			</ul>
+		</div>
+	</div>
+
+
+
+
+
 
 	<button type="button" class="btn btn-default"
 		onclick="location.href='/board/registerForm?bo_bbsid=02'">글쓰기</button>

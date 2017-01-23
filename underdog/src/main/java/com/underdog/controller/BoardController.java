@@ -93,7 +93,7 @@ public class BoardController {
 			jsp = "redirect:/board/list?bo_bbsid=01";
 			logger.info("공지사항으로 이동");
 		} else if (boardVO.getBo_bbsid().equals("02")) {
-			jsp = "redirect:/board/list?bo_bbsid=02";
+			jsp = "redirect:/board/listPage?bo_bbsid=02";
 			logger.info("자유게시판으로 이동");
 		} else if (boardVO.getBo_bbsid().equals("03")) {
 			jsp = "redirect:/board/list?bo_bbsid=03";
