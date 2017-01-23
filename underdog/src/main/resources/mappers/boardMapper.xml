@@ -29,6 +29,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 게시판 리스트 불러오기 -->
 <select id="list" parameterType="String" resultType="BoardVO">
 		select * from board where bo_bbsid = #{bo_bbsid} and bo_status = 0
+		
+		select * from 
+		 (select rownum rnum,bo_idx,bo_me_email,bo_bbsid,bo_me_nick,
+		 bo_title,bo_content,bo_hit,bo_regdate,bo_regip,bo_status,
+		 bo_deldate from  
+	  	 (select * from board order by bo_idx desc) 
+	   		where bo_status = 0
+<!-- 	   		 where rnum >= ((#{page}-1) * 10+1)  and rnum <= (#{page} * 10) -->
+		
 </select>
 
 <!-- 상세내용 조회 및 수정하기 폼 내용 불러오기 -->

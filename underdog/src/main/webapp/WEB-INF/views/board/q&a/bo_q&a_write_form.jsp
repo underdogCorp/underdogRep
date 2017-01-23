@@ -2,6 +2,17 @@
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
+<script>
+	$(function(){
+		$('#qnaWriteSubmitBtn').click(function(){
+			var f = $('#qnaWriteSubmitFrm');
+			
+			f.attr('method', 'POST');
+			f.attr('action', "/board/registerProc");
+			f.submit();
+		})
+	})
+</script>
 <h2>Q & A 글쓰기</h2><br/>
 
 <form id="qnaWriteSubmitFrm">
