@@ -60,7 +60,7 @@
 	<br>
 	<a href="/board/list?bo_bbsid=03">FAQ</a>
 	<br>
-	<a href="/board/list?bo_bbsid=04">Q & A</a>
+	<a href="/board/listPage?bo_bbsid=04">Q & A</a>
 	<br>
 
 	<c:if test="${sessionScope.MEMBER == null}">

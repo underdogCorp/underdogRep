@@ -65,10 +65,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </update>
 
 
-  <select id="listCriteria" resultType="BoardVO">
+ <select id="listCriteria" resultType="BoardVO">
  <![CDATA[
  select * from board 
- where bo_idx > 0 
+ where bo_bbsid = #{bo_bbsid} and bo_idx > 0 
  order by bo_idx desc, bo_regdate desc
  limit #{pageStart}, #{perPageNum}
  ]]>  
