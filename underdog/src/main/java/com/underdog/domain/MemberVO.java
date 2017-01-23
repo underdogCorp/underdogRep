@@ -2,6 +2,7 @@ package com.underdog.domain;
 
 
 import java.security.Timestamp;
+import java.util.Date;
 
 
 public class MemberVO {
@@ -11,9 +12,9 @@ public class MemberVO {
 	private String me_name; /* 이름 */
 	private String me_nick; /* 닉네임 */
 	private String me_birth; /* 생년월일 */
-	private Timestamp me_regdate; /* 회원가입일 */
+	private Date me_regdate; /* 회원가입일 */
 	private int me_status; /* 회원탈퇴유무 */
-	private Timestamp me_exitdate; /* 회원탈퇴일 */
+	private Date me_exitdate; /* 회원탈퇴일 */
 	private int me_grade; /* 회원 등급 */
 	private String me_keyword; /* 관심 검색어 */
 	private int me_point; /* 포인트 */
@@ -51,10 +52,10 @@ public class MemberVO {
 	public void setMe_birth(String me_birth) {
 		this.me_birth = me_birth;
 	}
-	public Timestamp getMe_regdate() {
+	public Date getMe_regdate() {
 		return me_regdate;
 	}
-	public void setMe_regdate(Timestamp me_regdate) {
+	public void setMe_regdate(Date me_regdate) {
 		this.me_regdate = me_regdate;
 	}
 	public int getMe_status() {
@@ -63,10 +64,10 @@ public class MemberVO {
 	public void setMe_status(int me_status) {
 		this.me_status = me_status;
 	}
-	public Timestamp getMe_exitdate() {
+	public Date getMe_exitdate() {
 		return me_exitdate;
 	}
-	public void setMe_exitdate(Timestamp me_exitdate) {
+	public void setMe_exitdate(Date me_exitdate) {
 		this.me_exitdate = me_exitdate;
 	}
 	public int getMe_grade() {

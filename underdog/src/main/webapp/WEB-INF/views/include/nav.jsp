@@ -26,49 +26,37 @@
 <body>
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
-		<div class="navbar-header">
-			<p class="navbar-brand"> 네비게이션 바</p>
-		</div>
-
-
-		<c:if test="${sessionScope.MEMBER ne null }">
-			<li><p>${sessionScope.MEMBER.me_name}님이입장하셨습니다.</p></li>
-			<li><p>
-					<a href="/member/logoutProc">로그아웃</a>
-				</p></li>
-		</c:if>
-
-		<c:if test="${sessionScope.MEMBER.me_grade eq 100}">
-			<li><a href="">관리자모드</a></li>
-		</c:if>
+		<ul class="nav navbar-nav navbar-left">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">홈</a>
+			</div>
+			<li><a href="#">회사소개</a></li>
+			<li><a href="/mypage/mypage?me_email=${sessionScope.MEMBER.me_email}">마이페이지</a></li>
+			<li><a href="/board/list?bo_bbsid=01">공지사항</a></li>
+			<li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">게시판 목록<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/board/list?bo_bbsid=02">자유게시판</a></li>
+					<li><a href="/board/list?bo_bbsid=03">FAQ</a></li>
+					<li><a href="/board/list?bo_bbsid=04">Q & A</a></li>
+				</ul></li>
+			</li>
+			<li></li>
+			<li></li>
 		</ul>
 
+		<ul class="nav navbar-nav navbar-right">
+			<c:if test="${sessionScope.MEMBER == null}">
+				<li><a href="/member/loginForm">로그인하기</a></li>
+				<li><a href="/member/joinForm">회원 가입하기</a></li>
+			</c:if>
+			<c:if test="${sessionScope.MEMBER ne null }">
+				<li><p>${sessionScope.MEMBER.me_name}님이입장하셨습니다.</p></li>
+				<li><a href="/member/logoutProc">로그아웃</a></li>
+			</c:if>
+			<c:if test="${sessionScope.MEMBER.me_grade eq 100}">
+				<li><a href="">관리자모드</a></li>
+			</c:if>
+		</ul>
 	</div>
 	</nav>
-	<br />
-	<br />
-	<a>회원등급 : ${sessionScope.MEMBER.me_grade}</a>
-	<br>
-
-	<a href="/">홈</a>
-	<br>
-	<a href="#">회사소개</a>
-	<br>
-	<a href="/board/list?bo_bbsid=01">공지사항</a>
-	<br>
-	<a href="/board/list?bo_bbsid=02">자유게시판</a>
-	<br>
-	<a href="/board/list?bo_bbsid=03">FAQ</a>
-	<br>
-	<a href="/board/list?bo_bbsid=04">Q & A</a>
-	<br>
-
-	<c:if test="${sessionScope.MEMBER == null}">
-		<a href="/member/loginForm">로그인하기</a>
-		<a href="/member/joinForm">회원 가입하기</a>
-	</c:if>
-
-
-	<br />
-
-	======================================================================

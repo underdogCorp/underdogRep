@@ -3,4 +3,20 @@
 
 <mapper namespace="com.underdog.mapper.mypageMapper">
 
+<select id="memberInfo" parameterType="String" resultType="MemberVO">
+		select * from member where me_email = #{me_email}
+		
+<!-- 		select * from  -->
+<!-- 		 (select rownum rnum,bo_idx,bo_me_email,bo_bbsid,bo_me_nick, -->
+<!-- 		 bo_title,bo_content,bo_hit,bo_regdate,bo_regip,bo_status, -->
+<!-- 		 bo_deldate from   -->
+<!-- 	  	 (select * from board order by bo_idx desc)  -->
+<!-- 	   		where bo_status = 0 -->
+<!-- 	   		 where rnum >= ((#{page}-1) * 10+1)  and rnum <= (#{page} * 10) -->
+		
+</select>
+
+
+
+
 </mapper>
