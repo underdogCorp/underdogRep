@@ -5,6 +5,17 @@ public class Criteria {
 	private int page;
 	private int perPageNum;
 	private String bo_bbsid;
+	private int bo_idx;
+
+
+	
+	public int getBo_idx() {
+		return bo_idx;
+	}
+
+	public void setBo_idx(int bo_idx) {
+		this.bo_idx = bo_idx;
+	}
 
 	public String getBo_bbsid() {
 		return bo_bbsid;
