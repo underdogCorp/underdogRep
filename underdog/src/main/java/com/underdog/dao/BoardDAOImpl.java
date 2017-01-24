@@ -93,12 +93,14 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	
+	// 게시판 리스트 불러오기 + 검색된 게시글 불러오기
 	@Override
 	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
 		logger.info("BoardDAOImpl - listSearchCriteria 입장");
 		return session.selectList(namespace + ".listSearchCriteria", cri);
 	}
 
+	// 게시글 총 갯수 + 검색된 게시글 총 갯수
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		logger.info("BoardDAOImpl - listSearchCount 입장");

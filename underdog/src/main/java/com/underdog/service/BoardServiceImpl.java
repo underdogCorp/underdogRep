@@ -86,13 +86,15 @@ public class BoardServiceImpl implements BoardService{
 		
 		return dao.listFaq(data);
 	}
-
+	
+	// 게시판 리스트 불러오기 + 검색된 게시글 불러오기
 	@Override
 	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
 		logger.info("BoardServiceImpl - listSearchCriteria 입장");
 		return dao.listSearchCriteria(cri);
 	}
-
+	
+	// 게시글 총 갯수 + 검색된 게시글 총 갯수
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		logger.info("BoardServiceImpl - listSearchCount 입장");

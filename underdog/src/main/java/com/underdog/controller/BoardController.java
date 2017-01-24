@@ -34,7 +34,6 @@ public class BoardController {
 	 @RequestMapping( value = "/list")
 	 public String list(Criteria cri, Model model) throws Exception{
 		 logger.info("BoardController - list() 입장");
-		 logger.info("BoardController - board_cont() 입장");
 		 logger.info("page:" + cri.getPage());
 		 logger.info("perPageNum:" + cri.getPerPageNum());
 	     logger.info("bo_bbsid:" + cri.getBo_bbsid());
@@ -59,10 +58,10 @@ public class BoardController {
 				logger.info("자유게시판으로 이동");
 			} else if (cri.getBo_bbsid().equals("03")) {
 				jsp = "/board/faq/bo_faq_list";
-				logger.info("faq로 이동 이동");
+				logger.info("faq 게시판으로 이동");
 			} else if (cri.getBo_bbsid().equals("04")) {
 				jsp = "/board/q&a/bo_q&a_list";
-				logger.info("Q&A로 이동");
+				logger.info("Q&A 게시판으로 이동");
 			}
 
 			return jsp; 
@@ -114,7 +113,7 @@ public class BoardController {
 			jsp = "redirect:/board/list?bo_bbsid=03";
 			logger.info("faq 게시판으로 이동 이동");
 		} else if (boardVO.getBo_bbsid().equals("04")) {
-			jsp = "redirect:/board/list?bo_bbsid=04";
+			jsp = "redirect:/board/slist?bo_bbsid=04";
 			logger.info("Q&A 게시판으로 이동");
 		}
 
@@ -133,6 +132,8 @@ public class BoardController {
 		logger.info("perPageNum:" + data.get("perPageNum"));
 		logger.info("bo_bbsid:" + data.get("bo_bbsid"));
 		logger.info("bo_idx:" + data.get("bo_idx"));
+		logger.info("keyword:" + data.get("keyword"));
+		logger.info("searchType:" + data.get("searchType"));
 		logger.info("state:" + data.get("state"));
 		
 		model.addAttribute("board", service.board_cont(data));
@@ -174,16 +175,20 @@ public class BoardController {
 		String bo_bbsid = (String) data.get("bo_bbsid");
 		String page = (String) data.get("page");
 		String perPageNum = (String) data.get("perPageNum");
+		String keyword = (String) data.get("keyword");
+		String searchType = (String) data.get("searchType");
 		
 		logger.info(bo_idx);
 		logger.info(bo_bbsid);
 		logger.info(page);
 		logger.info(perPageNum);
+		logger.info("keyword:" + keyword);
+		logger.info("searchType:" + searchType);
+		
 		
 		service.modifyProc(data);
 		
-		
-		return "redirect:/board/board_cont?page="+page+"&perPageNum="+perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&state=modifyRead";
+		return "redirect:/board/board_cont?page="+page+"&perPageNum="+perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&keyword="+keyword+"&searchType="+searchType+"&state=modifyRead";
 	
 	}
 	
@@ -198,11 +203,17 @@ public class BoardController {
 		String bo_bbsid = (String) data.get("bo_bbsid");
 		String page = (String) data.get("page");
 		String perPageNum = (String) data.get("perPageNum");
+		String keyword = (String) data.get("keyword");
+		String searchType = (String) data.get("searchType");
 		
-		logger.info(bo_idx);
-		logger.info(bo_bbsid);
-		logger.info(page);
-		logger.info(perPageNum);
+		
+		logger.info("bo_idx:" + bo_idx);
+		logger.info("bo_bbsid:" + bo_bbsid);
+		logger.info("page:" + page);
+		logger.info("perPageNum:" + perPageNum);
+		logger.info("keyword:" + keyword);
+		logger.info("searchType:" + searchType);
+		
 		
 		service.delProc(bo_idx);
 		
@@ -214,10 +225,10 @@ public class BoardController {
 			logger.info("자유게시판으로 이동");
 		} else if (bo_bbsid.equals("03")) {
 			jsp = "redirect:/board/list?bo_bbsid=03";
-			logger.info("faq로 이동 이동");
+			logger.info("faq 게시판으로 이동 이동");
 		} else if (bo_bbsid.equals("04")) {
-			jsp = "redirect:/board/list?page="+page+"&perPageNum="+perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx;
-			logger.info("Q&A로 이동");
+			jsp = "redirect:/board/slist?page="+page+"&perPageNum="+perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx+"&keyword="+keyword+"&searchType="+searchType;
+			logger.info("Q&A 게시판으로 이동");
 		}
 
 		return jsp;
@@ -231,8 +242,8 @@ public class BoardController {
 		 logger.info("page:" + cri.getPage());
 		 logger.info("perPageNum:" + cri.getPerPageNum());
 		 logger.info("bo_bbsid:" + cri.getBo_bbsid());
-	     logger.info("Keyword:" + cri.getKeyword());
-	     logger.info("SearchType:" + cri.getSearchType());
+	     logger.info("keyword:" + cri.getKeyword());
+	     logger.info("searchType:" + cri.getSearchType());
 	     
 		 String jsp = null;
 		 PageMaker pageMaker = new PageMaker();
@@ -248,7 +259,6 @@ public class BoardController {
 		 logger.info("목록" + service.listSearchCriteria(cri));
 		 logger.info("갯수" + service.listSearchCount(cri));
 		 
-
 		 
 		 model.addAttribute("pageMaker", pageMaker);
 		 

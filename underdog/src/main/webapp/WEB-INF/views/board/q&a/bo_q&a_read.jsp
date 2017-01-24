@@ -23,9 +23,6 @@ $(function(){
 })
 </script>
 <br/>
-${data.page }
-${data.perPageNum }
-
 게시판 번호 : ${board.bo_idx } <br/>
 회원 이메일 : ${board.bo_me_email } <br/>
 게시판 아이디 : ${board.bo_bbsid} <br/>
@@ -36,11 +33,14 @@ ${data.perPageNum }
 게시일자: ${board.bo_regdate }<br/>
 아이피 : ${board.bo_regip } <br/>
 
-<input type="button" value="목록으로" onclick="location='/board/list?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }'">
+<input type="button" value="목록으로" onclick="location='/board/slist?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&keyword=${data.keyword }&searchType=${data.searchType }'">
 <br/>
 <c:if test="${sessionScope.MEMBER.me_email == board.bo_me_email}">
-<input type="button" value="수정폼으로" onclick="location='/board/board_cont?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&state=modify'"/>
-<input type="button" value="삭제하기" onclick="location='/board/delProc?page=${data.page }&perPageNum=${data.perPageNum }&bo_idx=${board.bo_idx }&bo_bbsid=${board.bo_bbsid}'"/>
+<input type="button" value="수정폼으로" onclick="location='/board/board_cont?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&keyword=${data.keyword }&searchType=${data.searchType }&state=modify'"/>
+<input type="button" value="삭제하기" onclick="location='/board/delProc?page=${data.page }&perPageNum=${data.perPageNum }&bo_idx=${board.bo_idx }&bo_bbsid=${board.bo_bbsid}&keyword=${data.keyword }&searchType=${data.searchType }'"/>
 </c:if>
+<br/>
 
+<input type="text" name=""/>
+<input type="button" value="댓글입력" />
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>

@@ -21,6 +21,9 @@ $(function(){
 게시판 아이디 : <input type="text" name="bo_bbsid" value="${data.bo_bbsid }"/> <br/>
 페이지 : <input type="text" name="page" value="${data.page }"/> <br/>
 페이지당게시물수 : <input type="text" name="perPageNum" value="${data.perPageNum }"/> <br/>
+키워드 : <input type="text" name="keyword" value="${data.keyword }"/> <br/>
+검색타입 : <input type="text" name="searchType" value="${data.searchType }"/> <br/>
+
 =======================================================================
 <br/>
 
