@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.underdog.domain.BoardVO;
 import com.underdog.domain.Criteria;
 import com.underdog.domain.PageMaker;
+import com.underdog.domain.SearchCriteria;
 import com.underdog.service.BoardService;
 
 @Controller
@@ -27,31 +28,43 @@ public class BoardController {
 	@Inject
 	private BoardService service;
 
-	// 게시판 리스트 조회
-//	@RequestMapping("/list")
-//	public String list(@RequestParam("bo_bbsid") String bo_bbsid, Model model) throws Exception{
-//		String jsp = null;
-//
-//		logger.info("BoardController - list() 입장");
-//
-//			model.addAttribute("list", service.list(bo_bbsid));
-//
-//		if (bo_bbsid.equals("01")) {
-//			jsp = "/board/info/bo_info_list";
-//			logger.info("공지사항으로 이동");
-//		} else if (bo_bbsid.equals("02")) {
-//			jsp = "/board/free/bo_free_list";
-//			logger.info("자유게시판으로 이동");
-//		} else if (bo_bbsid.equals("03")) {
-//			jsp = "/board/faq/bo_faq_list";
-//			logger.info("faq로 이동 이동");
-//		} else if (bo_bbsid.equals("04")) {
-//			jsp = "/board/q&a/bo_q&a_list";
-//			logger.info("Q&A로 이동");
-//		}
-//
-//		return jsp;
-//	}
+	 // 게시판 리스트 조회 + 페이징 처리	 
+	 @RequestMapping( value = "/list")
+	 public String list(Criteria cri, Model model) throws Exception{
+		 logger.info("BoardController - list() 입장");
+		 logger.info("BoardController - board_cont() 입장");
+		 logger.info("page:" + cri.getPage());
+		 logger.info("perPageNum:" + cri.getPerPageNum());
+	     logger.info("bo_bbsid:" + cri.getBo_bbsid());
+
+		 String jsp = null;
+				 
+		 model.addAttribute("list", service.listCriteria(cri));
+		 
+		 PageMaker pageMaker = new PageMaker();
+		 pageMaker.setCri(cri);
+		 
+		 pageMaker.setTotalCount(service.listCountCriteria(cri));
+		 
+		 model.addAttribute("pageMaker", pageMaker);
+		 
+		 
+			if (cri.getBo_bbsid().equals("01")) {
+				jsp = "/board/info/bo_info_list";
+				logger.info("공지사항으로 이동");
+			} else if (cri.getBo_bbsid().equals("02")) {
+				jsp = "/board/free/bo_free_list";
+				logger.info("자유게시판으로 이동");
+			} else if (cri.getBo_bbsid().equals("03")) {
+				jsp = "/board/faq/bo_faq_list";
+				logger.info("faq로 이동 이동");
+			} else if (cri.getBo_bbsid().equals("04")) {
+				jsp = "/board/q&a/bo_q&a_list";
+				logger.info("Q&A로 이동");
+			}
+
+			return jsp; 
+	 }
 
 	// 게시판 글쓰기 폼 보기
 	@RequestMapping("/registerForm")
@@ -138,11 +151,11 @@ public class BoardController {
 		}
 
 		if (data.get("state").equals("read") || data.get("state").equals("modifyRead")) {
-			logger.info("Q&A 상세보기 및 수정페이지로 이동");
+			logger.info("상세보기 및 수정페이지로 이동");
 			contM = "read";
 		} else if (data.get("state").equals("modify")) {
 			contM = "modify_form";
-			logger.info("Q&A 수정하기로 이동");
+			logger.info("수정하기로 이동");
 		}
 
 		return jsp + contM;
@@ -208,10 +221,9 @@ public class BoardController {
 		return jsp;
 	}
 
-	
-	 // // 게시판 리스트 조회 + 페이징 처리	 
-	 @RequestMapping( value = "/list")
-	 public String list(Criteria cri, Model model) throws Exception{
+	 // 게시판 리스트 조회 + 페이징 처리	 
+	 @RequestMapping( value = "/slist")
+	 public String slist(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		 logger.info("BoardController - list() 입장");
 		 logger.info("BoardController - board_cont() 입장");
 		 logger.info("page:" + cri.getPage());
@@ -220,12 +232,14 @@ public class BoardController {
 
 		 String jsp = null;
 				 
-		 model.addAttribute("list", service.listCriteria(cri));
+//		 model.addAttribute("list", service.listCriteria(cri));
+		 model.addAttribute("list", service.listSearchCriteria(cri));
 		 
 		 PageMaker pageMaker = new PageMaker();
 		 pageMaker.setCri(cri);
 		 
-		 pageMaker.setTotalCount(service.listCountCriteria(cri));
+//		 pageMaker.setTotalCount(service.listCountCriteria(cri));
+		 pageMaker.setTotalCount(service.listSearchCount(cri));
 		 
 		 model.addAttribute("pageMaker", pageMaker);
 		 
@@ -244,8 +258,8 @@ public class BoardController {
 				logger.info("Q&A로 이동");
 			}
 
-			return jsp;
-		 
+			return jsp; 
 	 }
+
 	 
 }

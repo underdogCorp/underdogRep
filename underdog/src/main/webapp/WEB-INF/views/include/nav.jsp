@@ -39,7 +39,7 @@
 				<ul class="dropdown-menu">
 					<li><a href="/board/list?bo_bbsid=02">자유게시판</a></li>
 					<li><a href="/board/list?bo_bbsid=03">FAQ</a></li>
-					<li><a href="/board/list?bo_bbsid=04">Q & A</a></li>
+					<li><a href="/board/slist?bo_bbsid=04">Q & A</a></li>
 				</ul>
 			</li>
 		</ul>

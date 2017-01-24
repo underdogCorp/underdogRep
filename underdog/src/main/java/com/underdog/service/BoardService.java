@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.underdog.domain.BoardVO;
 import com.underdog.domain.Criteria;
+import com.underdog.domain.SearchCriteria;
 
 
 public interface BoardService {
@@ -26,6 +27,9 @@ public interface BoardService {
 
 	public int listCountCriteria(Criteria cri) throws Exception;
 
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
+
+	public int listSearchCount(SearchCriteria cri) throws Exception;
 	
 	
 

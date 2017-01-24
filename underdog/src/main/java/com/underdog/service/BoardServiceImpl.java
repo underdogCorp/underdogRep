@@ -15,6 +15,7 @@ import com.underdog.controller.BoardController;
 import com.underdog.dao.BoardDAO;
 import com.underdog.domain.BoardVO;
 import com.underdog.domain.Criteria;
+import com.underdog.domain.SearchCriteria;
 
 @Service
 public class BoardServiceImpl implements BoardService{
@@ -78,6 +79,18 @@ public class BoardServiceImpl implements BoardService{
 	public int listCountCriteria(Criteria cri) throws Exception {
 		
 		return dao.listCountCriteria(cri);
+	}
+
+	@Override
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+
+		return dao.listSearch(cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+
+		return dao.listSearchCount(cri);
 	}
 
 
