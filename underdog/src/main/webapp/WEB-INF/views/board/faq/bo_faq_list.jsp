@@ -18,9 +18,9 @@
 
 
 function callContent(bo_idx){
-	$.post("/list",	// post 방식으로 /bbsViewFaq.dh 페이지로...
+	$.post("/board/listFaq",	// post 방식으로 /bbsViewFaq.dh 페이지로...
 	{
-		bo_bbsid : '${list.bo_bbsid}' // bbsid 값과,
+		bo_bbsid : "03" // bbsid 값과,
 		, bo_idx : bo_idx // bIdx 값을 전송한다.
 	},
 	function(data){				// /bbsViewFaq.dh에서 처리된 결과가 data라는 변수로 반환된다.
@@ -28,9 +28,9 @@ function callContent(bo_idx){
 		$(".bbsContent").hide();	// 감춘다.
 		$(".bbsTitle").css("font-size", "14px").css("font-weight", "normal").css("margin-top", "0px");
 		
-		$("#bbsTitle_" + idx).css("font-size", "30px").css("font-weight", "bold").css("margin-top", "20px");
-		$("#bbsContent_" + idx).html(data); // 클릭한 글에 해당하는 내용 영역에 내용을 넣은 후,
-		$("#bbsContent_" + idx).show();		// 보여준다.
+		$("#bbsTitle_" + bo_idx).css("font-size", "30px").css("font-weight", "bold").css("margin-top", "20px");
+		$("#bbsContent_" + bo_idx).html(data); // 클릭한 글에 해당하는 내용 영역에 내용을 넣은 후,
+		$("#bbsContent_" + bo_idx).show();		// 보여준다.
 	});
 }
 </script>
@@ -53,11 +53,11 @@ function callContent(bo_idx){
 			
 
 <c:choose>
-	<%-- <c:when test="${postCount == 0}">
+	<c:when test="${postCount == 0}">
 					<tr>
 						<td style="text-align:center;">등록된 게시물이 없습니다.</td>
 					</tr>
-	</c:when> --%>
+	</c:when>
 	<c:otherwise>
 		<c:forEach items="${list}" var="post" varStatus="status">
 					<tr>

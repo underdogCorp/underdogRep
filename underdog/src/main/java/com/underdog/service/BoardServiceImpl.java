@@ -80,16 +80,22 @@ public class BoardServiceImpl implements BoardService{
 		
 		return dao.listCountCriteria(cri);
 	}
+	
+	@Override
+	public BoardVO listFaq(Map data) throws Exception{
+		
+		return dao.listFaq(data);
+	}
 
 	@Override
 	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
-
-		return dao.listSearch(cri);
+		logger.info("BoardServiceImpl - listSearchCriteria 입장");
+		return dao.listSearchCriteria(cri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
-
+		logger.info("BoardServiceImpl - listSearchCount 입장");
 		return dao.listSearchCount(cri);
 	}
 

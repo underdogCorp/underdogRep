@@ -85,15 +85,25 @@ public class BoardDAOImpl implements BoardDAO {
 		
 		return session.selectOne(namespace + ".listCountCriteria", cri);
 	}
+	
+	@Override
+	public BoardVO listFaq(Map data) throws Exception{
+		
+		return session.selectOne(namespace + ".board_cont", data);
+	}
 
 	
 	@Override
-	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
-		return session.selectList(namespace + ".listSearch", cri);
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+		logger.info("BoardDAOImpl - listSearchCriteria 입장");
+		return session.selectList(namespace + ".listSearchCriteria", cri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
+		logger.info("BoardDAOImpl - listSearchCount 입장");
+		logger.info("DAO 갯수:" + session.selectOne(namespace + ".listSearchCount", cri));
+		
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 

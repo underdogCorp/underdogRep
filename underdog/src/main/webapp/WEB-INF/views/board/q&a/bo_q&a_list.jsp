@@ -8,7 +8,7 @@
 $(function(){
 	
 	$('#searchBtn').click(function(){
-			self.location = "slist"
+			self.location = "/board/slist"
 				+ '${pageMaker.makeQuery(1)}'
 				+ "&searchType=" + $("select option:selected").val()
 				+ "&keyword=" + $('#keywordInput').val()
@@ -69,20 +69,20 @@ $(function(){
 
 							<c:if test="${pageMaker.prev}">
 								<li><a
-									href="/board/list${pageMaker.makeSearch(pageMaker.startPage - 1) }&bo_bbsid=04">&laquo;</a></li>
+									href="/board/slist${pageMaker.makeSearch(pageMaker.startPage - 1) }&bo_bbsid=04">&laquo;</a></li>
 							</c:if>
 
 							<c:forEach begin="${pageMaker.startPage }" 
 								end="${pageMaker.endPage }" var="idx">
 								<li
 									<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
-									<a href="/board/list${pageMaker.makeSearch(idx)}&bo_bbsid=04">${idx}</a>
+									<a href="/board/slist${pageMaker.makeSearch(idx)}&bo_bbsid=04">${idx}</a>
 								</li>
 							</c:forEach>
 
 							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 								<li><a
-									href="/board/list${pageMaker.makeSearch(pageMaker.endPage +1) }&bo_bbsid=04">&raquo;</a></li>
+									href="/board/slist${pageMaker.makeSearch(pageMaker.endPage +1) }&bo_bbsid=04">&raquo;</a></li>
 							</c:if>
 
 						</ul>
@@ -98,19 +98,19 @@ $(function(){
 						<option value="n"
 							<c:out value="${cri.searchType == null?'selected':''}"/>>
 							---</option>
-						<option value="t"
+						<option value="bo_title"
 							<c:out value="${cri.searchType eq 't'?'selected':''}"/>>
-							Title</option>
-						<option value="c"
+							제목</option>
+						<option value="bo_content"
 							<c:out value="${cri.searchType eq 'c'?'selected':''}"/>>
-							Content</option>
-						<option value="w"
+							내용</option>
+						<option value="bo_me_nick"
 							<c:out value="${cri.searchType eq 'w'?'selected':''}"/>>
-							Writer</option>
+							작성자</option>
 					</select> 
 					<input type="text" name='keyword' id="keywordInput"
 						value='${cri.keyword }'>
-					<button id='searchBtn'>Search</button>
+					<button id='searchBtn'>검색</button>
 				</div>
 	
 	
