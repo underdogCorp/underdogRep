@@ -1,5 +1,6 @@
 package com.underdog.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -33,6 +34,10 @@ public class MyPageServiceImpl implements MyPageService {
 		System.out.println("서비스단에서 암호화한 me_pw값:"+me_pw);
 		return dao.pwcheck(me_email, me_pw);
 
+	}
+	// 마이페이지 회원정보 수정하기
+	public void modifyProc(HashMap data)throws Exception{
+		 dao.modifyProc(data);
 	}
 
 }

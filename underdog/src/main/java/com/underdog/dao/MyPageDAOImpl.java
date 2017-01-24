@@ -1,5 +1,6 @@
 package com.underdog.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -35,10 +36,10 @@ public class MyPageDAOImpl implements MyPageDAO {
 		MemberVO member;
 		logger.info("mypageDAOImpl- 회원정보 보기전 pw체크 입장");
 		member = (MemberVO) session.selectOne(namespace + ".memberInfo", me_email);
-		System.out.println("입력한 email값:"+me_email);
-		System.out.println("select한 email값:"+member.getMe_email());
-		System.out.println("select한 me_pw값:"+member.getMe_pw());
-		
+		System.out.println("입력한 email값:" + me_email);
+		System.out.println("select한 email값:" + member.getMe_email());
+		System.out.println("select한 me_pw값:" + member.getMe_pw());
+
 		if (!member.getMe_email().equals(me_email)) {
 			result = 0;
 		} else if (!member.getMe_pw().equals(me_pw)) {
@@ -48,6 +49,12 @@ public class MyPageDAOImpl implements MyPageDAO {
 		}
 
 		return result;
+	}
+
+	// 마이페이지 회원정보 수정하기
+	@Override
+	public void modifyProc(HashMap data) {
+		 session.update(namespace + ".modifyProc", data);
 	}
 
 }

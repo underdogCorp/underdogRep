@@ -20,10 +20,14 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+
+
+
 <title>pinterest</title>
 </head>
 
-<body>
+<body onload="result()">
+	<input type="hidden" value="${result}" id="result" name="result">
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<ul class="nav navbar-nav navbar-left">
@@ -40,8 +44,7 @@
 					<li><a href="/board/list?bo_bbsid=02">자유게시판</a></li>
 					<li><a href="/board/list?bo_bbsid=03">FAQ</a></li>
 					<li><a href="/board/slist?bo_bbsid=04">Q & A</a></li>
-				</ul>
-			</li>
+				</ul></li>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
@@ -54,7 +57,7 @@
 				<li><a href="/member/logoutProc">로그아웃</a></li>
 			</c:if>
 			<c:if test="${sessionScope.MEMBER.me_grade eq 100}">
-				<li><a href="">관리자모드</a></li>
+				<li><a href="/member/manager">관리자모드</a></li>
 			</c:if>
 		</ul>
 	</div>

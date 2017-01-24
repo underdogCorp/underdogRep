@@ -95,40 +95,50 @@ h2 {
 
 			<div class="col-sm-9">
 				<h2>회원정보 보기</h2>
+				<form action="/mypage/modifyProc" method="post">
+					<input type="hidden" name="me_email" value="${memberInfo.me_email}">
+					<div id="memberInfo" style="display: none;">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>이름</th>
+									<th>닉네임</th>
+									<th>생년월일</th>
+									<th>회원가입일</th>
+									<th>회원등급</th>
+									<th>포인트</th>
+									<th>주소</th>
+									<th>상세주소</th>
+								</tr>
+							</thead>
+							<tbody>
 
-				<div id="memberInfo" style="display: none;">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>이름</th>
-								<th>닉네임</th>
-								<th>생년월일</th>
-								<th>회원가입일</th>
-								<th>회원등급</th>
-								<th>포인트</th>
-								<th>주소</th>
-								<th>상세주소</th>
-							</tr>
-						</thead>
-						<tbody>
+								<tr>
+									<td><input type="text" name="me_name"
+										value="${memberInfo.me_name}" /></td>
+									<td><input type="text" name="me_nick"
+										value="${memberInfo.me_nick}" /></td>
+									<td><input type="text" name="me_birth"
+										value="${memberInfo.me_birth}" /></td>
+									<td><input type="text" name="me_regdate"
+										value="${memberInfo.me_regdate}" readonly /></td>
+									<td><input type="text" name="me_grade"
+										value="${memberInfo.me_grade}" readonly /></td>
+									<td><input type="text" name="me_point"
+										value="${memberInfo.me_point}" readonly /></td>
+									<td><input type="text" name="me_add1"
+										value="${memberInfo.me_add1}" /></td>
+									<td><input type="text" name="me_add2"
+										value="${memberInfo.me_add2}" /></td>
+								</tr>
+							</tbody>
+						</table>
+						<span style="float: right">
+							<button type="submit" class="btn btn-warning right">수정하기</button>
 
-							<tr>
-								<td>${memberInfo.me_name}</td>
-								<td>${memberInfo.me_nick}</td>
-								<td>${memberInfo.me_birth}</td>
-								<td>${memberInfo.me_regdate}</td>
-								<td>${memberInfo.me_grade}</td>
-								<td>${memberInfo.me_point}</td>
-								<td>${memberInfo.me_add1}</td>
-								<td>${memberInfo.me_add2}</td>
-							</tr>
-						</tbody>
-					</table>
-					<span style="float: right">
-						<button type="submit" class="btn btn-warning right">수정하기</button>
-						<button type="submit" class="btn btn-default right">수정취소</button>
-					</span> <br>
-				</div>
+						</span> <br>
+					</div>
+				</form>
 				<hr>
 				<br>
 
