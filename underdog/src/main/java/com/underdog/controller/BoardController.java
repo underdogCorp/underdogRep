@@ -28,30 +28,30 @@ public class BoardController {
 	private BoardService service;
 
 	// 게시판 리스트 조회
-	@RequestMapping("/list")
-	public String list(@RequestParam("bo_bbsid") String bo_bbsid, Model model) throws Exception{
-		String jsp = null;
-
-		logger.info("BoardController - list() 입장");
-
-			model.addAttribute("list", service.list(bo_bbsid));
-
-		if (bo_bbsid.equals("01")) {
-			jsp = "/board/info/bo_info_list";
-			logger.info("공지사항으로 이동");
-		} else if (bo_bbsid.equals("02")) {
-			jsp = "/board/free/bo_free_list";
-			logger.info("자유게시판으로 이동");
-		} else if (bo_bbsid.equals("03")) {
-			jsp = "/board/faq/bo_faq_list";
-			logger.info("faq로 이동 이동");
-		} else if (bo_bbsid.equals("04")) {
-			jsp = "/board/q&a/bo_q&a_list";
-			logger.info("Q&A로 이동");
-		}
-
-		return jsp;
-	}
+//	@RequestMapping("/list")
+//	public String list(@RequestParam("bo_bbsid") String bo_bbsid, Model model) throws Exception{
+//		String jsp = null;
+//
+//		logger.info("BoardController - list() 입장");
+//
+//			model.addAttribute("list", service.list(bo_bbsid));
+//
+//		if (bo_bbsid.equals("01")) {
+//			jsp = "/board/info/bo_info_list";
+//			logger.info("공지사항으로 이동");
+//		} else if (bo_bbsid.equals("02")) {
+//			jsp = "/board/free/bo_free_list";
+//			logger.info("자유게시판으로 이동");
+//		} else if (bo_bbsid.equals("03")) {
+//			jsp = "/board/faq/bo_faq_list";
+//			logger.info("faq로 이동 이동");
+//		} else if (bo_bbsid.equals("04")) {
+//			jsp = "/board/q&a/bo_q&a_list";
+//			logger.info("Q&A로 이동");
+//		}
+//
+//		return jsp;
+//	}
 
 	// 게시판 글쓰기 폼 보기
 	@RequestMapping("/registerForm")
@@ -93,13 +93,13 @@ public class BoardController {
 			jsp = "redirect:/board/list?bo_bbsid=01";
 			logger.info("공지사항으로 이동");
 		} else if (boardVO.getBo_bbsid().equals("02")) {
-			jsp = "redirect:/board/listPage?bo_bbsid=02";
+			jsp = "redirect:/board/list?bo_bbsid=02";
 			logger.info("자유게시판으로 이동");
 		} else if (boardVO.getBo_bbsid().equals("03")) {
 			jsp = "redirect:/board/list?bo_bbsid=03";
 			logger.info("faq 게시판으로 이동 이동");
 		} else if (boardVO.getBo_bbsid().equals("04")) {
-			jsp = "redirect:/board/listPage?bo_bbsid=04";
+			jsp = "redirect:/board/list?bo_bbsid=04";
 			logger.info("Q&A 게시판으로 이동");
 		}
 
@@ -201,7 +201,7 @@ public class BoardController {
 			jsp = "redirect:/board/list?bo_bbsid=03";
 			logger.info("faq로 이동 이동");
 		} else if (bo_bbsid.equals("04")) {
-			jsp = "redirect:/board/listPage?page="+page+"&perPageNum="+perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx;
+			jsp = "redirect:/board/list?page="+page+"&perPageNum="+perPageNum+"&bo_bbsid="+bo_bbsid+"&bo_idx="+bo_idx;
 			logger.info("Q&A로 이동");
 		}
 
@@ -209,10 +209,10 @@ public class BoardController {
 	}
 
 	
-	 // 페이징 처리	 
-	 @RequestMapping( value = "/listPage")
-	 public String listPage(Criteria cri, Model model) throws Exception{
-		 logger.info("BoardController - listPage() 입장");
+	 // // 게시판 리스트 조회 + 페이징 처리	 
+	 @RequestMapping( value = "/list")
+	 public String list(Criteria cri, Model model) throws Exception{
+		 logger.info("BoardController - list() 입장");
 		 logger.info("BoardController - board_cont() 입장");
 		 logger.info("page:" + cri.getPage());
 		 logger.info("perPageNum:" + cri.getPerPageNum());
@@ -224,7 +224,7 @@ public class BoardController {
 		 
 		 PageMaker pageMaker = new PageMaker();
 		 pageMaker.setCri(cri);
-		 //pageMaker.setTotalCount(131);
+		 
 		 pageMaker.setTotalCount(service.listCountCriteria(cri));
 		 
 		 model.addAttribute("pageMaker", pageMaker);

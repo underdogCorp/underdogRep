@@ -36,7 +36,7 @@ ${data.perPageNum }
 게시일자: ${board.bo_regdate }<br/>
 아이피 : ${board.bo_regip } <br/>
 
-<input type="button" value="목록으로" onclick="location='/board/listPage?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }'">
+<input type="button" value="목록으로" onclick="location='/board/list?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }'">
 <br/>
 <c:if test="${sessionScope.MEMBER.me_email == board.bo_me_email}">
 <input type="button" value="수정폼으로" onclick="location='/board/board_cont?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&state=modify'"/>
