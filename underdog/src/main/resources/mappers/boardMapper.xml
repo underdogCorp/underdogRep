@@ -39,7 +39,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		 (select rownum rnum,bo_idx,bo_me_email,bo_bbsid,bo_me_nick,
  		 bo_title,bo_content,bo_hit, bo_regdate,bo_regip,bo_status,
  		 bo_deldate from 
- 		 (select * from board where bo_bbsid = #{bo_bbsid} order by bo_idx desc, bo_regdate desc))   
+ 		 (select * from board where bo_bbsid = #{bo_bbsid} and bo_status = 0
+ 		 	order by bo_idx desc, bo_regdate desc))   
 	   		 where rnum >= #{pageStart}  and rnum <= (#{page} * #{perPageNum})
  ]]>  
  </select>
