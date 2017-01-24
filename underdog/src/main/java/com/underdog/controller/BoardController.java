@@ -1,9 +1,11 @@
 package com.underdog.controller;
 
+import java.io.PrintWriter;
 import java.util.HashMap;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -213,7 +215,6 @@ public class BoardController {
 	 @RequestMapping( value = "/list")
 	 public String list(Criteria cri, Model model) throws Exception{
 		 logger.info("BoardController - list() 입장");
-		 logger.info("BoardController - board_cont() 입장");
 		 logger.info("page:" + cri.getPage());
 		 logger.info("perPageNum:" + cri.getPerPageNum());
 	     logger.info("bo_bbsid:" + cri.getBo_bbsid());
@@ -238,7 +239,7 @@ public class BoardController {
 				logger.info("자유게시판으로 이동");
 			} else if (cri.getBo_bbsid().equals("03")) {
 				jsp = "/board/faq/bo_faq_list";
-				logger.info("faq로 이동 이동");
+				logger.info("faq로 이동");
 			} else if (cri.getBo_bbsid().equals("04")) {
 				jsp = "/board/q&a/bo_q&a_list";
 				logger.info("Q&A로 이동");
@@ -247,5 +248,23 @@ public class BoardController {
 			return jsp;
 		 
 	 }
+	 
+	// faq 게시판 리스트 조회 + 페이징 처리	 
+		 @RequestMapping( value = "/listFaq")
+		 public void listFaq(@RequestParam HashMap data, 
+				 HttpServletResponse res, Model model) throws Exception{
+			
+			logger.info("BoardController - listFaq() 입장");
+			logger.info("bo_bbsid:" + data.get("bo_bbsid"));
+			logger.info("bo_idx:" + data.get("bo_idx"));
+			
+			BoardVO bv = service.listFaq(data);
+			
+//			model.addAttribute("listFaq", service.listFaq(data));
+			
+			PrintWriter writer = res.getWriter();
+			writer.write(bv.getBo_content());
+
+		 }
 	 
 }

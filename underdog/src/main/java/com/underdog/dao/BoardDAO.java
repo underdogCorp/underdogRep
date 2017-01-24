@@ -23,6 +23,8 @@ public interface BoardDAO {
 
 	public int listCountCriteria(Criteria cri) throws Exception; 
 	
+	public BoardVO listFaq(Map data) throws Exception;
+	
 
 	//
 	// public List<BoardVO> listPage(int page) throws Exception;

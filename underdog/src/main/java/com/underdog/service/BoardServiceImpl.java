@@ -79,6 +79,12 @@ public class BoardServiceImpl implements BoardService{
 		
 		return dao.listCountCriteria(cri);
 	}
+	
+	@Override
+	public BoardVO listFaq(Map data) throws Exception{
+		
+		return dao.listFaq(data);
+	}
 
 
 

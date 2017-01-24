@@ -26,9 +26,9 @@ public interface BoardService {
 
 	public int listCountCriteria(Criteria cri) throws Exception;
 
+	public BoardVO listFaq(Map data) throws Exception;
 	
 	
-
 
 	
 

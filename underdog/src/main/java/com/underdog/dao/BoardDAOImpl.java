@@ -84,6 +84,12 @@ public class BoardDAOImpl implements BoardDAO {
 		
 		return session.selectOne(namespace + ".listCountCriteria", cri);
 	}
+	
+	@Override
+	public BoardVO listFaq(Map data) throws Exception{
+		
+		return session.selectOne(namespace + ".board_cont", data);
+	}
 
 
 
