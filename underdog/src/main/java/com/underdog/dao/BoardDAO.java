@@ -27,7 +27,7 @@ public interface BoardDAO {
 	public BoardVO listFaq(Map data) throws Exception;
 	
 	
-	public List<BoardVO> listSearch(SearchCriteria cri)throws Exception;
+	public List<BoardVO> listSearchCriteria(SearchCriteria cri)throws Exception;
 	
 	public int listSearchCount(SearchCriteria cri)throws Exception;
 

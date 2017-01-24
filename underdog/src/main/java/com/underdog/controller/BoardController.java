@@ -224,7 +224,7 @@ public class BoardController {
 	}
 
 
-	 // 게시판 리스트 조회 + 페이징 처리	 
+	 // 게시판 리스트 조회 + 페이징 처리 + 검색
 	 @RequestMapping( value = "/slist")
 	 public String slist(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		 logger.info("BoardController - slist() 입장");
@@ -235,15 +235,20 @@ public class BoardController {
 	     logger.info("SearchType:" + cri.getSearchType());
 	     
 		 String jsp = null;
-				 
-//		 model.addAttribute("list", service.listCriteria(cri));
-		 model.addAttribute("list", service.listSearchCriteria(cri));
-		 
 		 PageMaker pageMaker = new PageMaker();
 		 pageMaker.setCri(cri);
 		 
 //		 pageMaker.setTotalCount(service.listCountCriteria(cri));
 		 pageMaker.setTotalCount(service.listSearchCount(cri));
+		 
+		 
+//		 model.addAttribute("list", service.listCriteria(cri));
+		 model.addAttribute("list", service.listSearchCriteria(cri));
+		 
+		 logger.info("목록" + service.listSearchCriteria(cri));
+		 logger.info("갯수" + service.listSearchCount(cri));
+		 
+
 		 
 		 model.addAttribute("pageMaker", pageMaker);
 		 
@@ -256,10 +261,10 @@ public class BoardController {
 				logger.info("자유게시판으로 이동");
 			} else if (cri.getBo_bbsid().equals("03")) {
 				jsp = "/board/faq/bo_faq_list";
-				logger.info("faq로 이동");
+				logger.info("faq 게시판으로 이동");
 			} else if (cri.getBo_bbsid().equals("04")) {
 				jsp = "/board/q&a/bo_q&a_list";
-				logger.info("Q&A로 이동");
+				logger.info("Q&A 게시판으로 이동");
 			}
 
 			return jsp; 

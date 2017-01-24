@@ -55,13 +55,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  
  <!-- 게시판 리스트 불러오기 + 페이징 + 검색-->
- <select id="listSearch" resultType="BoardVO">
+ <select id="listSearchCriteria" parameterType="SearchCriteria" resultType="BoardVO">
  <![CDATA[
  select * from 
  		 (select rownum rnum,bo_idx,bo_me_email,bo_bbsid,bo_me_nick,
  		 bo_title,bo_content,bo_hit, bo_regdate,bo_regip,bo_status,
  		 bo_deldate from 
- 		 (select * from board where bo_bbsid = #{bo_bbsid} and bo_status = 0
+ 		  (select * from board where bo_bbsid = #{bo_bbsid} and bo_status = 0
 ]]>
 
 	 <include refid="search"></include>
@@ -74,13 +74,36 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 <!-- 총 게시물 수  + 검색-->
- <select id="listSearchCount" resultType="int">
- <![CDATA[
- select count(bo_idx) from board 
- where bo_bbsid = #{bo_bbsid} and bo_status = 0 
- ]]>
+ <!-- <select id="listSearchCount" resultType="int">
+  select count(*) from board 
+ 	where bo_bbsid = #{bo_bbsid} and bo_status = 0  
  <include refid="search"></include>
- </select>
+ </select>  -->
+ 
+ <!-- 총 게시물 수  + 검색-->
+<select id="listSearchCount" parameterType="SearchCriteria" resultType="int"> 
+ select count(*) from board  	
+ 
+ 	<where>
+  	<!-- 검색 조건이 없어서 총레코드 개수 반환  -->
+			<if test="searchType==''">
+				bo_bbsid = #{bo_bbsid} and bo_status = 0
+			</if>
+			<!-- 검색 조건이 글쓴이인 경우 -->
+			<if test="searchType=='bo_me_nick'">
+				bo_bbsid = #{bo_bbsid} and bo_status = 0 and bo_me_nick like '%' || #{keyword} ||'%' 
+			</if>
+			<!-- 검색 조건이 제목인 경우 -->
+			<if test="searchType=='bo_title'">
+				bo_bbsid = #{bo_bbsid} and bo_status = 0 and bo_title like '%' || #{keyword} ||'%' 
+			</if>
+			<!-- 검색 조건이 내용인 경우 -->
+			<if test="searchType=='bo_content'">
+				bo_bbsid = #{bo_bbsid} and bo_status = 0 and bo_content like '%' || #{keyword} ||'%'
+			</if> 
+ 	</where>
+ 	
+</select> 
  
  
  
@@ -99,7 +122,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!-- 게시글 삭제 -->
 <select id="board_delproc" parameterType="String">
-	update board set bo_status = '1', bo_deldate = sysdate where bo_idx = #{bo_idx}
+	update board set bo_status = 1, bo_deldate = sysdate where bo_idx = #{bo_idx}
 </select>
 
 
@@ -112,18 +135,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </update>
 
 
- <sql id="search">
+<!--  <sql id="search">
 	<if test="searchType != null" >
 		<if test="searchType == 't'.toString()">
-			and bo_title like CONCAT('%', #{keyword}, '%')
+			and bo_title like CONCAT('%',#{keyword},'%')
 		</if>
 		<if test="searchType == 'c'.toString()">
-			and bo_content like CONCAT('%', #{keyword}, '%')
+			and bo_content like CONCAT('%',#{keyword},'%')
 		</if>
 		<if test="searchType == 'w'.toString()">
-			and bo_me_nick like CONCAT('%', #{keyword}, '%')
+			and bo_me_nick like CONCAT('%',#{keyword},'%')
+		</if>
+	</if>
+</sql> -->
+ 
+  <sql id="search">
+	<if test="searchType != null" >
+		<if test="searchType == 'bo_title'">
+			and bo_title like '%' || #{keyword} ||'%'
+		</if>
+		<if test="searchType == 'bo_content'">
+			and bo_content like '%' || #{keyword} ||'%'
+		</if>
+		<if test="searchType == 'bo_me_nick'">
+			and bo_me_nick like '%' || #{keyword} ||'%'
 		</if>
 	</if>
 </sql>
- 
 </mapper>

@@ -90,7 +90,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
 		logger.info("BoardServiceImpl - listSearchCriteria 입장");
-		return dao.listSearch(cri);
+		return dao.listSearchCriteria(cri);
 	}
 
 	@Override
