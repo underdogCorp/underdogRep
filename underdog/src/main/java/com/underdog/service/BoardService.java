@@ -27,13 +27,13 @@ public interface BoardService {
 
 	public int listCountCriteria(Criteria cri) throws Exception;
 
-<<<<<<< HEAD
 	public BoardVO listFaq(Map data) throws Exception;
-=======
+
+	
 	public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
 
 	public int listSearchCount(SearchCriteria cri) throws Exception;
->>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
+
 	
 	
 

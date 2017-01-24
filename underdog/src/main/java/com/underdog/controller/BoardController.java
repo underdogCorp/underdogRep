@@ -223,18 +223,11 @@ public class BoardController {
 		return jsp;
 	}
 
-<<<<<<< HEAD
-	
-	 // // 게시판 리스트 조회 + 페이징 처리	 
-	 @RequestMapping( value = "/list")
-	 public String list(Criteria cri, Model model) throws Exception{
-		 logger.info("BoardController - list() 입장");
-=======
+
 	 // 게시판 리스트 조회 + 페이징 처리	 
 	 @RequestMapping( value = "/slist")
 	 public String slist(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
 		 logger.info("BoardController - slist() 입장");
->>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 		 logger.info("page:" + cri.getPage());
 		 logger.info("perPageNum:" + cri.getPerPageNum());
 		 logger.info("bo_bbsid:" + cri.getBo_bbsid());
