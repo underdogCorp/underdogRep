@@ -224,12 +224,13 @@ public class BoardController {
 	 // 게시판 리스트 조회 + 페이징 처리	 
 	 @RequestMapping( value = "/slist")
 	 public String slist(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception{
-		 logger.info("BoardController - list() 입장");
-		 logger.info("BoardController - board_cont() 입장");
+		 logger.info("BoardController - slist() 입장");
 		 logger.info("page:" + cri.getPage());
 		 logger.info("perPageNum:" + cri.getPerPageNum());
-	     logger.info("bo_bbsid:" + cri.getBo_bbsid());
-
+		 logger.info("bo_bbsid:" + cri.getBo_bbsid());
+	     logger.info("Keyword:" + cri.getKeyword());
+	     logger.info("SearchType:" + cri.getSearchType());
+	     
 		 String jsp = null;
 				 
 //		 model.addAttribute("list", service.listCriteria(cri));

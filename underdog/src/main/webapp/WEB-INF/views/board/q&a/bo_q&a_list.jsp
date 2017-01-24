@@ -8,7 +8,7 @@
 $(function(){
 	
 	$('#searchBtn').click(function(){
-			self.location = "slist"
+			self.location = "/board/slist"
 				+ '${pageMaker.makeQuery(1)}'
 				+ "&searchType=" + $("select option:selected").val()
 				+ "&keyword=" + $('#keywordInput').val()
