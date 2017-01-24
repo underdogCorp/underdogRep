@@ -26,7 +26,7 @@
 <title>pinterest</title>
 </head>
 
-<body onload="result()">
+<body onload="result();">
 	<input type="hidden" value="${result}" id="result" name="result">
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
