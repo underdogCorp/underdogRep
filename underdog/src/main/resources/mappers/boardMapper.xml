@@ -27,23 +27,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 <!-- 게시판 리스트 불러오기 -->
-<select id="list" parameterType="String" resultType="BoardVO">
-		select * from board where bo_bbsid = #{bo_bbsid} and bo_status = 0
-		
-<!-- 		select * from  -->
-<!-- 		 (select rownum rnum,bo_idx,bo_me_email,bo_bbsid,bo_me_nick, -->
-<!-- 		 bo_title,bo_content,bo_hit,bo_regdate,bo_regip,bo_status, -->
-<!-- 		 bo_deldate from   -->
-<!-- 	  	 (select * from board order by bo_idx desc)  -->
-<!-- 	   		where bo_status = 0 -->
-<!-- 	   		 where rnum >= ((#{page}-1) * 10+1)  and rnum <= (#{page} * 10) -->
-		
-</select>
+<!-- <select id="list" parameterType="String" resultType="BoardVO"> -->
+<!-- 		select * from board where bo_bbsid = #{bo_bbsid} and bo_status = 0;		 -->
+<!-- </select> -->
 
+
+<!-- 게시판 리스트 불러오기 + 페이징 -->
+ <select id="listCriteria" resultType="BoardVO">
+ <![CDATA[
+ select * from 
+ 		 (select rownum rnum,bo_idx,bo_me_email,bo_bbsid,bo_me_nick,
+ 		 bo_title,bo_content,bo_hit, bo_regdate,bo_regip,bo_status,
+ 		 bo_deldate from 
+ 		 (select * from board where bo_bbsid = #{bo_bbsid} order by bo_idx desc, bo_regdate desc))   
+	   		 where rnum >= #{pageStart}  and rnum <= (#{page} * #{perPageNum})
+ ]]>  
+ </select>
+
+<!-- 총 게시물 수  -->
+ <select id="listCountCriteria" resultType="int">
+ <![CDATA[
+ select count(bo_idx) from board 
+ where bo_bbsid = #{bo_bbsid} and bo_status = 0 
+ ]]>
+ </select>
+ 
+ 
 <!-- 상세내용 조회 및 수정하기 폼 내용 불러오기 -->
 <select id="board_cont" parameterType="Map" resultType="BoardVO">
 	select * from board where bo_idx = #{bo_idx}
 </select>
+
 
 <!-- 게시글 조회수 증가 -->
 <select id="hit" parameterType="Map">
@@ -56,6 +70,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	update board set bo_status = '1', bo_deldate = sysdate where bo_idx = #{bo_idx}
 </select>
 
+
 <!-- 게시글 수정 -->
 <update id="modifyProc" parameterType="Map">
 	update board 
@@ -65,27 +80,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 </update>
 
 
- <select id="listCriteria" resultType="BoardVO">
- <![CDATA[
- select * from 
- 		 (select rownum rnum,bo_idx,bo_me_email,bo_bbsid,bo_me_nick,
- 		 bo_title,bo_content,bo_hit, bo_regdate,bo_regip,bo_status,
- 		 bo_deldate from 
- 		 (select * from board where bo_bbsid = #{bo_bbsid} order by bo_idx desc, bo_regdate desc))   
-	   		 where rnum >= #{pageStart}  and rnum <= (#{page} * #{perPageNum})
- ]]>  
- </select>
-
- <select id="listCountCriteria" resultType="int">
- <![CDATA[
- select 
-   count(bo_idx) 
- from 
-   board 
- where 
-   bo_bbsid = #{bo_bbsid} and bo_status = 0 
- ]]>
- </select>
  
  
 </mapper>
