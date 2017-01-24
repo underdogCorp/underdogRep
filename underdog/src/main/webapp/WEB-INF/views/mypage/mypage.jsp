@@ -40,12 +40,18 @@ h2 {
 }
 </style>
 <script>
+	function page_view() {
+		if(${result==1})
+			member_view()
+	}
+
 	function member_view() {
 		document.getElementById("memberInfo").style.display = 'block';
 		document.getElementById("basketInfo").style.display = 'none';
 		document.getElementById("orderInfo").style.display = 'none';
 		document.getElementById("myboardInfo").style.display = 'none';
 	}
+
 	function basket_view() {
 		document.getElementById("basketInfo").style.display = 'block';
 		document.getElementById("memberInfo").style.display = 'none';
@@ -70,14 +76,15 @@ h2 {
 
 
 </head>
-<body>
+<body onLoad="page_view()">
 	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+
 	<div class="container-fluid">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
 				<h4>마이 페이지</h4>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a onclick="member_view()">회원정보</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#myModal">회원정보</a></li>
 					<li><a onclick="basket_view()">장바구니</a></li>
 					<li><a onclick="order_view()">구입목록</a></li>
 					<li><a onclick="myboard_view()">내가쓴글</a></li>
@@ -219,5 +226,41 @@ h2 {
 				<br>
 
 			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+			<form method="post" action="/mypage/pwcheck">
+				<div class="modal fade" id="myModal" role="dialog">
+					<div class="modal-dialog modal-sm">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">회원정보를 확인합니다</h4>
+							</div>
+							<div class="modal-body">
+								<p>비밀번호를 입력하세요</p>
+								<input type="password" class="form-control" id="me_pw"
+									name="me_pw">
+							</div>
+							<div class="modal-footer">
+								<input type="submit" class="btn btn-success" value="확인">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">취소</button>
+								<input type="hidden" name=me_email
+									value="${sessionScope.MEMBER.me_email}" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
 </body>
 </html>

@@ -4,7 +4,6 @@
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-
 <h1>
 Hello Pinterest!!!!! !
 </h1>
