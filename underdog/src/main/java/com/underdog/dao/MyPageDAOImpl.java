@@ -28,4 +28,26 @@ public class MyPageDAOImpl implements MyPageDAO {
 		return session.selectOne(namespace + ".memberInfo", me_email);
 	}
 
+	// 마이페이지 회원정보 보기전 pw체크
+	@Override
+	public int pwcheck(String me_email, String me_pw) throws Exception {
+		int result = 0;
+		MemberVO member;
+		logger.info("mypageDAOImpl- 회원정보 보기전 pw체크 입장");
+		member = (MemberVO) session.selectOne(namespace + ".memberInfo", me_email);
+		System.out.println("입력한 email값:"+me_email);
+		System.out.println("select한 email값:"+member.getMe_email());
+		System.out.println("select한 me_pw값:"+member.getMe_pw());
+		
+		if (!member.getMe_email().equals(me_email)) {
+			result = 0;
+		} else if (!member.getMe_pw().equals(me_pw)) {
+			result = -1;
+		} else if (member.getMe_pw().equals(me_pw)) {
+			result = 1;
+		}
+
+		return result;
+	}
+
 }

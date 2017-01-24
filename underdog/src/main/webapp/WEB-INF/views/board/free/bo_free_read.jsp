@@ -19,7 +19,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 </head>
 <body>
-<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
 	<!-- 좌우측의 공간 확보 -->
 	<div class="container">
@@ -40,8 +40,8 @@
 						</tr>
 						<tr>
 							<td>글쓴이</td>
-							<td>${board.bo_me_nick}<span style='float: right'>조회 :
-									${board.bo_hit} </span>
+							<td>${board.bo_me_nick}<span style='float: right'>조회
+									: ${board.bo_hit} </span>
 							</td>
 						</tr>
 						<tr>
@@ -50,15 +50,15 @@
 					</tbody>
 				</table>
 
-				bo_idx의 (현제 게시글) 이메일 값:${board.bo_me_email} <br>
-				<br> 쎄션에있는 이메일 값:${sessionScope.MEMBER.me_email}
+				bo_idx의 (현제 게시글) 이메일 값:${board.bo_me_email} <br> <br>
+				쎄션에있는 이메일 값:${sessionScope.MEMBER.me_email}
 
 				<table class="table table-condensed">
 					<thead>
 						<tr>
 							<td><span style='float: right'>
 									<button type="button" id="list" class="btn btn-default"
-										onclick="location.href=''">목록</button>
+										onclick="location='/board/list?page=${data.page}&perPageNum=${data.perPageNum}&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx}'">목록</button>
 									<button type="button" id="modify" class="btn btn-default"
 										onclick="location.href=''">수정</button> <c:if
 										test="${sessionScope.MEMBER.me_email eq board.bo_me_email}">

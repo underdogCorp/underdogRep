@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.underdog.controller.BoardController;
 import com.underdog.domain.BoardVO;
 import com.underdog.domain.Criteria;
+import com.underdog.domain.SearchCriteria;
 
 @Repository
 public class BoardDAOImpl implements BoardDAO {
@@ -89,6 +90,19 @@ public class BoardDAOImpl implements BoardDAO {
 	public BoardVO listFaq(Map data) throws Exception{
 		
 		return session.selectOne(namespace + ".board_cont", data);
+	}
+
+	
+	@Override
+	public List<BoardVO> listSearch(SearchCriteria cri) throws Exception {
+		logger.info("BoardDAOImpl - listSearch 입장");
+		return session.selectList(namespace + ".listSearch", cri);
+	}
+
+	@Override
+	public int listSearchCount(SearchCriteria cri) throws Exception {
+		logger.info("BoardDAOImpl - listSearchCount 입장");
+		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
 
 

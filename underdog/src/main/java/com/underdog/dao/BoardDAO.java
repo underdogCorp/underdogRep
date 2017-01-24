@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.underdog.domain.BoardVO;
 import com.underdog.domain.Criteria;
+import com.underdog.domain.SearchCriteria;
 
 public interface BoardDAO {
 
@@ -23,9 +24,16 @@ public interface BoardDAO {
 
 	public int listCountCriteria(Criteria cri) throws Exception; 
 	
+<<<<<<< HEAD
 	public BoardVO listFaq(Map data) throws Exception;
 	
 
+=======
+	public List<BoardVO> listSearch(SearchCriteria cri)throws Exception;
+	
+	public int listSearchCount(SearchCriteria cri)throws Exception;
+	
+>>>>>>> branch 'master' of https://github.com/underdogCorp/underdogRep.git
 	//
 	// public List<BoardVO> listPage(int page) throws Exception;
 	//
