@@ -120,12 +120,9 @@ h2 {
 										value="${memberInfo.me_nick}" /></td>
 									<td><input type="text" name="me_birth"
 										value="${memberInfo.me_birth}" /></td>
-									<td><input type="text" name="me_regdate"
-										value="${memberInfo.me_regdate}" readonly /></td>
-									<td><input type="text" name="me_grade"
-										value="${memberInfo.me_grade}" readonly /></td>
-									<td><input type="text" name="me_point"
-										value="${memberInfo.me_point}" readonly /></td>
+									<td>${memberInfo.me_regdate}</td>
+									<td>${memberInfo.me_grade}</td>
+									<td>${memberInfo.me_point}</td>
 									<td><input type="text" name="me_add1"
 										value="${memberInfo.me_add1}" /></td>
 									<td><input type="text" name="me_add2"
