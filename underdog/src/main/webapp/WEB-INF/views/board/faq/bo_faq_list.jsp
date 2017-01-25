@@ -40,7 +40,7 @@ function callContent(bo_idx){
 		<h2>F A Q</h2>
 		<p>자주하는 질문</p>
 		<table class="table table-hover">
-			<thead>
+			<!-- <thead>
 				<tr>
 					<th>번호</th>
 					<th>제목</th>
@@ -49,7 +49,7 @@ function callContent(bo_idx){
 					<th>게시일</th>
 					<th>아이피</th>
 				</tr>
-			</thead>	
+			</thead> -->	
 			
 
 <c:choose>
