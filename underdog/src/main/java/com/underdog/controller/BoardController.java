@@ -1,7 +1,9 @@
 package com.underdog.controller;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +29,7 @@ public class BoardController {
 
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
+	
 	@Inject
 	private BoardService service;
 
@@ -249,15 +252,15 @@ public class BoardController {
 		 PageMaker pageMaker = new PageMaker();
 		 pageMaker.setCri(cri);
 		 
-//		 pageMaker.setTotalCount(service.listCountCriteria(cri));
-		 pageMaker.setTotalCount(service.listSearchCount(cri));
+
+		 int totalCount = service.listSearchCount(cri);
+		 pageMaker.setTotalCount(totalCount);
 		 
+		 List<BoardVO> list = service.listSearchCriteria(cri);
+		 model.addAttribute("list", list);
 		 
-//		 model.addAttribute("list", service.listCriteria(cri));
-		 model.addAttribute("list", service.listSearchCriteria(cri));
-		 
-		 logger.info("목록" + service.listSearchCriteria(cri));
-		 logger.info("갯수" + service.listSearchCount(cri));
+		 logger.info("갯수" + totalCount);
+		 logger.info("목록" + list);
 		 
 		 
 		 model.addAttribute("pageMaker", pageMaker);

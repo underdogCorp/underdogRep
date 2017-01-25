@@ -3,4 +3,36 @@
 
 <mapper namespace="com.underdog.mapper.replyMapper">
 
+<insert id="registerProc">
+	insert into reply (
+		re_idx,
+		re_me_email,
+		re_bo_idx,
+		re_content,
+		
+		re_ref,
+		re_level,
+		re_step,
+		
+		re_regip,
+		re_regdate
+	) values (
+		RE_IDX_SEQ.nextval,
+		#{re_me_email},
+		#{re_bo_idx},
+		#{re_content},
+		
+		RE_IDX_SEQ.nextval,
+		#{re_me_email},
+		#{re_me_email},
+		
+		#{re_regip},
+		sysdate
+		
+	) 
+
+
+</insert>
+
+
 </mapper>

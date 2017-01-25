@@ -43,10 +43,20 @@ $(function(){
 
  <%-- 댓글 입력폼 --%>
  <form id="replySmitFrm">
- 
+ <input type="text" name="page" value="${data.page }"/><br/>
+ <input type="text" name="perPageNum" value="${data.perPageNum }"/><br/>
+ <input type="text" name="bo_idx" value="${data.bo_idx }"/><br/>
+ <input type="text" name="bo_bbsid" value="${data.bo_bbsid }"/><br/>
+ <input type="text" name="keyword" value="${data.keyword }"/><br/>
+ <input type="text" name="searchType" value="${data.searchType }"/><br/>
+      
+
+작성자 이메일(히든으로 할것)<input type="text" name="re_me_email" value="${sessionScope.MEMBER.me_email }"/>
+게시글 번호(히든으로 할것)  <input type="text" name="re_bo_idx" value="${data.bo_idx }"/>
+  
   <table border="1" width="550">
    <tr>
-    <td colspan="2">댓글(댓글수: )</td>
+    <td colspan="2">댓글(댓글수: ) 작성자 : ${sessionScope.MEMBER.me_nick }(${sessionScope.MEMBER.me_email })</td>
    </tr>  
    <tr>
     <th>
@@ -59,8 +69,6 @@ $(function(){
   </table>
  </form>
  
- <p/>
- <p/>
  
  <%--댓글 목록 --%>
 <%--  <table align="center" border="0">

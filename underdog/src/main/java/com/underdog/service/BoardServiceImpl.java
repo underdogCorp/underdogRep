@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	private BoardDAO dao;
 	
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
 	
 	// 게시판 리스트 불러오기
 	@Override
