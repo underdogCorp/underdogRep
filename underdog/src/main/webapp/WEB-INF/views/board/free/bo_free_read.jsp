@@ -54,7 +54,7 @@
 										<button type="button" class="btn btn-default"
 											onclick="location.href='/board/delProc?bo_idx=${board.bo_idx}&bo_bbsid=${board.bo_bbsid}'">삭제</button>
 										<button type="button" id="modify" class="btn btn-default"
-											onclick="location='/board/board_cont?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&keyword=${data.keyword }&searchType=${data.searchType }&state=modify'"/>수정</button>
+											onclick="location='/board/board_cont?page=${data.page}&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&keyword=${data.keyword }&searchType=${data.searchType }&state=modify'"/>수정</button>
 
 
 									</c:if>
