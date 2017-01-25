@@ -94,7 +94,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  
  
 <!-- 상세내용 조회 및 수정하기 폼 내용 불러오기 -->
-<select id="board_cont" parameterType="Map" resultType="BoardVO">
+<select id="board_cont"  resultType="BoardVO">
 	select * from board where bo_idx = #{bo_idx}
 </select>
 
@@ -112,7 +112,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 <!-- 게시글 수정 -->
-<update id="modifyProc" parameterType="Map">
+<update id="modifyProc">
 	update board 
 		set bo_title = #{bo_title},
 			bo_content = #{bo_content}				

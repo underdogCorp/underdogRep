@@ -16,10 +16,9 @@ $(function(){
 
 	});
 
-})
+});
+
 </script>
-
-
 
 
 	<div class="container">

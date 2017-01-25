@@ -6,9 +6,18 @@ public class Criteria {
 	private int perPageNum;
 	private String bo_bbsid;
 	private int bo_idx;
-
+	private String state;
 
 	
+	
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
 	public int getBo_idx() {
 		return bo_idx;
 	}

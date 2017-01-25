@@ -13,9 +13,9 @@ public class PageMaker {
 
   private int displayPageNum = 10;
 
-  private Criteria cri;
+  private SearchCriteria cri;
 
-  public void setCri(Criteria cri) {
+  public void setCri(SearchCriteria cri) {
     this.cri = cri;
   }
 
@@ -92,4 +92,5 @@ public class PageMaker {
 	    return uriComponents.toUriString();
 	  } 
 
+  
 }

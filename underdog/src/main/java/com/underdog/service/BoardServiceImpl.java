@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	private BoardDAO dao;
 	
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
 	
 	// 게시판 리스트 불러오기
 	@Override
@@ -45,10 +45,10 @@ public class BoardServiceImpl implements BoardService{
 
 	// 상세보기 및 수정 폼 가기
 	@Override
-	public BoardVO board_cont(HashMap data) throws Exception{
+	public BoardVO board_cont(SearchCriteria cri) throws Exception{
 		logger.info("BoardServiceImpl - board_cont 입장");
 		
-		return dao.board_cont(data);
+		return dao.board_cont(cri);
 	}
 	
 
