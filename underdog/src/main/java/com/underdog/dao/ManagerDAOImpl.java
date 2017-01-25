@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ManagerDAOImpl {
+public class ManagerDAOImpl implements ManagerDAO{
 	
 	@Inject
 	private SqlSession session;
