@@ -332,6 +332,7 @@ public class BoardController {
 		 public void listFaq(@RequestParam HashMap data, 
 				 HttpServletResponse res, Model model) throws Exception{
 			
+			 res.setCharacterEncoding("utf-8");
 			logger.info("BoardController - listFaq() 입장");
 			logger.info("bo_bbsid:" + data.get("bo_bbsid"));
 			logger.info("bo_idx:" + data.get("bo_idx"));

@@ -3,4 +3,11 @@
 
 <mapper namespace="com.underdog.mapper.basketMapper">
 
+	<!-- 장바구니 리스트 불러오기 -->
+	<select id="basket" parameterType="String" resultType="BasketVO">
+		select *
+		from basket where ba_me_email = #{me_email}
+	</select>
+
+
 </mapper>
