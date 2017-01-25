@@ -18,31 +18,38 @@
 	<!DOCTYPE html>
 <html>
 <head>
-<title>Bootstrap Example</title>
+<title>자유 게시판</title>
 <meta charset="UTF-8">
 </head>
 <body>
 	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
 	<div class="container">
-		<h2>Hover Rows</h2>
-		<p>The .table-hover class enables a hover state on table rows:</p>
+		<h2>자유 게시판</h2>
 		<table class="table table-hover">
 			<thead>
 				<tr>
+					<th>번호</th>
 					<th>제목</th>
-					<th>닉네임</th>
-					<th>이메일</th>
-					<th>날짜</th>
+					<th>작성자</th>
+					<th>조회수</th>
+					<th>게시일</th>
 				</tr>
 			</thead>
 			<tbody>
+			<!-- 화면 출력 번호  변수 정의 -->		
+				<c:set var="num" value="${pageMaker.totalCount-(pageMaker.cri.page-1)*10}"/> 
+				
 				<c:forEach items="${list}" var="list">
 					<tr>
-						<td><a
-							href="/board/board_cont${pageMaker.makeQuery(pageMaker.cri.page) }&bo_bbsid=${list.bo_bbsid}&bo_idx=${list.bo_idx }&state=read">${list.bo_title}</a></td>
-						<td>${list.bo_me_nick}</td>
-						<td>${list.bo_me_email}</td>
+						<td>
+						<!-- 번호 출력 부분 -->	
+ 						<c:out value="${num}"/>			
+						<c:set var="num" value="${num-1}"/>
+						</td>
+						<td><a href="/board/board_cont${pageMaker.makeQuery(pageMaker.cri.page)}&bo_bbsid=${list.bo_bbsid}&bo_idx=${list.bo_idx }&state=read">${list.bo_title}</a></td>
+						<td>${list.bo_me_nick}(${list.bo_me_email})</td>
+						<td>${list.bo_hit}</td>
 						<td>${list.bo_regdate}</td>
 					</tr>
 				</c:forEach>
