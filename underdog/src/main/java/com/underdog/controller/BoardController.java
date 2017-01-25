@@ -194,17 +194,17 @@ public class BoardController {
 	
 	// 삭제 프로세스
 	@RequestMapping("/delProc")
-	public String delProc(@RequestParam HashMap data) throws Exception {
+	public String delProc(@ModelAttribute("cri") SearchCriteria cri) throws Exception {
 		logger.info("BoardController - delProc 입장");
 		
 		String jsp = null;
 		
-		String bo_idx = (String) data.get("bo_idx");
-		String bo_bbsid = (String) data.get("bo_bbsid");
-		String page = (String) data.get("page");
-		String perPageNum = (String) data.get("perPageNum");
-		String keyword = (String) data.get("keyword");
-		String searchType = (String) data.get("searchType");
+		int bo_idx = cri.getBo_idx();
+		String bo_bbsid = (String) cri.getBo_bbsid();
+		int page = cri.getPage();
+		int perPageNum = cri.getPerPageNum();
+		String keyword = (String) cri.getKeyword();
+		String searchType = (String) cri.getSearchType();
 		
 		
 		logger.info("bo_idx:" + bo_idx);
