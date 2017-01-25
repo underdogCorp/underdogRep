@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Bootstrap Example</title>
+<title>마이 페이지</title>
 <style>
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
 .row.content {
@@ -76,7 +76,7 @@ h2 {
 
 
 </head>
-<body onLoad="page_view()">
+<body onload="page_view()">
 	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
 	<div class="container-fluid">
@@ -167,7 +167,7 @@ h2 {
 
 
 
-					<h3>합계금액</h3>
+					<h4>합계금액 :   (불러온 가격 입력)</h4>
 					<span style="float: right">
 						<button type="submit" class="btn btn-danger">주문하기</button>
 						<button type="submit" class="btn btn-default right">주문취소</button>
