@@ -7,5 +7,6 @@ encoding//src/main/java/com/underdog/service/MemberService.java=UTF-8
 encoding//src/main/java/com/underdog/service/MemberServiceImpl.java=UTF-8
 encoding//src/main/java/com/underdog/util/AES256.java=UTF-8
 encoding//src/main/webapp/WEB-INF/views/include/mfooter.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/manager/manager.jsp=UTF-8
 encoding//src/main/webapp/resources/css/member.css=UTF-8
 encoding/<project>=UTF-8
