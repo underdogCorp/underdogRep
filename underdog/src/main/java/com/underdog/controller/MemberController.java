@@ -210,10 +210,5 @@ public class MemberController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "/manager")
-	public String manager() throws Exception {
-		logger.info("관리자 폼");
-		return "/manager/manager";
-	}
 
 }

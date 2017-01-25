@@ -56,7 +56,7 @@
 				<li><a href="/member/logoutProc">로그아웃</a></li>
 			</c:if>
 			<c:if test="${sessionScope.MEMBER.me_grade eq 100}">
-				<li><a href="/member/manager">관리자모드</a></li>
+				<li><a href="/manager/manager">관리자모드</a></li>
 			</c:if>
 		</ul>
 	</div>
