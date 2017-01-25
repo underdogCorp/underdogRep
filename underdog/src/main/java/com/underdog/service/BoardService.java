@@ -17,7 +17,7 @@ public interface BoardService {
 	
 	public void registerProc(HttpServletRequest req, BoardVO boardVO) throws Exception;
 
-	public BoardVO board_cont(HashMap data) throws Exception;
+	public BoardVO board_cont(SearchCriteria cri) throws Exception;
 
 	public void delProc (int bo_idx) throws Exception;
 

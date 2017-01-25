@@ -35,7 +35,7 @@ public class BoardController {
 
 	 // 게시판 리스트 조회 + 페이징 처리	 
 	 @RequestMapping( value = "/list")
-	 public String list(Criteria cri, Model model) throws Exception{
+	 public String list(SearchCriteria cri, Model model) throws Exception{
 		 logger.info("BoardController - list() 입장");
 		 logger.info("page:" + cri.getPage());
 		 logger.info("perPageNum:" + cri.getPerPageNum());
@@ -125,41 +125,86 @@ public class BoardController {
 	}
 
 	// 게시글 상세보기 및 수정 폼
+//	@RequestMapping("/board_cont")
+//	public String board_cont(@RequestParam HashMap data, Model model) throws Exception {
+//
+//		String jsp = null;
+//		String contM = null;
+//		logger.info("BoardController - board_cont() 입장");
+//		logger.info("page:" + data.get("page"));
+//		logger.info("perPageNum:" + data.get("perPageNum"));
+//		logger.info("bo_bbsid:" + data.get("bo_bbsid"));
+//		logger.info("bo_idx:" + data.get("bo_idx"));
+//		logger.info("keyword:" + data.get("keyword"));
+//		logger.info("searchType:" + data.get("searchType"));
+//		logger.info("state:" + data.get("state"));
+//		
+//		model.addAttribute("board", service.board_cont(data));
+//		model.addAttribute("data", data);
+//		
+//		if (data.get("bo_bbsid").equals("01")) {
+//			jsp = "/board/info/bo_info_";
+//			logger.info("공지사항 상세보기 이동");
+//		} else if (data.get("bo_bbsid").equals("02")) {
+//			jsp = "/board/free/bo_free_";
+//			logger.info("자유게시판 상세보기 이동");
+//		} else if (data.get("bo_bbsid").equals("03")) {
+//			jsp = "/board/faq/bo_faq_";
+//			logger.info("faq 상세보기 이동");
+//		} else if (data.get("bo_bbsid").equals("04")) {
+//			jsp = "/board/q&a/bo_q&a_";
+//			logger.info("Q&A 상세보기 이동");
+//		}
+//
+//		if (data.get("state").equals("read") || data.get("state").equals("modifyRead")) {
+//			logger.info("상세보기 및 수정페이지로 이동");
+//			contM = "read";
+//		} else if (data.get("state").equals("modify")) {
+//			contM = "modify_form";
+//			logger.info("수정하기로 이동");
+//		}
+//
+//		return jsp + contM;
+//
+//	}
+
+	
+	// 게시글 상세보기 및 수정 폼
 	@RequestMapping("/board_cont")
-	public String board_cont(@RequestParam HashMap data, Model model) throws Exception {
+	public String board_cont(@ModelAttribute("cri") SearchCriteria cri, Model model) throws Exception {
 
 		String jsp = null;
 		String contM = null;
 		logger.info("BoardController - board_cont() 입장");
-		logger.info("page:" + data.get("page"));
-		logger.info("perPageNum:" + data.get("perPageNum"));
-		logger.info("bo_bbsid:" + data.get("bo_bbsid"));
-		logger.info("bo_idx:" + data.get("bo_idx"));
-		logger.info("keyword:" + data.get("keyword"));
-		logger.info("searchType:" + data.get("searchType"));
-		logger.info("state:" + data.get("state"));
+		logger.info("page:" + cri.getPage());
+		logger.info("perPageNum:" + cri.getPerPageNum());
+		logger.info("bo_bbsid:" + cri.getBo_bbsid());
+		logger.info("bo_idx:" + cri.getBo_idx());
+		logger.info("keyword:" + cri.getKeyword());
+		logger.info("searchType:" + cri.getSearchType());
+		logger.info("state:" + cri.getState());
 		
-		model.addAttribute("board", service.board_cont(data));
-		model.addAttribute("data", data);
+		model.addAttribute("board", service.board_cont(cri));
 		
-		if (data.get("bo_bbsid").equals("01")) {
+		
+		if (cri.getBo_bbsid().equals("01")) {
 			jsp = "/board/info/bo_info_";
 			logger.info("공지사항 상세보기 이동");
-		} else if (data.get("bo_bbsid").equals("02")) {
+		} else if (cri.getBo_bbsid().equals("02")) {
 			jsp = "/board/free/bo_free_";
 			logger.info("자유게시판 상세보기 이동");
-		} else if (data.get("bo_bbsid").equals("03")) {
+		} else if (cri.getBo_bbsid().equals("03")) {
 			jsp = "/board/faq/bo_faq_";
 			logger.info("faq 상세보기 이동");
-		} else if (data.get("bo_bbsid").equals("04")) {
+		} else if (cri.getBo_bbsid().equals("04")) {
 			jsp = "/board/q&a/bo_q&a_";
 			logger.info("Q&A 상세보기 이동");
 		}
 
-		if (data.get("state").equals("read") || data.get("state").equals("modifyRead")) {
+		if (cri.getState().equals("read") || cri.getState().equals("modifyRead")) {
 			logger.info("상세보기 및 수정페이지로 이동");
 			contM = "read";
-		} else if (data.get("state").equals("modify")) {
+		} else if (cri.getState().equals("modify")) {
 			contM = "modify_form";
 			logger.info("수정하기로 이동");
 		}
@@ -167,7 +212,6 @@ public class BoardController {
 		return jsp + contM;
 
 	}
-
 
 	// 수정 프로세스
 	@RequestMapping("/modifyProc")

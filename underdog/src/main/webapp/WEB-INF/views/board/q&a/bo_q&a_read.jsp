@@ -31,28 +31,28 @@ $(function(){
 게시일자: ${board.bo_regdate }<br/>
 아이피 : ${board.bo_regip } <br/>
 
-<input type="button" value="목록으로" onclick="location='/board/slist?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&keyword=${data.keyword }&searchType=${data.searchType }'">
+<input type="button" value="목록으로" onclick="location='/board/slist?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_bbsid=${cri.bo_bbsid}&bo_idx=${cri.bo_idx }&keyword=${cri.keyword }&searchType=${cri.searchType }'">
 <br/>
 <c:if test="${sessionScope.MEMBER.me_email == board.bo_me_email}">
-<input type="button" value="수정폼으로" onclick="location='/board/board_cont?page=${data.page }&perPageNum=${data.perPageNum }&bo_bbsid=${data.bo_bbsid}&bo_idx=${data.bo_idx }&keyword=${data.keyword }&searchType=${data.searchType }&state=modify'"/>
-<input type="button" value="삭제하기" onclick="location='/board/delProc?page=${data.page }&perPageNum=${data.perPageNum }&bo_idx=${board.bo_idx }&bo_bbsid=${board.bo_bbsid}&keyword=${data.keyword }&searchType=${data.searchType }'"/>
+<input type="button" value="수정폼으로" onclick="location='/board/board_cont?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_bbsid=${cri.bo_bbsid}&bo_idx=${cri.bo_idx }&keyword=${cri.keyword }&searchType=${cri.searchType }&state=modify'"/>
+<input type="button" value="삭제하기" onclick="location='/board/delProc?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_idx=${cri.bo_idx }&bo_bbsid=${cri.bo_bbsid}&keyword=${cri.keyword }&searchType=${cri.searchType }'"/>
 </c:if>
 <br/>
 
-
+댓글==========================================================<br/>
 
  <%-- 댓글 입력폼 --%>
  <form id="replySmitFrm">
- <input type="text" name="page" value="${data.page }"/><br/>
- <input type="text" name="perPageNum" value="${data.perPageNum }"/><br/>
- <input type="text" name="bo_idx" value="${data.bo_idx }"/><br/>
- <input type="text" name="bo_bbsid" value="${data.bo_bbsid }"/><br/>
- <input type="text" name="keyword" value="${data.keyword }"/><br/>
- <input type="text" name="searchType" value="${data.searchType }"/><br/>
+ <input type="text" name="page" value="${cri.page }"/><br/>
+ <input type="text" name="perPageNum" value="${cri.perPageNum }"/><br/>
+ <input type="text" name="bo_idx" value="${cri.bo_idx }"/><br/>
+ <input type="text" name="bo_bbsid" value="${cri.bo_bbsid }"/><br/>
+ <input type="text" name="keyword" value="${cri.keyword }"/><br/>
+ <input type="text" name="searchType" value="${cri.searchType }"/><br/>
       
 
 작성자 이메일(히든으로 할것)<input type="text" name="re_me_email" value="${sessionScope.MEMBER.me_email }"/>
-게시글 번호(히든으로 할것)  <input type="text" name="re_bo_idx" value="${data.bo_idx }"/>
+게시글 번호(히든으로 할것)  <input type="text" name="re_bo_idx" value="${cri.bo_idx }"/>
   
   <table border="1" width="550">
    <tr>

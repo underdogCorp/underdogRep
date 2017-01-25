@@ -23,15 +23,12 @@
 		#{re_content},
 		
 		RE_IDX_SEQ.nextval,
-		#{re_me_email},
-		#{re_me_email},
+		0,
+		0,
 		
 		#{re_regip},
 		sysdate
-		
 	) 
-
-
 </insert>
 
 

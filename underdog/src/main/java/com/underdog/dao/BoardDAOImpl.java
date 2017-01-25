@@ -47,14 +47,14 @@ public class BoardDAOImpl implements BoardDAO {
 
 	// 상세보기 및 수정 폼
 	@Override
-	public BoardVO board_cont(HashMap data) throws Exception {
+	public BoardVO board_cont(SearchCriteria cri) throws Exception {
 		logger.info("BoardDAOImpl - board_cont 입장");
-		logger.info((String) data.get("state"));
+		logger.info((String) cri.getState());
 		
-		if(data.get("state").equals("read")) {
-			session.update(namespace +".hit", data);
+		if(cri.getState().equals("read")) {
+			session.update(namespace +".hit", cri);
 		}
-		return (BoardVO)session.selectOne(namespace +".board_cont", data);
+		return (BoardVO)session.selectOne(namespace +".board_cont", cri);
 	}
 	
 	// 게시글 삭제
