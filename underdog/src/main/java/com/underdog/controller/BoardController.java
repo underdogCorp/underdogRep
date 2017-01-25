@@ -186,7 +186,6 @@ public class BoardController {
 		
 		model.addAttribute("board", service.board_cont(cri));
 		
-		
 		if (cri.getBo_bbsid().equals("01")) {
 			jsp = "/board/info/bo_info_";
 			logger.info("공지사항 상세보기 이동");
