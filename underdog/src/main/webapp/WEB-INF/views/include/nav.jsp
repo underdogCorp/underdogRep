@@ -53,6 +53,7 @@
 			</c:if>
 			<c:if test="${sessionScope.MEMBER ne null }">
 				<li><p>${sessionScope.MEMBER.me_name}님이입장하셨습니다.</p></li>
+				<li><a href="/basket/view?me_email=${sessionScope.MEMBER.me_email}">장바구니</a></li>
 				<li><a href="/member/logoutProc">로그아웃</a></li>
 			</c:if>
 			<c:if test="${sessionScope.MEMBER.me_grade eq 100}">
