@@ -6,7 +6,12 @@
 
 
 
+	<!-- 회원정보 가져오기 -->
+	<select id="membersAll" resultType="MemberVO">
+		select * from member
 
+
+	</select>
 
 
 
