@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,10 +41,16 @@ h2 {
 }
 </style>
 <script>
+
 	function page_view() {
 		if(${result==1})
 			member_view()
 	}
+
+	
+	
+	
+	
 
 	function member_view() {
 		document.getElementById("memberInfo").style.display = 'block';
@@ -93,7 +100,7 @@ h2 {
 
 			</div>
 
-			<div class="col-sm-9">
+			<div class="col-sm-10">
 				<h2>회원정보 보기</h2>
 				<form action="/mypage/modifyProc" method="post">
 					<input type="hidden" name="me_email" value="${memberInfo.me_email}">
@@ -115,13 +122,19 @@ h2 {
 
 								<tr>
 									<td><input type="text" name="me_name"
-										value="${memberInfo.me_name}" /></td>
+										value="${memberInfo.me_name}" maxlength="10" size="10" /></td>
 									<td><input type="text" name="me_nick"
-										value="${memberInfo.me_nick}" /></td>
+										value="${memberInfo.me_nick}" maxlength="10" size="10" /></td>
 									<td><input type="text" name="me_birth"
-										value="${memberInfo.me_birth}" /></td>
-									<td>${memberInfo.me_regdate}</td>
-									<td>${memberInfo.me_grade}</td>
+										value="${memberInfo.me_birth}" maxlength="10" size="10" /></td>
+									<td><fmt:formatDate value="${memberInfo.me_regdate}"
+											pattern="Y/M/D" /></td>
+									<c:if test="${memberInfo.me_grade eq 100}">
+										<td>관리자</td>
+									</c:if>
+									<c:if test="${memberInfo.me_grade ne 100}">
+										<td>일반회원</td>
+									</c:if>
 									<td>${memberInfo.me_point}</td>
 									<td><input type="text" name="me_add1"
 										value="${memberInfo.me_add1}" /></td>
@@ -167,7 +180,7 @@ h2 {
 
 
 
-					<h4>합계금액 :   (불러온 가격 입력)</h4>
+					<h4>합계금액 : (불러온 가격 입력)</h4>
 					<span style="float: right">
 						<button type="submit" class="btn btn-danger">주문하기</button>
 						<button type="submit" class="btn btn-default right">주문취소</button>
@@ -211,21 +224,26 @@ h2 {
 					<table class="table table-hover">
 						<thead>
 							<tr>
+								<th>번호</th>
 								<th>제목</th>
-								<th>닉네임</th>
-								<th>이메일</th>
-								<th>날짜</th>
+								<th>작성자</th>
+								<th>조회수</th>
+								<th>게시일</th>
+								<th>게시판종류</th>
 							</tr>
 						</thead>
 						<tbody>
 
 							<tr>
-								<td><a>title</a></td>
-								<td>nick</td>
-								<td>n@n</td>
-								<td>2017</td>
+								<c:forEach items="${myboardList}" var="list">
+									<td>번호</td>
+									<td>${list.bo_title}</td>
+									<td>${list.bo_me_nick}(${list.bo_me_email})</td>
+									<td>${list.bo_hit}</td>
+									<td>${list.bo_regdate}</td>
+									<td>${list.bo_bbsid}</td>
 							</tr>
-
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>

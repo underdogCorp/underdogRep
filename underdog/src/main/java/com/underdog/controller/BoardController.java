@@ -42,15 +42,20 @@ public class BoardController {
 	     logger.info("bo_bbsid:" + cri.getBo_bbsid());
 
 		 String jsp = null;
-				 
-		 model.addAttribute("list", service.listCriteria(cri));
+				
 		 
 		 PageMaker pageMaker = new PageMaker();
 		 pageMaker.setCri(cri);
 		 
+		 //페이징처리 갯수?
 		 pageMaker.setTotalCount(service.listCountCriteria(cri));
+		 logger.info("count:" + service.listCountCriteria(cri));
 		 
+		 //총 게시물 목록 페이징처리?
+		 model.addAttribute("list", service.listCriteria(cri));
 		 model.addAttribute("pageMaker", pageMaker);
+		 
+		 logger.info("list:" + service.listCriteria(cri));
 		 
 		 
 			if (cri.getBo_bbsid().equals("01")) {

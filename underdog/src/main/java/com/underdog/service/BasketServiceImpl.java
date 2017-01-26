@@ -16,7 +16,7 @@ public class BasketServiceImpl implements BasketService {
 	private BasketDAO dao;
 	
 	@Override
-	public List<BasketVO> basket(String me_email) {
+	public List<BasketVO> basket(String me_email) throws Exception {
 		return dao.basket(me_email);
 	}
 	
