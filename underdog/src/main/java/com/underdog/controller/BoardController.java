@@ -191,7 +191,6 @@ public class BoardController {
 		
 		model.addAttribute("board", service.board_cont(cri));
 		
-		
 		if (cri.getBo_bbsid().equals("01")) {
 			jsp = "/board/info/bo_info_";
 			logger.info("공지사항 상세보기 이동");
@@ -338,6 +337,7 @@ public class BoardController {
 		 public void listFaq(@RequestParam HashMap data, 
 				 HttpServletResponse res, Model model) throws Exception{
 			
+			 res.setCharacterEncoding("utf-8");
 			logger.info("BoardController - listFaq() 입장");
 			logger.info("bo_bbsid:" + data.get("bo_bbsid"));
 			logger.info("bo_idx:" + data.get("bo_idx"));

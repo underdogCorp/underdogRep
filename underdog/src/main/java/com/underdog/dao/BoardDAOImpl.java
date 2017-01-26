@@ -86,6 +86,7 @@ public class BoardDAOImpl implements BoardDAO {
 		return session.selectOne(namespace + ".listCountCriteria", cri);
 	}
 	
+	// faq 게시판 클릭한 글 정보 불러오기(선택한 글 하나만 정보 가져옴)
 	@Override
 	public BoardVO listFaq(Map data) throws Exception{
 		
