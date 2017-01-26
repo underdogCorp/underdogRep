@@ -298,6 +298,7 @@ public class BoardController {
 
 		 int totalCount = service.listSearchCount(cri);
 		 pageMaker.setTotalCount(totalCount);
+		
 		 
 		 List<BoardVO> list = service.listSearchCriteria(cri);
 		 model.addAttribute("list", list);
@@ -308,6 +309,7 @@ public class BoardController {
 		 
 		 model.addAttribute("pageMaker", pageMaker);
 		 
+		 logger.info(pageMaker.makeSearch(cri.getPage()));
 		 
 			if (cri.getBo_bbsid().equals("01")) {
 				jsp = "/board/info/bo_info_list";
