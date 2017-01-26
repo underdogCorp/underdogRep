@@ -8,6 +8,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.underdog.dao.MyPageDAO;
+import com.underdog.domain.BoardVO;
 import com.underdog.domain.MemberVO;
 import com.underdog.util.AES256;
 
@@ -38,6 +39,13 @@ public class MyPageServiceImpl implements MyPageService {
 	// 마이페이지 회원정보 수정하기
 	public void modifyProc(HashMap data)throws Exception{
 		 dao.modifyProc(data);
+	}
+	
+	// 마이페이지 내가 쓴 글 가져오기 
+	@Override
+	public List<BoardVO> myboardInfo(String me_email) throws Exception {
+
+		return dao.myboardInfo(me_email);
 	}
 
 }
