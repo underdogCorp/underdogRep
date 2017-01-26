@@ -49,7 +49,7 @@ $(function(){
  <input type="text" name="bo_bbsid" value="${cri.bo_bbsid }"/><br/>
  <input type="text" name="keyword" value="${cri.keyword }"/><br/>
  <input type="text" name="searchType" value="${cri.searchType }"/><br/>
-      
+ <input type="text" name="state" value="${cri.state }"/><br/>  
 
 작성자 이메일(히든으로 할것)<input type="text" name="re_me_email" value="${sessionScope.MEMBER.me_email }"/>
 게시글 번호(히든으로 할것)  <input type="text" name="re_bo_idx" value="${cri.bo_idx }"/>
@@ -71,32 +71,21 @@ $(function(){
  
  
  <%--댓글 목록 --%>
-<%--  <table align="center" border="0">
-  <c:if test="${!empty clist}">
-  <c:forEach var="c" items="${clist}">
-  <tr>
-   <th>${c.comment_name}</th>
-   <td>${fn:substring(c.comment_date,0,16)}
-   <span id="com_del">
-   <a href="javascript:com_del_ok(${c.comment_no},${c.g_no});" 
-   onfocus="this.blur();">삭제</a></span>
-   onfocus="this.blur();" ie 웹브라우저 계열에서 하이퍼링크 걸린곳
-   클릭시 생기는 사각점선을 사라지게 한다. 삭제를 클릭시 com_del_ok()함수를
-   호출
-   </td>
-   jstl substring을 사용하여 0이상 16미만 사이의 년월일 시분 까지만
-   출력한다.
-  </tr>
-  <tr>
-   <td colspan="2">
-   ${c.comment_cont}
-   </td>
-  </tr>
-  </c:forEach>
-  </c:if>
- </table> --%>
-
-
+<c:forEach var="rList" items="${rList } ">
+  <table border="1" width="550">
+   <tr>
+    <td colspan="2">댓글(댓글수: ) 작성자 : ${rList.re_me_email }</td>
+   </tr>  
+   <tr>
+    <th>
+     <td>${rList.re_content }</td>
+    </th>
+    <th>
+     <input type="button" id="replySmitBtn" value="댓글달기" />
+    </th>
+   </tr>
+  </table>
+</c:forEach>
 
 
 

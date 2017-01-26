@@ -1,5 +1,7 @@
 package com.underdog.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
@@ -25,6 +27,22 @@ public class ReplyServiceImpl implements ReplyService {
 		
 		replyVO.setRe_regip(req.getRemoteAddr());
 		dao.registerProc(replyVO);
+	}
+
+	// 댓글 리스트 불러오기 
+	@Override
+	public List<ReplyVO> replyList(int re_bo_idx) {
+		logger.info("BoardServiceImpl - replyList 입장");
+		
+		return dao.replyList(re_bo_idx);
+	}
+	
+	// 댓글 총 갯수 불러오기
+	@Override
+	public int replyCount(int re_bo_idx) {
+		logger.info("BoardServiceImpl - replyCount 입장");
+		
+		return dao.replyCount(re_bo_idx);
 	}
 
 }
