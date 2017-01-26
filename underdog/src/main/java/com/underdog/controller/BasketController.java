@@ -16,14 +16,14 @@ import com.underdog.service.BasketService;
 @RequestMapping("/basket/*")
 public class BasketController {
 
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(BasketController.class);
 
 	@Inject
 	private BasketService service;
 	
 	// 장바구니 조회
 	@RequestMapping(value = "/view")
-	public String view(@RequestParam("me_email") String me_email, Model model, HttpServletRequest req){
+	public String view(@RequestParam("me_email") String me_email, Model model, HttpServletRequest req) throws Exception{
 		
 		int result = 0;
 		if (req.getParameter("result") != null){
@@ -39,6 +39,9 @@ public class BasketController {
 		
 		jsp = "/basket/basket_read";
 		logger.info("basket - 장바구니 조회 페이지로 이동");
+		
+// 굳이 여기서 로그로 확인할 필요 없음.(메모리 주소 밖에 안나옴) view단에서 출력해서 확인하면 됨.(바보야)
+//		logger.info(service.basket(me_email).toString());
 		
 		return jsp;
 	}
