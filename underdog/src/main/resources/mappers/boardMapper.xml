@@ -46,7 +46,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  </select>
 
 <!-- 총 게시물 수  -->
- <select id="listCountCriteria" resultType="int">
+ <select id="listCountCriteria" parameterType="SearchCriteria" resultType="int">
  <![CDATA[
  select count(bo_idx) from board 
  where bo_bbsid = #{bo_bbsid} and bo_status = 0 
