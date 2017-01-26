@@ -61,7 +61,7 @@
 									<td>${me_list.me_name}</td>
 									<td>${me_list.me_nick}</td>
 									<td>${me_list.me_birth}</td>
-									<td><fmt:formatDate	value="${me_list.me_regdate}" pattern="Y/M/D/hh/mm" /></td>
+									<td><fmt:formatDate	value="${me_list.me_regdate}" pattern="Y/M/D" /></td>
 									<td>${me_list.me_grade}</td>
 									<td>${me_list.me_point}</td>
 									<td>${me_list.me_zipcode}</td>

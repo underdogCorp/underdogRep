@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.underdog.controller.MyPageController;
+import com.underdog.domain.BoardVO;
 import com.underdog.domain.MemberVO;
 
 @Repository
@@ -55,6 +56,12 @@ public class MyPageDAOImpl implements MyPageDAO {
 	@Override
 	public void modifyProc(HashMap data) {
 		 session.update(namespace + ".modifyProc", data);
+	}
+
+	@Override
+	public List<BoardVO> myboardInfo(String me_email) throws Exception {
+			
+		return session.selectList(namespace+".myboardList",me_email);
 	}
 
 }

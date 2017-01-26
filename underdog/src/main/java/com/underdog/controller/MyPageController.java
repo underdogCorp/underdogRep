@@ -30,18 +30,27 @@ public class MyPageController {
 	@RequestMapping(value = "/mypage")
 	public String mypage(@RequestParam("me_email") String me_email, Model model, HttpServletRequest req)
 			throws Exception {
-
+		//비밀번호 체크 값
 		int result = 0;
 		if (req.getParameter("result") != null)
+		//비밀번호 체크후 결과값
 			result = Integer.parseInt(req.getParameter("result"));
-
+		
 		String jsp = null;
 		System.out.println("쎄션 me_email:" + me_email);
-
+		//본인 회원 정보
 		model.addAttribute("memberInfo", service.memberInfo(me_email));
+		//비밀번호 체크 결과값 보내기
 		model.addAttribute("result", result);
 		logger.info(service.memberInfo(me_email).getMe_regdate().toString());
-
+		
+	//마이 페이지 내가 쓴글 가져오기
+		model.addAttribute("myboardList",service.myboardInfo(me_email));
+		
+		
+		
+		
+		
 		jsp = "/mypage/mypage";
 		logger.info("mypage - 마이페이지폼 이동");
 
@@ -81,5 +90,10 @@ public class MyPageController {
 		String jsp = "redirect:/mypage/mypage?me_email="+data.get("me_email");
 		return jsp;
 	}
+	
+	
+	
+	
+	
 
 }
