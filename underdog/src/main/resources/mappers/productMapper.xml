@@ -3,4 +3,44 @@
 
 <mapper namespace="com.underdog.mapper.productMapper">
 
+	<insert id="registerProc" parameterType="ProductVO">
+		insert into product (
+			PR_IDX
+			,PR_ME_EMAIL
+			,PR_HIGHCODE
+			,PR_LOWCODE
+			,PR_TITLE
+			,PR_CONTENT
+			,PR_REGDATE
+			,PR_REGIP
+			,PR_KEYWORD
+			,PR_REGION
+			,PR_PAY_H
+			,PR_PAY_D
+			,PR_PAY_M
+			,PR_STARTDAY
+			,PR_ENDDAY
+		) values (
+			PR_IDX_SEQ.nextval,
+			#{pr_me_email}
+			,#{pr_highcode}
+			,#{pr_lowcode}
+			,#{pr_title}
+			,#{pr_content}
+			,sysdate
+			,#{pr_regip}
+			,#{pr_keyword}
+			,#{pr_region}
+			,#{pr_pay_h}
+			,#{pr_pay_d}
+			,#{pr_pay_m}
+			,#{pr_startday}
+			,#{pr_endday}
+		)
+		
+		
+	
+	
+	</insert>
+
 </mapper>

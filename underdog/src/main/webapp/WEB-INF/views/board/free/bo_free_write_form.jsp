@@ -48,7 +48,7 @@
 <body>
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
-
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 	<div>
 		<div class="bbsWriteForm">
 			<h2>자유 게시판 글쓰기</h2>
@@ -92,5 +92,6 @@
 			</form>
 		</div>
 	</div>
+</div>
 </body>
 </html>

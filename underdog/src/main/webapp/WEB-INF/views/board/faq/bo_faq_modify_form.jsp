@@ -15,6 +15,7 @@ $(function(){
 })
 
 </script>
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 <form id="faqModifySubmitFrm">
 히든으로 넘길 값들 <br/>
 게시판 번호 : <input type="hidden" name="bo_idx" value="${data.bo_idx }"/> <br/>
@@ -35,5 +36,5 @@ $(function(){
 아이피 : ${data.bo_regip } <br/>
 </form>
 <input type="button" id="faqModifySubmitBtn" value="수정하기" />
-
+</div>
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>

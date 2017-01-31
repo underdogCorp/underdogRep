@@ -21,7 +21,7 @@ $(function(){
 </script>
 
 
-	<div class="container">
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 
 		<h2>Q & A</h2>
 		<p>무엇이든 물어보세요</p>
@@ -59,7 +59,6 @@ $(function(){
 				${pageMaker.totalCount }<br/>
 				${pageMaker.cri.page }
 		</table>
-	</div>
 	
 					<div class="box-footer">
 
@@ -111,19 +110,18 @@ $(function(){
 						value='${cri.keyword }'>
 					<button id='searchBtn'>검색</button>
 				</div>
+
 	
 	
 	
 	
-	
-	
-	
+
 <c:if test="${sessionScope.MEMBER != null }">
 	<button type="button" class="btn btn-default"
 		onclick="location.href='/board/registerForm?bo_bbsid=04'">글쓰기</button>
 </c:if>
 
-
+</div>
 
 
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>

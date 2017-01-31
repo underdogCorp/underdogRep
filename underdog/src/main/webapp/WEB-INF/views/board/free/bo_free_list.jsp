@@ -24,7 +24,7 @@
 <body>
 	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-	<div class="container">
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 		<h2>자유 게시판</h2>
 		<table class="table table-hover">
 			<thead>
@@ -95,6 +95,6 @@
 
 
 
-
+</div>
 </body>
 </html>

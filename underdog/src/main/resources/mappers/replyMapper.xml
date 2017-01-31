@@ -4,7 +4,7 @@
 <mapper namespace="com.underdog.mapper.replyMapper">
 
 <!-- 댓글 등록 -->
-<insert id="registerProc" parameterType="ReplyVO">
+<insert id="registerProc">
 	insert into reply (
 		re_idx,
 		re_me_email,
@@ -21,7 +21,7 @@
 		RE_IDX_SEQ.nextval,
 		#{re_me_email},
 		#{re_bo_idx},
-		#{re_content},
+		#{comment_content},
 		
 		RE_IDX_SEQ.nextval,
 		0,
@@ -37,11 +37,6 @@
 	select * from reply where re_bo_idx = #{re_bo_idx}
 </select>
 
-
-<!-- 댓글 총 갯수 구하기 -->
-<select id="replyCount" resultType="int">
-	select count(re_idx) from reply where re_bo_idx = #{re_bo_idx}
-</select>
 
 
 </mapper>

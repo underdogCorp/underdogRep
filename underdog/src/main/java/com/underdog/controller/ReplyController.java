@@ -1,5 +1,8 @@
 package com.underdog.controller;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
@@ -7,12 +10,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.underdog.domain.PageMaker;
 import com.underdog.domain.ReplyVO;
-import com.underdog.domain.SearchCriteria;
 import com.underdog.service.ReplyService;
 
 @Controller
@@ -25,42 +27,37 @@ public class ReplyController {
 	private ReplyService service;
 	
 	// 댓글 등록 프로세스
+	@ResponseBody
 	@RequestMapping("/registerProc")
-	public String registerProc(HttpServletRequest req, 
-			@ModelAttribute("cri") SearchCriteria cri, 
-			ReplyVO replyVO,
-			Model model
-			){
-		
+//	public void registerProc(@RequestParam HashMap date, HttpServletRequest req, HttpServletResponse res) throws Exception{
+	public void registerProc(@RequestParam HashMap date, HttpServletRequest req) throws Exception{
+//		PrintWriter out = res.getWriter();
 		logger.info("ReplyController - registerProc() 입장");
-	
 		
-		logger.info("bo_idx:" + cri.getBo_idx());
-		logger.info("bo_bbsid:" + (String) cri.getBo_bbsid());
-		logger.info("page:" + cri.getPage());
-		logger.info("perPageNum:" + cri.getPerPageNum());
-		logger.info("keyword:" + (String) cri.getKeyword());
-		logger.info("searchType:" + (String) cri.getSearchType());
-		logger.info("re_content:" + (String) replyVO.getRe_content());
-		logger.info("re_me_email:" + (String) replyVO.getRe_me_email());
-		logger.info("state:" + cri.getState());
+		date.put("re_regip", req.getRemoteAddr());
+		System.out.println(date);
 		
-		
-		service.registerProc(req, replyVO);
-		
-		model.addAttribute("rList", service.replyList(replyVO.getRe_bo_idx()));
-		int ssss = service.replyCount(replyVO.getRe_bo_idx());
-		model.addAttribute("rCount", service.replyCount(replyVO.getRe_bo_idx()));
-		logger.info(""+ssss);
-		
-		PageMaker pm = new PageMaker();
-		pm.setCri(cri);
-		
-		return "redirect:/board/board_cont"+pm.makeSearch(cri.getPage())+"&bo_bbsid="+cri.getBo_bbsid()+"&bo_idx="+cri.getBo_idx()+"&state=modifyRead";
+		service.registerProc(date);
 
+		//out.println("1");
 	}
 	
 	
+	// 댓글 리스트 불러오기
+	@RequestMapping("/reply_cont")
+	public String  reply_cont(@RequestParam HashMap data, Model model) {
+		logger.info("ReplyController - reply_cont() 입장");
+		
+	
+		List<ReplyVO> list = service.reply_cont(data);
+		model.addAttribute("reply", list);
+		
+		System.out.println(list);
+		return "/board/comment/comment_list";
+	}
+	
+	
+
 	
 	
 	

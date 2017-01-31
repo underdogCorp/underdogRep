@@ -36,7 +36,7 @@ function callContent(bo_idx){
 </script>
 
 
-	<div class="container">
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 		<h2>F A Q</h2>
 		<p>자주하는 질문</p>
 		<table class="table table-hover">

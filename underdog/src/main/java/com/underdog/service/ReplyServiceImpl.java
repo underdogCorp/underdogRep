@@ -1,5 +1,6 @@
 package com.underdog.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -22,27 +23,27 @@ public class ReplyServiceImpl implements ReplyService {
 	
 	// 댓글 등록 프로세스
 	@Override
-	public void registerProc(HttpServletRequest req, ReplyVO replyVO) {
+	public void registerProc(HashMap date) {
 		logger.info("BoardServiceImpl - registerProc 입장");
 		
-		replyVO.setRe_regip(req.getRemoteAddr());
-		dao.registerProc(replyVO);
+		dao.registerProc(date);
 	}
 
+	
 	// 댓글 리스트 불러오기 
 	@Override
-	public List<ReplyVO> replyList(int re_bo_idx) {
-		logger.info("BoardServiceImpl - replyList 입장");
+	public List<ReplyVO> reply_cont(HashMap data) {
+		logger.info("BoardServiceImpl - registerProc 입장");
 		
-		return dao.replyList(re_bo_idx);
+		return dao.replyList(data);
 	}
-	
-	// 댓글 총 갯수 불러오기
-	@Override
-	public int replyCount(int re_bo_idx) {
-		logger.info("BoardServiceImpl - replyCount 입장");
-		
-		return dao.replyCount(re_bo_idx);
-	}
+
+
+
+
+
+
+
+
 
 }

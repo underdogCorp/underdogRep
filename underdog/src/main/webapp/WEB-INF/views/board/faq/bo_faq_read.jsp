@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
-
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 <br/>
 게시판 번호 : ${data.bo_idx } <br/>
 회원 이메일 : ${data.bo_me_email } <br/>
@@ -20,5 +20,5 @@
 <input type="button" value="수정폼으로" onclick="location='/board/board_cont?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}&state=modify'"/>
 <input type="button" value="삭제하기" onclick="location='/board/delProc?bo_idx=${data.bo_idx }&bo_bbsid=${data.bo_bbsid}"/>
 </c:if>
-
+</div>
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>

@@ -83,9 +83,11 @@ h2 {
 
 
 </head>
+
 <body onload="page_view()">
 	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 	<div class="container-fluid">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
@@ -287,5 +289,6 @@ h2 {
 					</div>
 				</div>
 			</form>
+</div>
 </body>
 </html>

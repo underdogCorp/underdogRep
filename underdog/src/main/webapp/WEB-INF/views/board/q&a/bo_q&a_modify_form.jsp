@@ -15,6 +15,7 @@ $(function(){
 })
 
 </script>
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 <form id="qnaModifySubmitFrm">
 히든으로 넘길 값들 <br/>
 게시판 번호 : <input type="text" name="bo_idx" value="${data.bo_idx }"/> <br/>
@@ -40,4 +41,5 @@ $(function(){
 </form>
 <input type="button" id="qnaModifySubmitBtn" value="수정하기" />
 
+</div>
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>

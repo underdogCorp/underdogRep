@@ -89,8 +89,8 @@
                     </a>
                 </div>
 
-                <a href="/product/registerForm" ><button type="button" class="btn btn-default"><i class=""></i>능력등록</button></a>
-                
+                <a href="#" ><button type="button" class="btn btn-default"><i class=""></i>능력등록</button></a>
+                </ul>
             </div>
         </div>
     </section>
@@ -175,8 +175,5 @@
         </div>
     </section>
 
-
-
- <%@ include file="/WEB-INF/views/include/footer.jsp"%>
-
-
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>
+<%@ include file="/WEB-INF/views/product/item_list.jsp"%>

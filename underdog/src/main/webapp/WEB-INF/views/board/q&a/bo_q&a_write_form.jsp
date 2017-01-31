@@ -13,6 +13,7 @@
 		})
 	})
 </script>
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 <h2>Q & A 글쓰기</h2><br/>
 
 <form id="qnaWriteSubmitFrm">
@@ -29,5 +30,5 @@
 
 <input type="button" id="qnaWriteSubmitBtn" value="제출">
 </form>
-
+</div>
 <%@ include file="/WEB-INF/views/include/footer.jsp"%>
