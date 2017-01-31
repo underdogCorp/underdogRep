@@ -12,6 +12,15 @@
 			return;
 		}
 	}
+	function button_modify(me_email){
+	
+		
+		
+	}
+	
+	
+	
+	
 </script>
 
 
@@ -43,7 +52,6 @@
 								<th>주소</th>
 								<th>상세주소</th>
 								<th>삭제</th>
-								<th>수정</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -61,7 +69,8 @@
 									<td>${me_list.me_name}</td>
 									<td>${me_list.me_nick}</td>
 									<td>${me_list.me_birth}</td>
-									<td><fmt:formatDate	value="${me_list.me_regdate}" pattern="Y/M/D" /></td>
+									<td><fmt:formatDate value="${me_list.me_regdate}"
+											pattern="Y/M/D" /></td>
 									<td>${me_list.me_grade}</td>
 									<td>${me_list.me_point}</td>
 									<td>${me_list.me_zipcode}</td>
@@ -69,9 +78,8 @@
 									<td>${me_list.me_add2}</td>
 									<td><button type="button" class="btn btn-danger btn-sm"
 											onclick="button_delete('${me_list.me_email}')">삭제</button></td>
-									<td><button type="button" class="btn btn-warning btn-sm"
-											onclick="button_modify('${me_list.me_email}')">수정</button></td>
 								</tr>
+
 							</c:forEach>
 						</tbody>
 					</table>
