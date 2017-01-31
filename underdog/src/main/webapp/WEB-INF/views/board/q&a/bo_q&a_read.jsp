@@ -235,66 +235,13 @@ function tryCommentEntry(){
 		</div>
 		<div style="clear: both;"></div>
 	</div>
-	<%-- 	<div id="commentListWrap">
-		<c:if test="${comments.stream().count() == 0}">
-			<div class="fGray center">등록된 댓글이 없습니다.</div>
-		</c:if>
-		<c:forEach items="${comments}" var="comment">
-			<div class="commentItem" id="comment_${comment.BC_IDX}"
-				style="padding-left:${comment.BC_LEVEL * 30}px;">
-				<table>
-					<tr>
-						<td
-							class="imgWrap<c:if test="${comment.BC_LEVEL > 0}"> replyIcon</c:if>">
-						</td>
-						<td class="contentWrap">
-							<div class="commentName">${comment.BC_ME_NAME}
-								(${comment.BC_ME_ID})</div>
-							<div class="commentDate">${fn:replace(fn:substring(comment.BC_REGDATE, 0, 16), "-", ".")}</div>
-							<c:if test="${comment.BC_STATUS == '0'}">
-								<div class="commentContent fGray">삭제된 댓글입니다.</div>
-							</c:if> <c:if test="${comment.BC_STATUS != '0'}">
-								<div class="commentContent">${fn:replace(comment.BC_COMMENT, enter, '<br />')}</div>
-								<div class="commentBtn">
-									<button type="button" class="tBtn bBlue"
-										onclick="callCommentReplyForm(${comment.BC_IDX});">답글</button>
-									<c:if test="${comment.BC_ME_ID == sessionScope.SS_USER_ID}">
-										<button type="button" class="tBtn bBrown"
-											onclick="callCommentModifyForm(${comment.BC_IDX});">수정</button>
-										<button type="button" class="tBtn bRed"
-											onclick="tryDeleteComment(${comment.BC_IDX}, ${post.BB_IDX});">삭제</button>
-									</c:if>
-								</div>
-							</c:if>
-						</td>
-					</tr>
-				</table>
-			</div>
-			<div class="commentModifyItem" id="comment_modify_${comment.BC_IDX}"
-				style="padding-left:${comment.BC_LEVEL * 30}px;display:none;"></div>
-			<div class="commentReplyItem" id="comment_reply_${comment.BC_IDX}"
-				style="padding-left:${comment.BC_LEVEL * 30}px;display:none;"></div>
-		</c:forEach>
-	</div> --%>
 </div>
 </div>
 </form>
 
-<div class="tm20">
-	<div style="float: left;">
-		<a
-			href="/bbsList.sj?bbsid=${param.bbsid}&page=${param.page}&sKeyword=${param.sKeyword}"><button
-				class="lBtn bGray" id="btnList">목록</button></a>
-
-
-
-
-
-
-
 
 		<%-- 댓글 입력폼 --%>
-		<form id="replySmitFrm" method="post">
+<%-- 		<form id="replySmitFrm" method="post">
 			<input type="text" name="page" value="${cri.page }" /><br /> <input
 				type="text" name="perPageNum" value="${cri.perPageNum }" /><br />
 			<input type="text" name="bo_idx" value="${cri.bo_idx }" /><br /> <input
@@ -316,25 +263,8 @@ function tryCommentEntry(){
 					<th><input type="button" id="replySmitBtn" value="댓글달기" /></th>
 				</tr>
 			</table>
-		</form>
+		</form> --%>
 
-
-		<%--댓글 목록 --%>
-		<%-- <c:forEach var="rList" items="${rList } ">
-  <table border="1" width="550">
-   <tr>
-    <td colspan="2">댓글(댓글수: ) 작성자 : ${rList.re_me_email }</td>
-   </tr>  
-   <tr>
-    <th>
-     <td>${rList.re_content }</td>
-    </th>
-    <th>
-     <input type="button" id="replySmitBtn" value="댓글달기" />
-    </th>
-   </tr>
-  </table>
-</c:forEach>  --%>
 
 
 
