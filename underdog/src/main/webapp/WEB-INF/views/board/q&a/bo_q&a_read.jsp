@@ -7,23 +7,12 @@
 
 <script>
 $(function(){
-		 
+		callCommentList()
+	
 		 $("#btnCommentEntry").click(function(){
 				tryCommentEntry();
 			});
 		 
-		 
-		 
-		 
-	// 댓글 submit
-/* 	$('#replySmitBtn').click(function(){
-		
-		var f = $('#replySmitFrm');
-		f.attr('method', 'POST');
-		f.attr('action', "/reply/registerProc");
-		f.submit();
-		
-	}) */
 	
 });
 
@@ -36,9 +25,8 @@ $(function(){
 					re_bo_idx : '${cri.bo_idx}'
 				},
 				function(data){
-					alert("리스트나와라");
 					$("#commentWrap").html(data);
-					
+					$("#comment_content").val("");
 					$("#btnCommentEntry").click(function(){
 						tryCommentEntry();
 					});
@@ -216,16 +204,13 @@ function tryCommentEntry(){
 </c:if>
 <br />
 
-댓글==========================================================
+==========================================================
 <br />
-
-
-
 
 
 <form method="post">
 <div id="commentWrap"></div>
-	<div id="commentTitle">Comments</div>
+	<div id="commentTitle">댓글</div>
 	<div id="commentWriteWrap">
 		<div id="commentTextarea">
 			<textarea name="comment_content" id="comment_content"></textarea>
@@ -238,32 +223,6 @@ function tryCommentEntry(){
 </div>
 </div>
 </form>
-
-
-		<%-- 댓글 입력폼 --%>
-<%-- 		<form id="replySmitFrm" method="post">
-			<input type="text" name="page" value="${cri.page }" /><br /> <input
-				type="text" name="perPageNum" value="${cri.perPageNum }" /><br />
-			<input type="text" name="bo_idx" value="${cri.bo_idx }" /><br /> <input
-				type="text" name="bo_bbsid" value="${cri.bo_bbsid }" /><br /> <input
-				type="text" name="keyword" value="${cri.keyword }" /><br /> <input
-				type="text" name="searchType" value="${cri.searchType }" /><br />
-			<input type="text" name="state" value="${cri.state }" /><br /> 작성자
-			이메일(히든으로 할것)<input type="text" name="re_me_email"
-				value="${sessionScope.MEMBER.me_email }" /> 게시글 번호(히든으로 할것) <input
-				type="text" name="re_bo_idx" value="${cri.bo_idx }" />
-
-			<table border="1" width="550">
-				<tr>
-					<td colspan="2">댓글(댓글수: ) 작성자 : ${sessionScope.MEMBER.me_nick }(${sessionScope.MEMBER.me_email })</td>
-				</tr>
-				<tr>
-					<th><textarea name="re_content" id="re_content" rows="5"
-							cols="50"></textarea></th>
-					<th><input type="button" id="replySmitBtn" value="댓글달기" /></th>
-				</tr>
-			</table>
-		</form> --%>
 
 
 

@@ -21,6 +21,17 @@ step : ${reply.re_step }<br/>
 내용 : ${reply.re_content }<br/>
 좋아요 : ${reply.re_good }<br/>
 싫어요 : ${reply.re_bad }<br/>
+
+<c:if test="${sessionScope.MEMBER.me_email != null}">
+<input type="button" value="댓글"/>
+</c:if>
+
+<c:if test="${sessionScope.MEMBER.me_email == reply.re_me_email}">
+<input type="button" value="수정"/>
+<input type="button" value="삭제"/>
+</c:if>
+<br/>
+=======================================<br/>
 </c:forEach>
 </body>
 </html>

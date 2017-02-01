@@ -220,6 +220,7 @@ public class BoardController {
 	// 수정 프로세스
 	@RequestMapping("/modifyProc")
 	public String modifyProc(@RequestParam HashMap data) throws Exception{
+	//public String modifyProc(HashMap data) throws Exception{	
 		
 		logger.info("BoardController - modifyProc() 입장");
 		String bo_idx = (String) data.get("bo_idx");

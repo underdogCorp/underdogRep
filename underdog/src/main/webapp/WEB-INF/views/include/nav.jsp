@@ -26,22 +26,9 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 	
-	
 	<!-- jQuery -->
-    <script src="/resources/js/boot/jquery.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/resources/js/boot/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="/resources/js/boot/jqBootstrapValidation.js"></script>
-    <script src="/resources/js/boot/contact_me.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="/resources/js/boot/freelancer.min.js"></script>
 	
 	
 <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
