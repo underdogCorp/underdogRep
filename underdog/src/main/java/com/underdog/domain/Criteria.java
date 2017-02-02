@@ -7,9 +7,20 @@ public class Criteria {
 	private String bo_bbsid;
 	private int bo_idx;
 	private String state;
+	private String bo_me_email;
+	
 
 	
-	
+
+
+	public String getBo_me_email() {
+		return bo_me_email;
+	}
+
+	public void setBo_me_email(String bo_me_email) {
+		this.bo_me_email = bo_me_email;
+	}
+
 	public String getState() {
 		return state;
 	}

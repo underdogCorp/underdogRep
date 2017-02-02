@@ -1,6 +1,7 @@
 package com.underdog.controller;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
@@ -10,10 +11,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.underdog.domain.BoardVO;
 import com.underdog.domain.MemberVO;
+import com.underdog.domain.PageMaker;
+import com.underdog.domain.SearchCriteria;
 import com.underdog.service.MyPageService;
 
 @Controller
@@ -29,10 +34,11 @@ public class MyPageController {
 	@RequestMapping(value = "/mypage")
 //	public String mypage(@RequestParam("me_email") String me_email, Model model, HttpServletRequest req)
 //			throws Exception {
-	public String mypage(HttpSession session, Model model, HttpServletRequest req)
+	public String mypage(HttpSession session, Model model, HttpServletRequest req,@ModelAttribute("cri") SearchCriteria cri)
 			throws Exception {
 		//비밀번호 체크 값
 		int result = 0;
+				
 		if (session.getAttribute("result") != null){
 		//비밀번호 체크후 결과값
 			result = (Integer)session.getAttribute("result");
@@ -41,9 +47,29 @@ public class MyPageController {
 		
 		String jsp = null;
 		
-		MemberVO vo = (MemberVO)session.getAttribute("MEMBER");
+		MemberVO vo = (MemberVO)session.getAttribute("MEMBER");	
+		System.out.println("me_email값:"+vo.getMe_email());
 		
+		//페이징 만들기 
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
 		
+		//페이지 총 수 가져오기
+		int totalCount = service.boardCount(vo.getMe_email());
+		System.out.println("총게시글수"+totalCount);
+		
+		pageMaker.setTotalCount(totalCount);
+		
+		//페이징 처리
+		model.addAttribute("pageMaker",pageMaker);
+		
+		cri.setBo_me_email(vo.getMe_email());
+		List<BoardVO> list =  service.myboardInfo(cri);
+		
+		//마이 페이지 내가 쓴글 가져오기
+		model.addAttribute("myboardList",list);	
+		
+			
 		System.out.println("쎄션 me_email:" + vo.getMe_email());
 		//본인 회원 정보
 		model.addAttribute("memberInfo", service.memberInfo(vo.getMe_email()));
@@ -51,8 +77,7 @@ public class MyPageController {
 		model.addAttribute("result", result);
 		logger.info(service.memberInfo(vo.getMe_email()).getMe_regdate().toString());
 		
-		//마이 페이지 내가 쓴글 가져오기
-		model.addAttribute("myboardList",service.myboardInfo(vo.getMe_email()));	
+	
 		
 		
 		
@@ -69,6 +94,8 @@ public class MyPageController {
 			throws Exception {
 		int result = 0;
 		String jsp = null;
+		
+		
 		MemberVO vo = (MemberVO)session.getAttribute("MEMBER");
 		
 		System.out.println("입력되 me_pw 값:" + me_pw);

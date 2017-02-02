@@ -32,8 +32,8 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1>Manager Mode</h1>      
-    <p>(회원,게시글,상품,주문에 관련된 모든 정보를 확인 수정 하실수 있습니다)</p>
+    <h1>관리자 페이지 입니다</h1>      
+    
   </div>
 </div>
 
@@ -52,12 +52,7 @@
         <li class="active"><a href="/manager/manager">Manager Mode Home</a></li>
         <li><a href="/manager/memberGet">Members</a></li>
         <li><a href="#">Products</a></li>
-        <li><a href="#">Board</a></li>
         <li><a href="#">Order</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> 미구현</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> 미구현</a></li>
       </ul>
     </div>
   </div>
