@@ -1,16 +1,18 @@
 package com.underdog.controller;
 
+import java.util.HashMap;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.underdog.domain.ProductVO;
-import com.underdog.service.BoardService;
 import com.underdog.service.ProductService;
 
 @Controller
@@ -21,6 +23,16 @@ public class ProductController {
 	
 	@Inject
 	private ProductService service;
+	
+	//상품 리스트 보기
+	@RequestMapping("/list")
+	public String list(Model model){
+		logger.info("ProductController - list() 입장");
+
+//		model.addAttribute("item", service.list());
+		
+		return "/product/item_list";
+	}
 	
 	
 	// 상품 등록 폼 보기

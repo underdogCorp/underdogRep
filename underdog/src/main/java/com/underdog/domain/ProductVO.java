@@ -6,6 +6,7 @@ public class ProductVO {
 
 	private int pr_idx;
 	private String pr_me_email;
+	private String pr_me_nick;
 	private String pr_highcode;
 	private String pr_lowcode;
 	private String pr_title;
@@ -36,6 +37,12 @@ public class ProductVO {
 	}
 	public void setPr_me_email(String pr_me_email) {
 		this.pr_me_email = pr_me_email;
+	}
+	public String getPr_me_nick() {
+		return pr_me_nick;
+	}
+	public void setPr_me_nick(String pr_me_nick) {
+		this.pr_me_nick = pr_me_nick;
 	}
 	public String getPr_highcode() {
 		return pr_highcode;
