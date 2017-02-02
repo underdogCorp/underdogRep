@@ -1,58 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html>
-<html>
-<head>
-<title>마이 페이지</title>
-<style>
-/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-.row.content {
-	height: 1500px
-}
 
-/* Set gray background color and 100% height */
-.sidenav {
-	background-color: #f1f1f1;
-	height: 100%;
-}
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-/* Set black background color, white text and some padding */
-footer {
-	background-color: #555;
-	color: white;
-	padding: 15px;
-}
 
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-	.sidenav {
-		height: auto;
-		padding: 15px;
-	}
-	.row.content {
-		height: auto;
-	}
-}
-
-h2 {
-	margin-left: 50px;
-}
-</style>
 <script>
 
-	function page_view() {
-		if(${result==1})
-			member_view()
-	}
-
-	
-	
-	
-	
 
 	function member_view() {
+	
 		document.getElementById("memberInfo").style.display = 'block';
 		document.getElementById("basketInfo").style.display = 'none';
 		document.getElementById("orderInfo").style.display = 'none';
@@ -82,10 +38,8 @@ h2 {
 </script>
 
 
-</head>
 
-<body onload="page_view()">
-	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+
 
 <div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 
@@ -255,6 +209,8 @@ h2 {
 
 			</div>
 
+		</div>
+	</div>
 
 
 
@@ -266,30 +222,50 @@ h2 {
 
 
 
-			<form method="post" action="/mypage/pwcheck">
-				<div class="modal fade" id="myModal" role="dialog">
-					<div class="modal-dialog modal-sm">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal">&times;</button>
-								<h4 class="modal-title">회원정보를 확인합니다</h4>
-							</div>
-							<div class="modal-body">
-								<p>비밀번호를 입력하세요</p>
-								<input type="password" class="form-control" id="me_pw"
-									name="me_pw">
-							</div>
-							<div class="modal-footer">
-								<input type="submit" class="btn btn-success" value="확인">
-								<button type="button" class="btn btn-default"
-									data-dismiss="modal">취소</button>
-								<input type="hidden" name=me_email
-									value="${sessionScope.MEMBER.me_email}" />
-							</div>
-						</div>
+	<form method="post" action="/mypage/pwcheck">
+		<div class="modal fade" id="myModal" role="dialog">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">회원정보를 확인합니다</h4>
+					</div>
+					<div class="modal-body">
+						<p>비밀번호를 입력하세요</p>
+						<input type="password" class="form-control" id="me_pw"
+							name="me_pw">
+					</div>
+					<div class="modal-footer">
+						<input type="submit" class="btn btn-success" value="확인">
+						<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+						<%-- <input type="hidden" name=me_email
+							value="${sessionScope.MEMBER.me_email}" /> --%>
 					</div>
 				</div>
-			</form>
+			</div>
+		</div>
+	</form>
 </div>
-</body>
-</html>
+
+
+<c:if test="${result == 1}">
+	<script>
+	member_view();	
+	</script>
+	<%
+		session.removeAttribute("result");
+	%>
+</c:if>
+<c:if test="${result == -1}">
+	<script>
+		alert("비밀번호가 다릅니다.");	
+	</script>
+	<%
+		session.removeAttribute("result");
+	%>
+</c:if>
+
+
+
+
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>

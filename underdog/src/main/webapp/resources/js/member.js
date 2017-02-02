@@ -8,6 +8,13 @@ var flagPw2Validation = false; //비밀번호 확인 입력
 var flagNameValidation = false; //이름 유효성
 var flagNickValidation = false; //닉네임 유효성
 
+function mypage(){
+	alert("로그인 해주세요");
+        location.href="/member/loginForm";     
+}
+
+
+
 $(function () {
 	loadData(); //이용약관 불러오기
     

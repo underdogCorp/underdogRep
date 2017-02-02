@@ -41,9 +41,7 @@ public class MyPageDAOImpl implements MyPageDAO {
 		System.out.println("select한 email값:" + member.getMe_email());
 		System.out.println("select한 me_pw값:" + member.getMe_pw());
 
-		if (!member.getMe_email().equals(me_email)) {
-			result = 0;
-		} else if (!member.getMe_pw().equals(me_pw)) {
+		 if (!member.getMe_pw().equals(me_pw)) {
 			result = -1;
 		} else if (member.getMe_pw().equals(me_pw)) {
 			result = 1;

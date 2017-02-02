@@ -1,12 +1,10 @@
 package com.underdog.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
-
 import java.util.HashMap;
-import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.underdog.domain.MemberVO;
 import com.underdog.service.MyPageService;
 
 @Controller
@@ -28,26 +27,32 @@ public class MyPageController {
 
 	// 마이페이지 회원정보 보기
 	@RequestMapping(value = "/mypage")
-	public String mypage(@RequestParam("me_email") String me_email, Model model, HttpServletRequest req)
+//	public String mypage(@RequestParam("me_email") String me_email, Model model, HttpServletRequest req)
+//			throws Exception {
+	public String mypage(HttpSession session, Model model, HttpServletRequest req)
 			throws Exception {
 		//비밀번호 체크 값
 		int result = 0;
-		if (req.getParameter("result") != null)
+		if (session.getAttribute("result") != null){
 		//비밀번호 체크후 결과값
-			result = Integer.parseInt(req.getParameter("result"));
+			result = (Integer)session.getAttribute("result");
+		}
+		logger.info("result 페이지 에서 !"+result);
 		
 		String jsp = null;
-		System.out.println("쎄션 me_email:" + me_email);
+		
+		MemberVO vo = (MemberVO)session.getAttribute("MEMBER");
+		
+		
+		System.out.println("쎄션 me_email:" + vo.getMe_email());
 		//본인 회원 정보
-		model.addAttribute("memberInfo", service.memberInfo(me_email));
+		model.addAttribute("memberInfo", service.memberInfo(vo.getMe_email()));
 		//비밀번호 체크 결과값 보내기
 		model.addAttribute("result", result);
-		logger.info(service.memberInfo(me_email).getMe_regdate().toString());
+		logger.info(service.memberInfo(vo.getMe_email()).getMe_regdate().toString());
 		
-	//마이 페이지 내가 쓴글 가져오기
-		model.addAttribute("myboardList",service.myboardInfo(me_email));
-		
-		
+		//마이 페이지 내가 쓴글 가져오기
+		model.addAttribute("myboardList",service.myboardInfo(vo.getMe_email()));	
 		
 		
 		
@@ -60,25 +65,22 @@ public class MyPageController {
 
 	// 마이페이지 회원 비밀번호 체크
 	@RequestMapping(value = "/pwcheck")
-	public String pwcheck(Model model, @RequestParam("me_pw") String me_pw, @RequestParam("me_email") String me_email)
+	public String pwcheck(Model model, @RequestParam("me_pw") String me_pw, HttpSession session)
 			throws Exception {
 		int result = 0;
 		String jsp = null;
+		MemberVO vo = (MemberVO)session.getAttribute("MEMBER");
+		
 		System.out.println("입력되 me_pw 값:" + me_pw);
-		System.out.println("입력된 me_email 값:" + me_email);
-		System.out.println("반환된 pw result 값:" + result);
+		System.out.println("입력된 me_email 값:" + vo.getMe_email());
+		
 
-		result = service.pwcheck(me_email, me_pw);
-
-		if (result == -1) {
-			System.out.println("비밀번호가 다릅니다");
-			jsp = "index";
-			model.addAttribute("result", result);
-		} else if (result == 1) {
-			System.out.println("비밀번호 체크 성공");
-			jsp = "redirect:/mypage/mypage?result=" + result + "&me_email=" + me_email;
-		}
-
+		result = service.pwcheck(vo.getMe_email(), me_pw);
+		session.setAttribute("result", result);
+//		model.addAttribute("result", result);
+//		model.addAttribute("me_email", me_email);
+		jsp = "redirect:/mypage/mypage";
+		
 		return jsp;
 	}
 
