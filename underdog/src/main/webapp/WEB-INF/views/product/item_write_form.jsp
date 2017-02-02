@@ -6,7 +6,7 @@
 	$(function(){
 		$('#pdtSubmitBtn').click(function(){
 			var f = $('#pdtSubmitFrm');
-			
+			alert("fff")
 			f.attr('method', 'POST');
 			f.attr('action', "/product/registerProc");
 			f.submit();

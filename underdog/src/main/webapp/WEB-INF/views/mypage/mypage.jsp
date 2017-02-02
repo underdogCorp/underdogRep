@@ -1,17 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>마이 페이지</title>
+<style>
+/* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+.row.content {
+	height: 1500px
+}
 
-<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+/* Set gray background color and 100% height */
+.sidenav {
+	background-color: #f1f1f1;
+	height: 100%;
+}
 
+/* Set black background color, white text and some padding */
+footer {
+	background-color: #555;
+	color: white;
+	padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+}
+
+h2 {
+	margin-left: 50px;
+}
+</style>
 <script>
 
-$(document).ready(function page_view(){
-	if(${result==1}){
-		member_view();
-	}		
-});
+	function page_view() {
+		if(${result==1})
+			member_view()
+	}
 
-
+	
+	
+	
 	
 
 	function member_view() {
@@ -44,16 +82,19 @@ $(document).ready(function page_view(){
 </script>
 
 
+</head>
 
-
+<body onload="page_view()">
+	<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
 <div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+
 	<div class="container-fluid">
 		<div class="row content">
 			<div class="col-sm-2 sidenav">
 				<h4>마이 페이지</h4>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a data-toggle="modal" data-target="#myModal">회원정보</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#myModal">회원정보</a></li>
 					<li><a onclick="basket_view()">장바구니</a></li>
 					<li><a onclick="order_view()">구입목록</a></li>
 					<li><a onclick="myboard_view()">내가쓴글</a></li>
@@ -213,8 +254,6 @@ $(document).ready(function page_view(){
 				<br>
 
 			</div>
-</div>
-</div>
 
 
 
@@ -251,7 +290,6 @@ $(document).ready(function page_view(){
 					</div>
 				</div>
 			</form>
-		</div>
-
-
-		<%@ include file="/WEB-INF/views/include/footer.jsp"%>
+</div>
+</body>
+</html>
