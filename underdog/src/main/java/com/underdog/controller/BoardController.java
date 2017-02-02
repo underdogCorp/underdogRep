@@ -296,41 +296,51 @@ public class BoardController {
 		 logger.info("bo_bbsid:" + cri.getBo_bbsid());
 	     logger.info("keyword:" + cri.getKeyword());
 	     logger.info("searchType:" + cri.getSearchType());
+	    
+	     System.out.println(Const.BBSID_check);
+	     String jsp = "redirect:/";
 	     
-		 String jsp = null;
-		 PageMaker pageMaker = new PageMaker();
-		 pageMaker.setCri(cri);
-		 
+	     for(int i = 0 ; i<Const.BBSID_check.length;i++)
+	     {
+	    	 if(cri.getBo_bbsid().equals(Const.BBSID_check[i])){
 
-		 int totalCount = service.listSearchCount(cri);
-		 pageMaker.setTotalCount(totalCount);
-		
-		 
-		 List<BoardVO> list = service.listSearchCriteria(cri);
-		 model.addAttribute("list", list);
-		 
-		 logger.info("갯수" + totalCount);
-		 logger.info("목록" + list);
-		 
-		 
-		 model.addAttribute("pageMaker", pageMaker);
-		 
-		 logger.info(pageMaker.makeSearch(cri.getPage()));
-		 
-			if (cri.getBo_bbsid().equals("01")) {
-				jsp = "/board/info/bo_info_list";
-				logger.info("공지사항으로 이동");
-			} else if (cri.getBo_bbsid().equals("02")) {
-				jsp = "/board/free/bo_free_list";
-				logger.info("자유게시판으로 이동");
-			} else if (cri.getBo_bbsid().equals("03")) {
-				jsp = "/board/faq/bo_faq_list";
-				logger.info("faq 게시판으로 이동");
-			} else if (cri.getBo_bbsid().equals("04")) {
-				jsp = "/board/q&a/bo_q&a_list";
-				logger.info("Q&A 게시판으로 이동");
-			}
+	    		 PageMaker pageMaker = new PageMaker();
+	    		 pageMaker.setCri(cri);
+	    		 
 
+	    		 int totalCount = service.listSearchCount(cri);
+	    		 pageMaker.setTotalCount(totalCount);
+	    		
+	    		 
+	    		 List<BoardVO> list = service.listSearchCriteria(cri);
+	    		 model.addAttribute("list", list);
+	    		 
+	    		 logger.info("갯수" + totalCount);
+	    		 logger.info("목록" + list);
+	    		 
+	    		 
+	    		 model.addAttribute("pageMaker", pageMaker);
+	    		 
+	    		 logger.info(pageMaker.makeSearch(cri.getPage()));
+	    		 
+	    			if (cri.getBo_bbsid().equals("01")) {
+	    				jsp = "/board/info/bo_info_list";
+	    				logger.info("공지사항으로 이동");
+	    			} else if (cri.getBo_bbsid().equals("02")) {
+	    				jsp = "/board/free/bo_free_list";
+	    				logger.info("자유게시판으로 이동");
+	    			} else if (cri.getBo_bbsid().equals("03")) {
+	    				jsp = "/board/faq/bo_faq_list";
+	    				logger.info("faq 게시판으로 이동");
+	    			} else if (cri.getBo_bbsid().equals("04")) {
+	    				jsp = "/board/q&a/bo_q&a_list";
+	    				logger.info("Q&A 게시판으로 이동");
+	    			}
+
+	    	 }
+	    	 
+	     }
+	     
 			return jsp; 
 	 }
 
