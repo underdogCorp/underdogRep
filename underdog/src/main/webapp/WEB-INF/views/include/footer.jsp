@@ -55,7 +55,7 @@
     </div>
 
 
-<%@ include file="/WEB-INF/views/product/item_list.jsp"%>
+<%@ include file="/WEB-INF/views/product/item_mainList.jsp"%>
 
 
 

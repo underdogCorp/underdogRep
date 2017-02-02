@@ -1,14 +1,15 @@
 package com.underdog.service;
 
+import java.util.HashMap;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.underdog.controller.ProductController;
 import com.underdog.dao.ProductDAO;
 import com.underdog.domain.ProductVO;
 
@@ -22,6 +23,16 @@ public class ProductServiceImpl implements ProductService {
 	@Inject
 	private ProductDAO dao;
 	
+	// 상품 리스트 보기
+	@Override
+	public List<ProductVO> list() {
+		
+		logger.info("ProductServiceImpl - list() 입장");
+		
+		return dao.list();
+	}
+	
+	
 	// 상품 등록 프로세스
 	@Override
 	public void registerProc(ProductVO productVo, HttpServletRequest req) {
@@ -30,7 +41,10 @@ public class ProductServiceImpl implements ProductService {
 		
 		productVo.setPr_regip(req.getRemoteAddr());
 		
+		//data.put("pr_regip", req.getRemoteAddr());
 		dao.registerProc(productVo);
 	}
+
+
 
 }

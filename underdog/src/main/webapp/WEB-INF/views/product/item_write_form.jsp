@@ -6,9 +6,11 @@
 	$(function(){
 		$('#pdtSubmitBtn').click(function(){
 			var f = $('#pdtSubmitFrm');
-			alert("fff")
+			alert("fff");
 			f.attr('method', 'POST');
+			alert("dddd");
 			f.attr('action', "/product/registerProc");
+			alert("yyyy");
 			f.submit();
 		})
 	});
@@ -18,12 +20,14 @@
 		$('#lowcodeTag').attr('display', 'block');
 	});
 </script>
+
 <div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+
 <h2>상품등록</h2><br/>
 
 <form id="pdtSubmitFrm">
 회원이메일 (hidden으로 처리, 임시): <input type="text" name="pr_me_email" value="${sessionScope.MEMBER.me_email}"><br/> <br/>
-회원닉네임 (hidden으로 처리, 임시): <input type="text" name="bo_me_nick" value="${sessionScope.MEMBER.me_nick}"><br/><br/>
+회원닉네임 (hidden으로 처리, 임시): <input type="text" name="pr_me_nick" value="${sessionScope.MEMBER.me_nick}"><br/><br/>
 
 
 상품등록자 : ${sessionScope.MEMBER.me_name}(${sessionScope.MEMBER.me_email})<br/>
@@ -52,8 +56,8 @@
 시급 : <input type="text" name="pr_pay_h"><br/>
 일급 : <input type="text" name="pr_pay_d"><br/>
 월급 : <input type="text" name="pr_pay_m"><br/>
-업무가능 시작일 : <input type="text" name="pr_startday"><br/>
-업무가능 종료일 : <input type="text" name="pr_endday"><br/>
+<!-- 업무가능 시작일 : <input type="text" name="pr_startday"><br/>
+업무가능 종료일 : <input type="text" name="pr_endday"><br/> -->
 
 
 <input type="button" id="pdtSubmitBtn" value="제출">

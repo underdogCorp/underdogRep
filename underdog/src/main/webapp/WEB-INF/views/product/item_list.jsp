@@ -1,226 +1,465 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-     <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>(DB)포켓몬 트레이너 정성훈!</h2>
-                            <hr class="star-primary">
-                            <img src="/resources/images/boot/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-                            <p>(DB)안녕하세요. 저는 포켓몬 트레이너 정성훈입니다!! 잘 부탁드립니다!</p>
-                            <ul class="list-inline item-details">
-                                <li>이름:
-                                    <strong><a href="http://startbootstrap.com">(DB)정성훈</a></strong>
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
+
+
+
+
+    <div id="all">
+
+        <div id="content">
+ 
+<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+               
+
+                <div class="col-md-3">
+                    <!-- *** MENUS AND FILTERS ***
+ _________________________________________________________ -->
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Categories</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked category-menu">
+                                <li>
+                                    <a href="category.html">Men <span class="badge pull-right">42</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>나이:
-                                    <strong><a href="http://startbootstrap.com">(DB)April 2014</a></strong>
+                                <li class="active">
+                                    <a href="category.html">Ladies  <span class="badge pull-right">123</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Skirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>능력:
-                                    <strong><a href="http://startbootstrap.com">(DB)1타1피 포켓몬 잡이</a></strong>
+                                <li>
+                                    <a href="category.html">Kids  <span class="badge pull-right">11</span></a>
+                                    <ul>
+                                        <li><a href="category.html">T-shirts</a>
+                                        </li>
+                                        <li><a href="category.html">Skirts</a>
+                                        </li>
+                                        <li><a href="category.html">Pants</a>
+                                        </li>
+                                        <li><a href="category.html">Accessories</a>
+                                        </li>
+                                    </ul>
                                 </li>
+
                             </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class=""></i> 바로구매</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class=""></i> 장바구니</button>
-                            <br/><br/>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="/resources/images/boot/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Brands <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <form>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Armani (10)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Versace (12)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Carlo Bruni (15)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox">Jack Honey (14)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+
+                            </form>
+
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="/resources/images/boot/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Colours <a class="btn btn-xs btn-danger pull-right" href="#"><i class="fa fa-times-circle"></i> Clear</a></h3>
+                        </div>
+
+                        <div class="panel-body">
+
+                            <form>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour white"></span> White (14)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour blue"></span> Blue (10)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour green"></span> Green (20)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour yellow"></span> Yellow (13)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox"> <span class="colour red"></span> Red (10)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
+
+                            </form>
+
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
+
+                    <!-- *** MENUS AND FILTERS END *** -->
+
+                    <div class="banner">
+                        <a href="#">
+                            <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
+                        </a>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="/resources/images/boot/portfolio/game.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+                <div class="col-md-9">
+                    <div class="box">
+                        <h1>Ladies</h1>
+                        <p>In our Ladies department we offer wide selection of the best products we have found and carefully selected worldwide.</p>
+                    </div>
+
+                    <div class="box info-bar">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-4 products-showing">
+                                Showing <strong>12</strong> of <strong>25</strong> products
+                            </div>
+
+                            <div class="col-sm-12 col-md-8  products-number-sort">
+                                <div class="row">
+                                    <form class="form-inline">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="products-number">
+                                                <strong>Show</strong>  <a href="#" class="btn btn-default btn-sm btn-primary">12</a>  <a href="#" class="btn btn-default btn-sm">24</a>  <a href="#" class="btn btn-default btn-sm">All</a> products
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="products-sort-by">
+                                                <strong>Sort by</strong>
+                                                <select name="sort-by" class="form-control">
+                                                    <option>Price</option>
+                                                    <option>Name</option>
+                                                    <option>Sales first</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="/resources/images/boot/portfolio/safe.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+                    <div class="row products">
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="detail.html">
+                                                <img src="img/product1.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="detail.html">
+                                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="detail.html" class="invisible">
+                                    <img src="img/product1.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
+                                    <p class="price">$143.00</p>
+                                    <p class="buttons">
+                                        <a href="detail.html" class="btn btn-default">View detail</a>
+                                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </p>
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Project Title</h2>
-                            <hr class="star-primary">
-                            <img src="/resources/images/boot/portfolio/submarine.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
-                                </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="detail.html">
+                                                <img src="img/product2.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="detail.html">
+                                                <img src="img/product2_2.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="detail.html" class="invisible">
+                                    <img src="img/product2.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="detail.html">White Blouse Armani</a></h3>
+                                    <p class="price"><del>$280</del> $143.00</p>
+                                    <p class="buttons">
+                                        <a href="detail.html" class="btn btn-default">View detail</a>
+                                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </p>
+                                </div>
+                                <!-- /.text -->
+
+                                <div class="ribbon sale">
+                                    <div class="theribbon">SALE</div>
+                                    <div class="ribbon-background"></div>
+                                </div>
+                                <!-- /.ribbon -->
+
+                                <div class="ribbon new">
+                                    <div class="theribbon">NEW</div>
+                                    <div class="ribbon-background"></div>
+                                </div>
+                                <!-- /.ribbon -->
+
+                                <div class="ribbon gift">
+                                    <div class="theribbon">GIFT</div>
+                                    <div class="ribbon-background"></div>
+                                </div>
+                                <!-- /.ribbon -->
+                            </div>
+                            <!-- /.product -->
                         </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="detail.html">
+                                                <img src="img/product3.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="detail.html">
+                                                <img src="img/product3_2.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="detail.html" class="invisible">
+                                    <img src="img/product3.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="detail.html">Black Blouse Versace</a></h3>
+                                    <p class="price">$143.00</p>
+                                    <p class="buttons">
+                                        <a href="detail.html" class="btn btn-default">View detail</a>
+                                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </p>
+
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="detail.html">
+                                                <img src="img/product3.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="detail.html">
+                                                <img src="img/product3_2.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="detail.html" class="invisible">
+                                    <img src="img/product3.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="detail.html">Black Blouse Versace</a></h3>
+                                    <p class="price">$143.00</p>
+                                    <p class="buttons">
+                                        <a href="detail.html" class="btn btn-default">View detail</a>
+                                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </p>
+
+                                </div>
+                                <!-- /.text -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="detail.html">
+                                                <img src="img/product2.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="detail.html">
+                                                <img src="img/product2_2.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="detail.html" class="invisible">
+                                    <img src="img/product2.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="detail.html">White Blouse Versace</a></h3>
+                                    <p class="price">$143.00</p>
+                                    <p class="buttons">
+                                        <a href="detail.html" class="btn btn-default">View detail</a>
+                                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </p>
+
+                                </div>
+                                <!-- /.text -->
+
+                                <div class="ribbon new">
+                                    <div class="theribbon">NEW</div>
+                                    <div class="ribbon-background"></div>
+                                </div>
+                                <!-- /.ribbon -->
+                            </div>
+                            <!-- /.product -->
+                        </div>
+
+                        <div class="col-md-4 col-sm-6">
+                            <div class="product">
+                                <div class="flip-container">
+                                    <div class="flipper">
+                                        <div class="front">
+                                            <a href="detail.html">
+                                                <img src="img/product1.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                        <div class="back">
+                                            <a href="detail.html">
+                                                <img src="img/product1_2.jpg" alt="" class="img-responsive">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="detail.html" class="invisible">
+                                    <img src="img/product1.jpg" alt="" class="img-responsive">
+                                </a>
+                                <div class="text">
+                                    <h3><a href="detail.html">Fur coat</a></h3>
+                                    <p class="price">$143.00</p>
+                                    <p class="buttons">
+                                        <a href="detail.html" class="btn btn-default">View detail</a>
+                                        <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    </p>
+
+                                </div>
+                                <!-- /.text -->
+
+                                <div class="ribbon gift">
+                                    <div class="theribbon">GIFT</div>
+                                    <div class="ribbon-background"></div>
+                                </div>
+                                <!-- /.ribbon -->
+
+                            </div>
+                            <!-- /.product -->
+                        </div>
+                        <!-- /.col-md-4 -->
                     </div>
+                    <!-- /.products -->
+
+                    <div class="pages">
+
+                        <p class="loadMore">
+                            <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Load more</a>
+                        </p>
+
+                        <ul class="pagination">
+                            <li><a href="#">&laquo;</a>
+                            </li>
+                            <li class="active"><a href="#">1</a>
+                            </li>
+                            <li><a href="#">2</a>
+                            </li>
+                            <li><a href="#">3</a>
+                            </li>
+                            <li><a href="#">4</a>
+                            </li>
+                            <li><a href="#">5</a>
+                            </li>
+                            <li><a href="#">&raquo;</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
                 </div>
+                <!-- /.col-md-9 -->
             </div>
+            <!-- /.container -->
         </div>
-    </div>
+        <!-- /#content -->
+
+</div>
+ <%@ include file="/WEB-INF/views/include/footer.jsp"%>
