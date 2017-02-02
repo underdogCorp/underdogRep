@@ -29,6 +29,7 @@
 	<!-- jQuery -->
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 
+	<script src="/resources/js/member.js"></script> 
 	
 	
 <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
