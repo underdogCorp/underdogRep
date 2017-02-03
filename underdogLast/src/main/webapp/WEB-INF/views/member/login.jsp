@@ -2,11 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 <div class="container" style="padding-bottom: 50px; padding-top: 110px;">
-<br>
-<br>
-<br>
-<br>
-
 
 <div class="container">
 	<div class="row">

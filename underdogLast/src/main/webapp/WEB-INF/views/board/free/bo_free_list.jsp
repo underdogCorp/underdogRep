@@ -6,14 +6,15 @@
 
 <div class="container" style="padding-bottom: 50px;">
 		<h2>자유 게시판</h2>
+		<tr>
 		<table class="table table-hover">
 			<thead>
 				<tr>
 					<th>번호</th>
 					<th>제목</th>
 					<th>작성자</th>
-					<th>조회수</th>
 					<th>게시일</th>
+					<th>조회수</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -29,8 +30,8 @@
 						</td>
 						<td><a href="/board/board_cont${pageMaker.makeQuery(pageMaker.cri.page)}&bo_bbsid=${list.bo_bbsid}&bo_idx=${list.bo_idx }&state=read">${list.bo_title}</a></td>
 						<td>${list.bo_me_nick}(${list.bo_me_email})</td>
-						<td>${list.bo_hit}</td>
 						<td>${list.bo_regdate}</td>
+						<td>${list.bo_hit}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

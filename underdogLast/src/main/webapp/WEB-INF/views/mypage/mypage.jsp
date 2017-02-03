@@ -3,7 +3,6 @@
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-
 <script>
 	function member_view() {
 
@@ -36,11 +35,6 @@
 	}
 </script>
 
-
-
-
-
-<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
 
 	<div class="container-fluid">
 		<div class="row content">
@@ -237,7 +231,7 @@
 			</div>
 		</div>
 	</form>
-</div>
+
 
 
 <c:if test="${result == 1}">
