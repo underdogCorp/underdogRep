@@ -13,11 +13,12 @@
 		document.getElementById("myboardInfo").style.display = 'none';
 	}
 
-	function basket_view() {
+	function basket_view(email) {
 		document.getElementById("basketInfo").style.display = 'block';
 		document.getElementById("memberInfo").style.display = 'none';
 		document.getElementById("orderInfo").style.display = 'none';
 		document.getElementById("myboardInfo").style.display = 'none';
+		
 	}
 	function order_view() {
 		document.getElementById("orderInfo").style.display = 'block';
@@ -47,7 +48,7 @@
 				<h4>마이 페이지</h4>
 				<ul class="nav nav-pills nav-stacked">
 					<li><a href="#" data-toggle="modal" data-target="#myModal">회원정보</a></li>
-					<li><a onclick="basket_view()">장바구니</a></li>
+					<li><a onclick="basket_view('${sessionScope.MEMBER.me_email}')">장바구니</a></li>
 					<li><a onclick="order_view()">구입목록</a></li>
 					<li><a onclick="myboard_view()">내가쓴글</a></li>
 				</ul>
@@ -108,38 +109,10 @@
 				<br>
 
 				<h2>장바구니 내역 보기</h2>
-
 				<div id="basketInfo" style="display: none;">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>상품 정보</th>
-								<th>고용 형태</th>
-								<th>고용 기간</th>
-								<th>상품 가격</th>
-								<th>상품 담은 날자</th>
-							</tr>
-						</thead>
-						<tbody>
 
-							<tr>
-								<td>회사와 함께 성장하겠습니다</td>
-								<td>연봉</td>
-								<td>3년</td>
-								<td>3800만원</td>
-								<td>2017/2/7</td>
-							</tr>
+<%@ include file="/WEB-INF/views/basket/basket_include.jsp"%>
 
-						</tbody>
-					</table>
-
-
-
-					<h4>합계금액 : (불러온 가격 입력)</h4>
-					<span style="float: right">
-						<button type="submit" class="btn btn-danger">주문하기</button>
-						<button type="submit" class="btn btn-default right">주문취소</button>
-					</span> <br>
 				</div>
 				<hr>
 				<br>

@@ -19,6 +19,7 @@ import com.underdog.domain.BoardVO;
 import com.underdog.domain.MemberVO;
 import com.underdog.domain.PageMaker;
 import com.underdog.domain.SearchCriteria;
+import com.underdog.service.BasketService;
 import com.underdog.service.MyPageService;
 
 @Controller
@@ -27,7 +28,9 @@ public class MyPageController {
 
 	@Inject
 	private MyPageService service;
-
+	@Inject
+	private BasketService service2;
+	
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	// 마이페이지 회원정보 보기
@@ -69,6 +72,10 @@ public class MyPageController {
 		//마이 페이지 내가 쓴글 가져오기
 		model.addAttribute("myboardList",list);	
 		
+		
+		//mypage 장바구니 정보 가져오기 (세종 추가_2017.02.03)
+		model.addAttribute("basket", service2.basket(vo.getMe_email()));
+		
 			
 		System.out.println("쎄션 me_email:" + vo.getMe_email());
 		//본인 회원 정보
@@ -78,9 +85,6 @@ public class MyPageController {
 		logger.info(service.memberInfo(vo.getMe_email()).getMe_regdate().toString());
 		
 	
-		
-		
-		
 		jsp = "/mypage/mypage";
 		logger.info("mypage - 마이페이지폼 이동");
 
@@ -120,8 +124,27 @@ public class MyPageController {
 		return jsp;
 	}
 	
-	
-	
+//	// 장바구니 조회
+//	@RequestMapping(value = "/basketView")
+//	public String basketView(@RequestParam("me_email") String me_email, Model model, HttpServletRequest req) throws Exception{
+//		
+//		int result = 0;
+//		if (req.getParameter("result") != null){
+//			result = Integer.parseInt(req.getParameter("result"));
+//		}
+//		
+//		String jsp = null;
+//		System.out.println("쎄션 me_email:" + me_email);
+//		
+//		model.addAttribute("basket", service2.basket(me_email));
+//		model.addAttribute("result", result);
+//		
+//		jsp = "/mypage/mypage";
+//		logger.info("mypage - 장바구니 조회로 이동");
+//		
+//		return jsp;
+//	}
+//	
 	
 	
 
