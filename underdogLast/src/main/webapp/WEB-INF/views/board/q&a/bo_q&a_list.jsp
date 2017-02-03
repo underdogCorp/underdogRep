@@ -21,7 +21,7 @@ $(function(){
 </script>
 
 
-<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
 
 		<h2>Q & A</h2>
 		<p>무엇이든 물어보세요</p>

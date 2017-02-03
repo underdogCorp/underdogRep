@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
-<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
 <br/>
 게시판 번호 : ${data.bo_idx } <br/>
 회원 이메일 : ${data.bo_me_email } <br/>

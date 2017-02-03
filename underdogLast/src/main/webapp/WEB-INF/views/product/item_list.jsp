@@ -17,14 +17,8 @@
  
  <%@include file="/WEB-INF/views/product/item_categories.jsp" %>
 
-
                     <!-- *** MENUS AND FILTERS END *** -->
-
-                    <div class="banner">
-                        <a href="#">
-                            <img src="/resources/img/banner.jpg" alt="sales 2014" class="img-responsive">
-                        </a>
-                    </div>
+                    
                 </div>
 
                 <div class="col-md-9">
@@ -70,22 +64,22 @@
                                 <div class="flip-container">
                                     <div class="flipper">
                                         <div class="front">
-                                            <a href="detail.html">
+                                            <a href="/product/read">
                                                 <img src="/resources/img/product1.jpg" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                         <div class="back">
-                                            <a href="detail.html">
+                                            <a href="/product/read">
                                                 <img src="/resources/img/product1_2.jpg" alt="" class="img-responsive">
                                             </a>
                                         </div>
                                     </div>
                                 </div>
-                                <a href="detail.html" class="invisible">
+                                <a href="/product/read" class="invisible">
                                     <img src="/resources/img/product1.jpg" alt="" class="img-responsive">
                                 </a>
                                 <div class="text">
-                                    <h3><a href="detail.html">Fur coat with very but very very long name</a></h3>
+                                    <h3><a href="/product/read">Fur coat with very but very very long name</a></h3>
                                     <p class="price">$143.00</p>
                                     <p class="buttons">
                                         <a href="detail.html" class="btn btn-default">View detail</a>

@@ -48,7 +48,7 @@
 <body>
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
-<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
 	<div>
 		<div class="bbsWriteForm">
 			<h2>자유 게시판 글쓰기</h2>

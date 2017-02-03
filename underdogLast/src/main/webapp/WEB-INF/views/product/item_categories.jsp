@@ -4,7 +4,7 @@
                    <div class="panel panel-default sidebar-menu">
 
                         <div class="panel-heading">
-                            <h3 class="panel-title">카테고리</h3>
+                            <h3 class="panel-title">Categories</h3>
                         </div>
 
                         <div class="panel-body">
@@ -90,4 +90,12 @@
                             </ul>
 
                         </div>
+                    </div>
+                    
+                    
+					<!--배너 -->
+                     <div class="banner">
+                        <a href="#">
+                            <img src="/resources/img/banner.jpg" alt="sales 2014" class="img-responsive">
+                        </a>
                     </div>

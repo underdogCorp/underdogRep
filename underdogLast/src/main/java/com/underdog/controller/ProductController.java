@@ -63,4 +63,10 @@ public class ProductController {
 		return "product/item_introduce";
 	}
 	
+	// 상품 상세보기 프로세스
+	@RequestMapping("/read")
+	public String read(){
+		
+		return "product/item_read";
+	}
 }

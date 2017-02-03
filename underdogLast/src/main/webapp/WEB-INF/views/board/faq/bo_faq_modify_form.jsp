@@ -15,7 +15,7 @@ $(function(){
 })
 
 </script>
-<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
 <form id="faqModifySubmitFrm">
 히든으로 넘길 값들 <br/>
 게시판 번호 : <input type="hidden" name="bo_idx" value="${data.bo_idx }"/> <br/>
