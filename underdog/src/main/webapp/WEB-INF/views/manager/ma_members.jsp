@@ -11,15 +11,7 @@
 		} else { //취소
 			return;
 		}
-	}
-	function button_modify(me_email){
-	
-		
-		
-	}
-	
-	
-	
+	}	
 	
 </script>
 

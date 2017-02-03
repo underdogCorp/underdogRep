@@ -19,16 +19,16 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-6">
+		<div class="col-sm-12">
 			<div class="panel panel-primary">
-				<div class="panel-heading">게시글 리스트</div>
+				<div class="panel-heading">상품 리스트</div>
 				<div class="panel-body">
 					
 				</div>
 				<div class="panel-footer">Buy 50 mobiles and get a gift card</div>
 			</div>
 		</div>
-		<div class="col-sm-6">
+		<div class="col-sm-12">
 			<div class="panel panel-primary">
 				<div class="panel-heading">주문 리스트</div>
 				<div class="panel-body">

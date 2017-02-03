@@ -87,6 +87,7 @@ $('#gggg').click(function(){
 					<span class="sr-only">Toggle navigation</span> Menu <i
 						class="fa fa-bars"></i>
 				</button>
+				<a href="/"><img src="../resources/images/logo51.png" /></a>
 				<a class="navbar-brand" href="/">Pinterest</a>
 			</div>
 

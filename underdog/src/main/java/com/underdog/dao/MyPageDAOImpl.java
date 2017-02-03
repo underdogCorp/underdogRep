@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import com.underdog.controller.MyPageController;
 import com.underdog.domain.BoardVO;
 import com.underdog.domain.MemberVO;
+import com.underdog.domain.SearchCriteria;
 
 @Repository
 public class MyPageDAOImpl implements MyPageDAO {
@@ -57,9 +58,15 @@ public class MyPageDAOImpl implements MyPageDAO {
 	}
 
 	@Override
-	public List<BoardVO> myboardInfo(String me_email) throws Exception {
+	public List<BoardVO> myboardInfo(SearchCriteria cri) throws Exception {
 			
-		return session.selectList(namespace+".myboardList",me_email);
+		return session.selectList(namespace+".myboardList",cri);
 	}
+
+	// 마이페이지 페이징 처리
+	public int boardCount(String me_email)throws Exception{
+		return session.selectOne(namespace+".boardCount",me_email);
+	}
+
 
 }

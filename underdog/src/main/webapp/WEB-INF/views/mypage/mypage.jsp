@@ -5,10 +5,8 @@
 
 
 <script>
-
-
 	function member_view() {
-	
+
 		document.getElementById("memberInfo").style.display = 'block';
 		document.getElementById("basketInfo").style.display = 'none';
 		document.getElementById("orderInfo").style.display = 'none';
@@ -177,7 +175,7 @@
 				<br>
 
 				<h2>내가 쓴글 보기</h2>
-				<div id="myboardInfo" style="display: none;">
+				<div id="myboardInfo" style="display: block;">
 					<table class="table table-hover">
 						<thead>
 							<tr>
@@ -190,10 +188,13 @@
 							</tr>
 						</thead>
 						<tbody>
-
 							<tr>
+							<!-- 화면 출력 번호  변수 정의 -->
+							<c:set var="num"
+								value="${pageMaker.totalCount-(pageMaker.cri.page-1)*10}" />
 								<c:forEach items="${myboardList}" var="list">
-									<td>번호</td>
+									<td> <c:out value="${num}" /> <c:set var="num"
+											value="${num-1}" /></td>
 									<td>${list.bo_title}</td>
 									<td>${list.bo_me_nick}(${list.bo_me_email})</td>
 									<td>${list.bo_hit}</td>
@@ -203,21 +204,39 @@
 							</c:forEach>
 						</tbody>
 					</table>
+
+					<div class="box-footer">
+
+						<div class="text-center">
+							<ul class="pagination">
+
+								<c:if test="${pageMaker.prev}">
+									<li><a
+										href="/mypage/mypage${pageMaker.makeQuery(pageMaker.startPage - 1) }">&laquo;</a></li>
+								</c:if>
+
+								<c:forEach begin="${pageMaker.startPage }"
+									end="${pageMaker.endPage }" var="idx">
+									<li
+										<c:out value="${pageMaker.cri.page == idx?'class =active':''}"/>>
+										<a href="/mypage/mypage${pageMaker.makeQuery(idx)}">${idx}</a>
+									</li>
+								</c:forEach>
+
+								<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+									<li><a
+										href="/mypage/mypage${pageMaker.makeQuery(pageMaker.endPage +1) }">&raquo;</a></li>
+								</c:if>
+
+							</ul>
+						</div>
+					</div>
 				</div>
 				<hr>
 				<br>
-
 			</div>
-
 		</div>
 	</div>
-
-
-
-
-
-
-
 
 
 
@@ -250,7 +269,7 @@
 
 <c:if test="${result == 1}">
 	<script>
-	member_view();	
+		member_view();
 	</script>
 	<%
 		session.removeAttribute("result");
@@ -258,7 +277,7 @@
 </c:if>
 <c:if test="${result == -1}">
 	<script>
-		alert("비밀번호가 다릅니다.");	
+		alert("비밀번호가 다릅니다.");
 	</script>
 	<%
 		session.removeAttribute("result");
