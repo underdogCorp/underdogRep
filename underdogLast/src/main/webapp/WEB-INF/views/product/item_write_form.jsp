@@ -58,6 +58,9 @@
 시급 : <input type="text" name="pr_pay_h"><br/>
 일급 : <input type="text" name="pr_pay_d"><br/>
 월급 : <input type="text" name="pr_pay_m"><br/>
+사진1 : <input type="text" name="pr_pay_m"><br/>
+사진2 : <input type="text" name="pr_pay_m"><br/>
+사진3 : <input type="text" name="pr_pay_m"><br/>
 <!-- 업무가능 시작일 : <input type="text" name="pr_startday"><br/>
 업무가능 종료일 : <input type="text" name="pr_endday"><br/> -->
 
