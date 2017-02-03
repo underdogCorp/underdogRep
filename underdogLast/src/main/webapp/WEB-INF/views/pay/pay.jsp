@@ -1,12 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-</body>
-</html>
+<div class="container" style="padding-bottom: 50px;">
+
+<div class="container-fluid">
+	<div class="row content">
+		<div class="col-sm-9">
+			<br>
+			<h2>주문 하기</h2>
+			<div id="basketInfo">
+			
+<%@ include file="/WEB-INF/views/basket/basket_include.jsp"%>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<%@ include file="/WEB-INF/views/include/footer.jsp"%>
