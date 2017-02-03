@@ -65,7 +65,7 @@ public class ProductController {
 
 		 service.registerProc(productVo, req);
 		 
-		return "/";
+		return "redirect:/product/list";
 	}
 	
 	// 상품소개(능력자란?) 페이지 이동

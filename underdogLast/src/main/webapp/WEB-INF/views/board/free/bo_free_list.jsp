@@ -4,7 +4,7 @@
 
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
+<div class="container" style="padding-bottom: 50px;">
 		<h2>자유 게시판</h2>
 		<tr>
 		<table class="table table-hover">

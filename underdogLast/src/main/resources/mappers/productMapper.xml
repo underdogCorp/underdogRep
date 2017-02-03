@@ -3,7 +3,7 @@
 
 <mapper namespace="com.underdog.mapper.productMapper">
 
-	<insert id="registerProc" parameterType="productVO">
+	<insert id="registerProc" parameterType="ProductVO">
 		insert into product (
 			PR_IDX
 			,PR_ME_EMAIL
@@ -38,13 +38,14 @@
 			,#{pr_pay_m}
 			,sysdate
 			,sysdate
-<!-- 			,#{pr_startday} -->
-<!-- 			,#{pr_endday} -->
 		)
 	</insert>
+<!-- 			,#{pr_startday} -->
+<!-- 			,#{pr_endday} -->	
+	
 
 	<select id="list" resultType="ProductVO">
-		select * from product;
-	
+		select * from product	
 	</select>
+	
 </mapper>

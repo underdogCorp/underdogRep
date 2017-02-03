@@ -167,7 +167,7 @@ function tryCommentEntry(){
 			}
 </script>
 
-<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
+<div class="container" style="padding-bottom: 50px;">
 <br />
 게시판 번호 : ${board.bo_idx }
 <br />

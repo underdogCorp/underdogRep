@@ -13,7 +13,7 @@
 
 
 	<!-- 좌우측의 공간 확보 -->
-<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
+<div class="container" style="padding-bottom: 50px;">
 		<hr />
 		<div class="row">
 			<div class="col-md-10">

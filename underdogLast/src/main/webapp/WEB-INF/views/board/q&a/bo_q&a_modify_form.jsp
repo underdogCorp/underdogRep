@@ -15,7 +15,7 @@ $(function(){
 })
 
 </script>
-<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
+<div class="container" style="padding-bottom: 50px;">
 <form id="qnaModifySubmitFrm">
 히든으로 넘길 값들 <br/>
 게시판 번호 : <input type="text" name="bo_idx" value="${cri.bo_idx }"/> <br/>

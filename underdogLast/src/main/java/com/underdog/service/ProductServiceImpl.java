@@ -41,6 +41,9 @@ public class ProductServiceImpl implements ProductService {
 		
 		productVo.setPr_regip(req.getRemoteAddr());
 		
+		logger.info(productVo.getPr_regip());
+		System.out.println(productVo.getPr_regip());
+		
 		//data.put("pr_regip", req.getRemoteAddr());
 		dao.registerProc(productVo);
 	}
