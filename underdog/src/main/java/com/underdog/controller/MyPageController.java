@@ -124,28 +124,6 @@ public class MyPageController {
 		return jsp;
 	}
 	
-//	// 장바구니 조회
-//	@RequestMapping(value = "/basketView")
-//	public String basketView(@RequestParam("me_email") String me_email, Model model, HttpServletRequest req) throws Exception{
-//		
-//		int result = 0;
-//		if (req.getParameter("result") != null){
-//			result = Integer.parseInt(req.getParameter("result"));
-//		}
-//		
-//		String jsp = null;
-//		System.out.println("쎄션 me_email:" + me_email);
-//		
-//		model.addAttribute("basket", service2.basket(me_email));
-//		model.addAttribute("result", result);
-//		
-//		jsp = "/mypage/mypage";
-//		logger.info("mypage - 장바구니 조회로 이동");
-//		
-//		return jsp;
-//	}
-//	
-	
 	
 
 }
