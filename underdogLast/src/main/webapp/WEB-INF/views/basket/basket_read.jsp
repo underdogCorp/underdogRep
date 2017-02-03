@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
 
-<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+<div class="container" style="padding-bottom: 50px;">
 
 <div class="container-fluid">
 	<div class="row content">
