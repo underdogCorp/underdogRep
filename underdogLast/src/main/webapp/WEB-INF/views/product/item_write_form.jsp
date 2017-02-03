@@ -6,22 +6,24 @@
 	$(function(){
 		$('#pdtSubmitBtn').click(function(){
 			var f = $('#pdtSubmitFrm');
-			alert("fff");
 			f.attr('method', 'POST');
-			alert("dddd");
 			f.attr('action', "/product/registerProc");
-			alert("yyyy");
+			alert("상품등록!");
 			f.submit();
 		})
+		
+		
+		$(".highcode").selected(function(){
+			alert("zzz");
+			$('#lowcodeTag').attr('display', 'block');
+		});
+		
 	});
 	
-	$(".highcode").selected(function(){
-		alert("zzz");
-		$('#lowcodeTag').attr('display', 'block');
-	});
+
 </script>
 
-<div class="container" style="padding-bottom: 50px; padding-top: 110px;">
+<div class="container" style="padding-bottom: 50px; padding-top: 50px;">
 
 <h2>상품등록</h2><br/>
 
@@ -33,18 +35,18 @@
 상품등록자 : ${sessionScope.MEMBER.me_name}(${sessionScope.MEMBER.me_email})<br/>
 
  <label for="sel1">상품대분류 : :</label>
-      <select class="form-control" id="highcodeTag">
+      <select class="form-control" id="highcodeTag" name="pr_highcode">
           <%@ include file="../product/highcode.jsp" %>
     <c:forEach var="h" items="${highcode }">
-    	<option name="pr_highcode" value="${h }" title="${h }" class="highcode"/>${h }</option>
+    	<option value="${h }" title="${h }" class="highcode"/>${h }</option>
     </c:forEach>
  </select>
  
  <label for="sel2">상품소분류 :</label>
- <select class="form-control" id="lowcodeTag" display="none">
+ <select class="form-control" id="lowcodeTag" display="none" name="pr_lowcode">
          <%@ include file="../product/lowcode.jsp" %>
   	  <c:forEach var="l" items="${day }">
-    	<option name="pr_lowcode" value="${l }" title="${l }"/>${l }</option>
+    	<option value="${l }" title="${l }"/>${l }</option>
    	  </c:forEach>
  </select>
  
@@ -52,7 +54,7 @@
 본문 : <input type="text" name="pr_content"><br/>
 검색키워드 : <input type="text" name="pr_keyword"><br/>
 업무가능지역 : <input type="text" name="pr_region"><br/>
-희망급여종류 : <input type="text" ><br/>
+희망급여종류 : 
 시급 : <input type="text" name="pr_pay_h"><br/>
 일급 : <input type="text" name="pr_pay_d"><br/>
 월급 : <input type="text" name="pr_pay_m"><br/>

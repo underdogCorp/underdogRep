@@ -49,6 +49,19 @@ public class ProductController {
 	public String registerProc(ProductVO productVo, HttpServletRequest req){
 		
 		 logger.info("ProductController - registerProc() 입장");
+		 
+		 logger.info("pr_me_email : " + productVo.getPr_me_email());
+		 logger.info("pr_me_nick : " + productVo.getPr_me_nick());
+		 logger.info("pr_highcode : " + productVo.getPr_highcode());
+		 logger.info("pr_lowcode : " + productVo.getPr_lowcode());
+		 logger.info("pr_title : " + productVo.getPr_title());
+		 logger.info("pr_content : " + productVo.getPr_content());
+		 logger.info("pr_keyword : " + productVo.getPr_keyword());
+		 logger.info("pr_region : " + productVo.getPr_region());
+		 logger.info("pr_pay_h : " + productVo.getPr_pay_h());
+		 logger.info("pr_pay_d : " + productVo.getPr_pay_d());
+		 logger.info("pr_pay_m : " + productVo.getPr_pay_m());
+		 
 
 		 service.registerProc(productVo, req);
 		 

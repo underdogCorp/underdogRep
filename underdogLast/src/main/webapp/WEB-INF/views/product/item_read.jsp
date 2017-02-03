@@ -59,7 +59,7 @@
                             <div class="row" id="thumbs">
                                 <div class="col-xs-4">
                                     <a href="/resources/img/detailbig1.jpg" class="thumb">
-                                        <img src=/resources/img/detailsquare.jpg" alt="" class="img-responsive">
+                                        <img src="/resources/img/detailsquare1.jpg" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="col-xs-4">
