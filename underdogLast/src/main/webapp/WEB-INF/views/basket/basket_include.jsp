@@ -51,7 +51,24 @@
 							<td>??</td>
 	</c:otherwise>
 </c:choose>
-							<td>${basket.ba_sum } 만원</td>
+							
+<c:choose>
+	<c:when test="${basket.ba_sum >= 10000}">
+		<fmt:parseNumber var="sumBasketDivide" value="${basket.ba_sum / 10000}" integerOnly="true" />
+			<c:if test="${basket.ba_sum % 10000 == 0}">
+				<td><c:out value="${sumBasketDivide}"/> 억원
+				</td>
+			</c:if>
+			<c:if test="${basket.ba_sum % 10000 != 0}">
+				<td><c:out value="${sumBasketDivide}"/> 억 <c:out value="${basket.ba_sum - sumBasketDivide * 10000}"/> 만원</h4>
+				</td>
+			</c:if>
+	</c:when>
+	<c:otherwise>
+			<td><c:out value="${basket.ba_sum }"/> 만원
+			</td>
+	</c:otherwise>
+</c:choose>	
 							<td>${basket.ba_regdate }</td>
 						</tr>
 <c:set var="sumAll" value="${sumAll + basket.ba_sum }"	/>					
@@ -60,7 +77,16 @@
 					</tbody>
 				</table>
 
-				<h4>합계금액 : <c:out value="${sumAll }"/> 만원</h4>
+				<h4>합계금액 : 
+<c:choose>
+	<c:when test="${sumAll >= 10000}">
+		<fmt:parseNumber var="sumAllDivide" value="${sumAll / 10000}" integerOnly="true" />
+			<c:out value="${sumAllDivide}"/> 억 <c:out value="${sumAll - sumAllDivide * 10000}"/> 만원</h4>
+	</c:when>
+	<c:otherwise>
+				<c:out value="${sumAll }"/> 만원</h4>
+	</c:otherwise>
+</c:choose>					
 				<span style="float: right">
 					<button type="submit" class="btn btn-danger">주문하기</button>
 					<button type="submit" class="btn btn-default right">주문취소</button>
