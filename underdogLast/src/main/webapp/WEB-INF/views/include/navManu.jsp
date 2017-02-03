@@ -1,6 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+<script>
+ function mypage(){
+ 	alert("로그인 해주세요");
+         location.href="/member/loginForm";     
+ }
+</script>
+
+
+
        <div class="yamm-content">
                                     <div class="row">
                                         <div class="col-sm-3">
