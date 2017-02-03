@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2>능력자들</h2>
+                    <h2>다양한 능력들</h2>
                     <hr class="star-primary">
                 </div>
             </div>
