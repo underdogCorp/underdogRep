@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html lang="en" style="margin-top:160px;">
+<html lang="en" style="margin-top:140px;">
 
 <head>
 
@@ -149,10 +149,11 @@
             <!--/.nav-collapse -->
 
             <div class="navbar-buttons">
-
+			<c:if test="${sessionScope.MEMBER.me_email != null }">
                 <div class="navbar-collapse collapse right" id="basket-overview" style="margin-left:10px;">
                     <a href="/basket/view?me_email=${sessionScope.MEMBER.me_email}" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart" ></i><span class="hidden-sm">장바구니</span></a>
                 </div>
+            </c:if>    
                 <!--/.nav-collapse -->
 
                 <div class="navbar-collapse collapse right" id="search-not-mobile">
