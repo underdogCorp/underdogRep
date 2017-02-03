@@ -31,7 +31,7 @@
 
 
 		<button type="button" class="btn btn-default"
-			onclick="location.href='/board/registerForm?bo_bbsid=04'">글쓰기</button>
+			onclick="location.href='/board/registerForm?bo_bbsid=01'" style="float:right">글쓰기</button>
 </div>
 
 
