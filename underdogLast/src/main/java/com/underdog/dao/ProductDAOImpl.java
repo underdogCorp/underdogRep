@@ -37,6 +37,7 @@ public class ProductDAOImpl implements ProductDAO {
 	@Override
 	public void registerProc(ProductVO productVo) {
 		logger.info("ProductDAOImpl - registerProc() 입장");
+		System.out.println("ProductDAOImpl - registerProc() 입장");
 		
 		session.insert(namespace + ".registerProc", productVo);
 		

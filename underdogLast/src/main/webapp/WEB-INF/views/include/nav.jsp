@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="margin-top:160px;">
 
 <head>
 
@@ -29,7 +29,8 @@
     <link href="/resources/css/animate.min.css" rel="stylesheet">
     <link href="/resources/css/owl.carousel.css" rel="stylesheet">
     <link href="/resources/css/owl.theme.css" rel="stylesheet">
-
+	<link href="/resources/css/scrolling-nav.css" rel="stylesheet">
+	
     <!-- theme stylesheet -->
     <link href="/resources/css/style.default.css" rel="stylesheet" id="theme-stylesheet">
 
@@ -59,7 +60,7 @@
     <!-- *** NAVBAR ***
  _________________________________________________________ -->
 
-    <div class="navbar navbar-default yamm" role="navigation" id="navbar">
+    <div class="navbar navbar-default navbar-fixed-top yamm" role="navigation" id="navbar">
         <div class="container">
             <div class="navbar-header">
 
@@ -149,8 +150,8 @@
 
             <div class="navbar-buttons">
 
-                <div class="navbar-collapse collapse right" id="basket-overview">
-                    <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">3 items in cart</span></a>
+                <div class="navbar-collapse collapse right" id="basket-overview" style="margin-left:10px;">
+                    <a href="/basket/view?me_email=${sessionScope.MEMBER.me_email}" class="btn btn-primary navbar-btn"><i class="fa fa-shopping-cart" ></i><span class="hidden-sm">장바구니</span></a>
                 </div>
                 <!--/.nav-collapse -->
 
