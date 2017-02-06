@@ -1,6 +1,6 @@
 package com.underdog.service;
 
-import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.underdog.dao.ProductDAO;
 import com.underdog.domain.ProductVO;
@@ -44,7 +46,23 @@ public class ProductServiceImpl implements ProductService {
 		logger.info(productVo.getPr_regip());
 		System.out.println(productVo.getPr_regip());
 		
-		//data.put("pr_regip", req.getRemoteAddr());
+
+	    MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)req;
+	    Iterator<String> iterator = multipartHttpServletRequest.getFileNames();
+	    MultipartFile multipartFile = null;
+	    while(iterator.hasNext()){
+	        multipartFile = multipartHttpServletRequest.getFile(iterator.next());
+	        if(multipartFile.isEmpty() == false){
+	        	logger.debug("------------- file start -------------");
+	        	logger.debug("name : "+multipartFile.getName());
+	        	logger.debug("filename : "+multipartFile.getOriginalFilename());
+	        	logger.debug("size : "+multipartFile.getSize());
+	        	logger.debug("-------------- file end --------------\n");
+	        }
+	    }
+		
+		
+		
 		dao.registerProc(productVo);
 	}
 

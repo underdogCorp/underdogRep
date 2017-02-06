@@ -27,7 +27,7 @@
 
 <h2>상품등록</h2><br/>
 
-<form id="pdtSubmitFrm">
+<form id="pdtSubmitFrm" enctype="multipart/form-data">
 회원이메일 (hidden으로 처리, 임시): <input type="text" name="pr_me_email" value="${sessionScope.MEMBER.me_email}"><br/> <br/>
 회원닉네임 (hidden으로 처리, 임시): <input type="text" name="pr_me_nick" value="${sessionScope.MEMBER.me_nick}"><br/><br/>
 
@@ -58,11 +58,11 @@
 시급 : <input type="text" name="pr_pay_h"><br/>
 일급 : <input type="text" name="pr_pay_d"><br/>
 월급 : <input type="text" name="pr_pay_m"><br/>
-사진1 : <input type="text" name="pr_pay_m"><br/>
-사진2 : <input type="text" name="pr_pay_m"><br/>
-사진3 : <input type="text" name="pr_pay_m"><br/>
-<!-- 업무가능 시작일 : <input type="text" name="pr_startday"><br/>
-업무가능 종료일 : <input type="text" name="pr_endday"><br/> -->
+업무가능 시작일 : <input type="date" name="pr_startday"><br/>
+업무가능 종료일 : <input type="date" name="pr_endday"><br/>
+사진1 : <input type="file" name="pr_photo1"><br/>
+
+
 
 
 <input type="button" id="pdtSubmitBtn" value="제출">

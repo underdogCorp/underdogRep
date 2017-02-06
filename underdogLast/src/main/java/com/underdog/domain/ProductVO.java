@@ -25,6 +25,9 @@ public class ProductVO {
 	private int pr_pay_m;
 	private Date pr_startday;
 	private Date pr_endday;
+//	private pr_photo1
+//	private pr_photo2
+//	private pr_photo3
 	
 	public int getPr_idx() {
 		return pr_idx;

@@ -28,7 +28,7 @@
                                                 </li>
                                                 <li><a href="/product/list">능력자 보기</a>
                                                 </li>
-                                                <li><a href="/product/registerForm">능력등록</a>
+                                                <li><a href="/product/registerForm/" id="productRegister">능력등록</a>
                                                 </li>
                                             </ul>
                                         </div>

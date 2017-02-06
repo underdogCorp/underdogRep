@@ -44,7 +44,9 @@
 	<!-- jQuery -->
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	
+	<!--JS파일 -->
 	<script src="/resources/js/member.js"></script>
+	<script src="/resources/js/check.js"></script>
 
 <script>       
  function mypage(){
@@ -87,8 +89,10 @@
             <div class="navbar-collapse collapse" id="navigation">
 
                 <ul class="nav navbar-nav navbar-left">
-                    <li class="active"><a href="/">Home</a>
+                    <li class="dropdown yamm-fw">
+                    	<a href="/" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Home <b class="caret"></b></a>
                     </li>
+                   
                     <li class="dropdown yamm-fw">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Pinterest? <b class="caret"></b></a>
                         <ul class="dropdown-menu">
