@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-
-
 <%@ include file="/WEB-INF/views/include/nav.jsp"%>
-
 
      <div id="all">
 
@@ -27,17 +24,18 @@
 											<th>고용 형태</th>
 											<th>고용 기간</th>
 											<th>상품 가격</th>
-											<th colspan="2">상품 담은 날짜</th>
+											<th>상품 담은 날짜</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+
 <c:forEach items="${basket}" var="basket">
 
 			<tr>
 
 
 				<td><a href="#"> <img src="/resources/img/detailsquare1.jpg"
-						alt="White Blouse Armani">
+						alt="White Blouse Armani" style="width:50px; height:50px;">
 				</a></td>
 
 
@@ -97,31 +95,13 @@
 					</c:otherwise>
 				</c:choose>
 				<td>${basket.ba_regdate }</td>
-				<td><a href="#"><i class="fa fa-trash-o"></i></a></td>
 			</tr>
 			<c:set var="sumAll" value="${sumAll + basket.ba_sum }" />
 
-		</c:forEach>
+</c:forEach>
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th colspan="5">합계금액 :</th>
-                                            <th colspan="2">	<c:choose>
-													<c:when test="${sumAll >= 10000}">
-														<fmt:parseNumber var="sumAllDivide" value="${sumAll / 10000}"
-															integerOnly="true" />
-														<c:out value="${sumAllDivide}" /> 억 <c:out
-															value="${sumAll - sumAllDivide * 10000}" /> 만원
-											</c:when>
-											<c:otherwise>
-												<c:out value="${sumAll }" /> 만원</h4>
-											</c:otherwise>
-											</c:choose>
-											</th>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                                
+								</table>
+
 <h4>
 	합계금액 :
 	<c:choose>

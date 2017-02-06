@@ -1,6 +1,8 @@
 package com.underdog.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -25,6 +27,14 @@ public class BasketDAOImpl implements BasketDAO {
 	public List<BasketVO> basket(String me_email) throws Exception {
 		logger.info("BasketDAOImpl - 장바구니 리스트 불러오기 입장");
 		return session.selectList(namespace + ".basket", me_email);
+	}
+
+	@Override
+	public void delete(Map<String, String> param) throws Exception {
+		logger.info("BasketDAOImpl - 장바구니 삭제하기 입장");
+		
+		session.delete(namespace + ".delete", param);
+		
 	}
 
 }

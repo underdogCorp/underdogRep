@@ -9,5 +9,12 @@
 		from basket where ba_me_email = #{me_email}
 	</select>
 
+	<!-- 장바구니 선택 상품 삭제하기 -->
+	<update id="delete" parameterType="Map" >
+		delete from basket where ba_me_email = #{me_email}
+		and ba_pr_idx = #{ba_pr_idx}
+	</update>
+
+
 
 </mapper>

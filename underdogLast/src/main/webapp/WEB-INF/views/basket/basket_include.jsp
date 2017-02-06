@@ -2,7 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<script>
+	function deleteCheck(idx){
+		var delCheck = confirm("선택하신 상품을 장바구니에서 삭제할까요?");
+		
+		if(delCheck){
+			alert("선택하신 상품을 장바구니에서 삭제합니다.");
+			location.href="/basket/delete?me_email=${sessionScope.MEMBER.me_email}&ba_pr_idx=" + idx;
+		}
+			
+	}
 
+</script>
 
 
 <table class="table">
@@ -12,7 +23,7 @@
 			<th>고용 형태</th>
 			<th>고용 기간</th>
 			<th>상품 가격</th>
-			<th>상품 담은 날짜</th>
+			<th colspan="2">상품 담은 날짜</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -23,7 +34,7 @@
 
 
 				<td><a href="#"> <img src="/resources/img/detailsquare1.jpg"
-						alt="White Blouse Armani">
+						alt="White Blouse Armani" style="width:50px; height:50px;">
 				</a></td>
 
 
@@ -83,6 +94,10 @@
 					</c:otherwise>
 				</c:choose>
 				<td>${basket.ba_regdate }</td>
+				
+				<td><button onclick="deleteCheck(${basket.ba_pr_idx });">삭제</button></td>
+				
+				
 			</tr>
 			<c:set var="sumAll" value="${sumAll + basket.ba_sum }" />
 
