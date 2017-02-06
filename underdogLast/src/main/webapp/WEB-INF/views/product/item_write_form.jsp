@@ -28,6 +28,7 @@
 <h2>상품등록</h2><br/>
 
 <form id="pdtSubmitFrm" enctype="multipart/form-data">
+
 회원이메일 (hidden으로 처리, 임시): <input type="text" name="pr_me_email" value="${sessionScope.MEMBER.me_email}"><br/> <br/>
 회원닉네임 (hidden으로 처리, 임시): <input type="text" name="pr_me_nick" value="${sessionScope.MEMBER.me_nick}"><br/><br/>
 
