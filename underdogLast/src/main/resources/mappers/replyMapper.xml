@@ -21,7 +21,7 @@
 		RE_IDX_SEQ.nextval,
 		#{re_me_email},
 		#{re_bo_idx},
-		#{comment_content},
+		#{re_content},
 		
 		RE_IDX_SEQ.nextval,
 		0,

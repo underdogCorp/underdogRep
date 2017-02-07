@@ -56,8 +56,8 @@ $(function(){
 					</tr>
 				</c:forEach>
 			</tbody>
-				${pageMaker.totalCount }<br/>
-				${pageMaker.cri.page }
+<%-- 				${pageMaker.totalCount }<br/> --%>
+<%-- 				${pageMaker.cri.page } --%>
 		</table>
 	
 					<div class="box-footer">
@@ -92,7 +92,7 @@ $(function(){
 	
 			<div class='box-body'>
 				
-				<select name="searchType">
+				<select name="searchType" >
 						<option value="n"
 							<c:out value="${cri.searchType == null?'selected':''}"/>>
 							---</option>
@@ -118,7 +118,7 @@ $(function(){
 
 <c:if test="${sessionScope.MEMBER != null }">
 	<button type="button" class="btn btn-default"
-		onclick="location.href='/board/registerForm?bo_bbsid=04'">글쓰기</button>
+		onclick="location.href='/board/registerForm?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_bbsid=${cri.bo_bbsid}&bo_idx=${cri.bo_idx }&keyword=${cri.keyword }&searchType=${cri.searchType }'">글쓰기</button>
 </c:if>
 
 </div>

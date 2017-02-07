@@ -77,22 +77,22 @@ public class BoardController {
 
 	// 게시판 글쓰기 폼 보기
 	@RequestMapping("/registerForm")
-	public String registerForm(@RequestParam("bo_bbsid") String bo_bbsid) throws Exception{
+	public String registerForm(@ModelAttribute("cri") SearchCriteria cri) throws Exception{
 
 		String jsp = null;
 
 		logger.info("BoardController - registerForm() 입장");
 
-		if (bo_bbsid.equals("01")) {
+		if (cri.getBo_bbsid().equals("01")) {
 			jsp = "/board/info/bo_info_write_form";
 			logger.info("공지사항 글쓰기 입장");
-		} else if (bo_bbsid.equals("02")) {
+		} else if (cri.getBo_bbsid().equals("02")) {
 			jsp = "/board/free/bo_free_write_form";
 			logger.info("자유게시판 글쓰기 입장");
-		} else if (bo_bbsid.equals("03")) {
+		} else if (cri.getBo_bbsid().equals("03")) {
 			jsp = "/board/faq/bo_faq_write_form";
 			logger.info("faq 글쓰기 입장");
-		} else if (bo_bbsid.equals("04")) {
+		} else if (cri.getBo_bbsid().equals("04")) {
 			jsp = "/board/q&a/bo_q&a_write_form";
 			logger.info("Q&A 글쓰기 입장");
 		}

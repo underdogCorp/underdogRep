@@ -44,7 +44,7 @@ function tryCommentEntry(){
 				{
 					 re_bo_idx : '${cri.bo_idx}'
 					, re_me_email : '${board.bo_me_email}'
-					, comment_content : $("#comment_content").val()
+					, re_content : $("#comment_content").val()
 				},
 				function(data){
 					
@@ -167,46 +167,107 @@ function tryCommentEntry(){
 			}
 </script>
 
+<script type="text/javascript" src="/resources/ckeditor_full/ckeditor.js"></script>
+
 <div class="container" style="padding-bottom: 50px;">
-<br />
-게시판 번호 : ${board.bo_idx }
-<br />
-회원 이메일 : ${board.bo_me_email }
-<br />
-게시판 아이디 : ${board.bo_bbsid}
-<br />
-회원 닉네임 : ${board.bo_me_nick }
-<br />
-제목 : ${board.bo_title }
-<br />
-본문 : ${board.bo_content }
-<br />
-조회수 : ${board.bo_hit }
-<br />
-게시일자: ${board.bo_regdate }
-<br />
-아이피 : ${board.bo_regip }
-<br />
+
+		<div class="bbsWriteForm" >
+			<form id="qnaWriteSubmitFrm">
+			
+<input type="hidden" name="bo_bbsid" value="04"><br/>
+<input type="hidden" name="bo_me_email" value="${sessionScope.MEMBER.me_email}">
+<input type="hidden" name="bo_me_nick" value="${sessionScope.MEMBER.me_nick}">
+			
+			<h2>Q & A 글쓰기</h2>
+			</br>
+					<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-2 text-center">게시판번호</div>
+						<div class="col-md-3">
+							${board.bo_idx }
+						</div>
+					</div>
+					</br>
+
+										<div class="row">
+						<div class="col-md-2 text-center">게시판아이디</div>
+						<div class="col-md-3">
+							${board.bo_bbsid}
+						</div>
+					</div>
+					</br>
+					
+										<div class="row">
+						<div class="col-md-2 text-center">조회수</div>
+						<div class="col-md-3">
+							${board.bo_hit }
+						</div>
+					</div>
+					</br>
+					
+										<div class="row">
+						<div class="col-md-2 text-center">게시일자</div>
+						<div class="col-md-3">
+							${board.bo_regdate }
+						</div>
+					</div>
+					</br>
+					
+										<div class="row">
+						<div class="col-md-2 text-center">아이피</div>
+						<div class="col-md-3">
+							${board.bo_regip }
+						</div>
+					</div>
+					</br>
+					
+															<div class="row">
+						<div class="col-md-2 text-center">작성자</div>
+						<div class="col-md-3">
+							${board.bo_me_nick }(${board.bo_me_email })
+						</div>
+					</div>
+					</br>
+					
+					<div class="row ">
+						<div class="col-md-2 text-center">제 목</div>
+						<div class="col-md-6">
+							${board.bo_title }
+						</div>
+					</div>
+				</div>
+				</br>
+				<div class="row mar_t20">
+					<textarea id="bo_content" class="textarea_fixed" name="bo_content" readonly
+						rows="10" cols="60">${board.bo_content }</textarea>
+				 	<script type="text/javascript">
+						CKEDITOR.replace('bo_content');
+					</script> 
+				</div>
+				<div class="row mar_t20">
+					<div class="col-md-offset-4" >
+						<button type="submit" class="btn btn-default" id="qnaWriteSubmitBtn">글 등록</button>
+						
+					<c:if test="${sessionScope.MEMBER.me_email == board.bo_me_email}">
+						<input type="button" value="수정폼으로" class="btn btn-default"
+						onclick="location='/board/board_cont?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_bbsid=${cri.bo_bbsid}&bo_idx=${cri.bo_idx }&keyword=${cri.keyword }&searchType=${cri.searchType }&state=modify'" />
+
+					<input type="button" value="삭제하기" class="btn btn-default"
+						onclick="location='/board/delProc?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_idx=${cri.bo_idx }&bo_bbsid=${cri.bo_bbsid}&keyword=${cri.keyword }&searchType=${cri.searchType }'" />
+					</c:if>
+						<button type="reset" class="btn btn-default"
+							onclick="location='/board/slist?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_bbsid=${cri.bo_bbsid}&bo_idx=${cri.bo_idx }&keyword=${cri.keyword }&searchType=${cri.searchType }'">목록으로</button>
+					</div>
+					</div>
+				</div>
+			</form>
+			</div>
+		</div>
 
 
-
-
-
-
-<input type="button" value="목록으로"
-	onclick="location='/board/slist?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_bbsid=${cri.bo_bbsid}&bo_idx=${cri.bo_idx }&keyword=${cri.keyword }&searchType=${cri.searchType }'">
-<br />
-<c:if test="${sessionScope.MEMBER.me_email == board.bo_me_email}">
-	<input type="button" value="수정폼으로"
-		onclick="location='/board/board_cont?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_bbsid=${cri.bo_bbsid}&bo_idx=${cri.bo_idx }&keyword=${cri.keyword }&searchType=${cri.searchType }&state=modify'" />
-	<input type="button" value="삭제하기"
-		onclick="location='/board/delProc?page=${cri.page }&perPageNum=${cri.perPageNum }&bo_idx=${cri.bo_idx }&bo_bbsid=${cri.bo_bbsid}&keyword=${cri.keyword }&searchType=${cri.searchType }'" />
-</c:if>
-<br />
 
 ==========================================================
 <br />
-
 
 <form method="post">
 <div id="commentWrap"></div>
@@ -216,12 +277,12 @@ function tryCommentEntry(){
 			<textarea name="comment_content" id="comment_content"></textarea>
 		</div>
 		<div id="commentButton">
-			<button type="button" id="btnCommentEntry">댓글등록</button>
+			<button type="button" id="btnCommentEntry" class="btn btn-default">댓글등록</button>
 		</div>
 		<div style="clear: both;"></div>
 	</div>
 </form>
-</div>
+
 
 
 

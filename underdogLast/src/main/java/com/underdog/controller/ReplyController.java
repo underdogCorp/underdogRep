@@ -30,14 +30,13 @@ public class ReplyController {
 	@ResponseBody
 	@RequestMapping("/registerProc")
 //	public void registerProc(@RequestParam HashMap date, HttpServletRequest req, HttpServletResponse res) throws Exception{
-	public void registerProc(@RequestParam HashMap date, HttpServletRequest req) throws Exception{
+	public void registerProc(ReplyVO replyVo, HttpServletRequest req) throws Exception{
 //		PrintWriter out = res.getWriter();
-		logger.info("ReplyController - registerProc() 입장");
-		
-		date.put("re_regip", req.getRemoteAddr());
-		System.out.println(date);
-		
-		service.registerProc(date);
+		logger.info("re_bo_idx : "+replyVo.getRe_bo_idx());
+		logger.info("re_me_email : "+replyVo.getRe_me_email());
+		logger.info("re_content : "+replyVo.getRe_content());
+
+		service.registerProc(replyVo, req);
 
 		//out.println("1");
 	}
@@ -45,11 +44,11 @@ public class ReplyController {
 	
 	// 댓글 리스트 불러오기
 	@RequestMapping("/reply_cont")
-	public String  reply_cont(@RequestParam HashMap data, Model model) {
+	public String  reply_cont(ReplyVO replyVo, Model model) {
 		logger.info("ReplyController - reply_cont() 입장");
 		
 	
-		List<ReplyVO> list = service.reply_cont(data);
+		List<ReplyVO> list = service.reply_cont(replyVo);
 		model.addAttribute("reply", list);
 		
 		System.out.println(list);

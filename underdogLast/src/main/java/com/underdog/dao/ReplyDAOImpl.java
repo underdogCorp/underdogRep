@@ -27,18 +27,20 @@ public class ReplyDAOImpl implements ReplyDAO {
 	
 	// 댓글 등록 프로세스
 	@Override
-	public void registerProc(HashMap date) {
+	public void registerProc(ReplyVO replyVo) {
 		logger.info("ReplyDAOImpl - registerProc 입장");
-		session.insert(namespace + ".registerProc", date);
+		session.insert(namespace + ".registerProc", replyVo);
 	}
-
+	
 	// 댓글 리스트 불러오기
 	@Override
-	public List<ReplyVO> replyList(HashMap data) {
+	public List<ReplyVO> replyList(ReplyVO replyVo) {
 		logger.info("ReplyDAOImpl - replyList 입장");
 		
-		return session.selectList(namespace + ".replyList", data);
+		return session.selectList(namespace + ".replyList", replyVo);
 	}
+
+
 
 
 }

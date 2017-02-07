@@ -9,9 +9,13 @@ import com.underdog.domain.ReplyVO;
 
 public interface ReplyService {
 
-	public List<ReplyVO> reply_cont(HashMap date);
+	//댓글 등록 프로세스
+	public void registerProc(ReplyVO replyVo, HttpServletRequest req);
 	
-	public void registerProc(HashMap date);
+	//댓글 리스트 불러오기
+	public List<ReplyVO> reply_cont(ReplyVO replyVo);
+
+	
 
 
 }

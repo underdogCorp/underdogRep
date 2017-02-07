@@ -23,20 +23,25 @@ public class ReplyServiceImpl implements ReplyService {
 	
 	// 댓글 등록 프로세스
 	@Override
-	public void registerProc(HashMap date) {
+	public void registerProc(ReplyVO replyVo, HttpServletRequest req) {
 		logger.info("BoardServiceImpl - registerProc 입장");
 		
-		dao.registerProc(date);
+		replyVo.setRe_regip(req.getRemoteAddr());
+		
+		dao.registerProc(replyVo);
+		
 	}
 
-	
+
 	// 댓글 리스트 불러오기 
 	@Override
-	public List<ReplyVO> reply_cont(HashMap data) {
+	public List<ReplyVO> reply_cont(ReplyVO replyVo) {
 		logger.info("BoardServiceImpl - registerProc 입장");
 		
-		return dao.replyList(data);
+		return dao.replyList(replyVo);
 	}
+
+
 
 
 

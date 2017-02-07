@@ -7,8 +7,8 @@ import com.underdog.domain.ReplyVO;
 
 public interface ReplyDAO {
 
-	public void registerProc(HashMap date);
+	public void registerProc(ReplyVO replyVo);
 
-	public List<ReplyVO> replyList(HashMap date);
+	public List<ReplyVO> replyList(ReplyVO replyVo);
 
 }
